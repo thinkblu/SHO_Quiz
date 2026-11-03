@@ -89,6 +89,15 @@ main .wrap{padding-block:24px 64px;display:flex;flex-direction:column;gap:18px}
 .opt.wrong .L{background:var(--red);color:var(--surface)}
 .opt.wrong .mk{color:var(--red)}
 .opt:disabled{cursor:default}
+.opt.pending{border-color:var(--yellow);border-style:dashed;background:var(--surface-2)}
+.opt.pending .L{background:var(--yellow);color:var(--yellow-ink)}
+.confirm{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--surface-2);border-left:4px solid var(--yellow);border-radius:6px;padding:10px 12px}
+.confirm[hidden]{display:none}
+.confirm p{margin:0;font-weight:600}
+.confirm .acts{display:flex;gap:8px;flex-wrap:wrap}
+.confirm .yes{background:var(--green);color:var(--green-ink);border:0;padding:8px 14px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.confirm .no{background:transparent;color:var(--ink);border:1.5px solid var(--line);padding:8px 14px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.confirm .no:hover{border-color:var(--ink)}
 .qfoot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 .hint{font-size:14px;color:var(--muted)}
 .reveal{background:var(--ink);color:var(--surface);border:0;padding:9px 16px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
@@ -159,8 +168,8 @@ function showHome(){
     </button>`}).join('');
   $('#view').innerHTML=`<h2 style="font-size:26px">Pilih modul</h2><div class="modgrid">${cards}</div>
     <div class="howto">
-      <div><b>1 · Pilih jawapan</b>Klik satu pilihan. Jawapan betul akan disambut dengan bunga api.</div>
-      <div><b>2 · Tukar jika perlu</b>Anda boleh menukar pilihan selagi jawapan belum didedahkan.</div>
+      <div><b>1 · Pilih &amp; sahkan</b>Klik satu pilihan, kemudian tekan <i>Ya, pasti</i>. Jawapan betul disambut dengan bunga api.</div>
+      <div><b>2 · Tukar jika belum pasti</b>Tekan <i>Tukar jawapan</i> untuk memilih semula. Selepas disahkan, jawapan dikunci.</div>
       <div><b>3 · Dedah jawapan</b>Lihat jawapan sebenar, penerangan dan rujukan slaid.</div>
     </div>`;
   document.querySelectorAll('.mod').forEach(b=>b.onclick=()=>go('m'+b.dataset.m));
@@ -185,6 +194,7 @@ function showModule(n){
 function bindCrumbs(){document.querySelectorAll('.crumbs button').forEach(b=>b.onclick=()=>go(b.dataset.h))}
 
 function showChapter(m,c){
+  PEND = {};
   const s = st(c.id);
   $('#hdr').innerHTML=`<div class="crumbs"><button data-h="">Utama</button><span>›</span><button data-h="m${m.n}">Modul ${m.n}</button><span>›</span><span>Bab ${esc(c.id)}</span></div>
     <div class="eyebrow">Modul ${m.n} · Bab ${esc(c.id)} · ${c.total} slaid</div><h1>${esc(c.title)}</h1>`;
@@ -200,34 +210,50 @@ function showChapter(m,c){
       <div class="opts" role="group" aria-label="Pilihan jawapan soalan ${i+1}">
         ${q.o.map((o,k)=>`<button class="opt" data-k="${k}"><span class="L">${LET[k]}</span><span>${esc(o)}</span><span class="mk"></span></button>`).join('')}
       </div>
+      <div class="confirm" hidden role="alertdialog" aria-live="polite"><p></p><div class="acts"><button class="yes">Ya, pasti</button><button class="no">Tukar jawapan</button></div></div>
       <div class="qfoot"><span class="hint"></span><button class="reveal">Dedah jawapan</button></div>
       <div class="ans" hidden></div>
     </article>`).join('') + `<div id="fin"></div>`;
   c.qs.forEach((q,i)=>{
     const card = $('#q'+i);
-    card.querySelectorAll('.opt').forEach(b=>b.onclick=e=>pick(c,i,+b.dataset.k,e));
+    card.querySelectorAll('.opt').forEach(b=>b.onclick=()=>pick(c,i,+b.dataset.k));
+    card.querySelector('.yes').onclick=()=>confirmPick(c,i);
+    card.querySelector('.no').onclick=()=>{delete PEND[i]; paint(c,i); card.querySelector('.opt[data-k="0"]').focus()};
     card.querySelector('.reveal').onclick=()=>reveal(c,i,true);
     paint(c,i);
   });
   stats(c);
 }
 
-function pick(c,i,k,e){
-  const s=st(c.id); if(s.rev[i]) return;
+/* unconfirmed choice per question (in memory only) */
+let PEND = {};
+function pick(c,i,k){
+  const s=st(c.id); if(s.rev[i] || s.pick[i]!==undefined) return;
+  PEND[i]=k; paint(c,i);
+  $('#q'+i+' .yes').focus({preventScroll:true});
+}
+function confirmPick(c,i){
+  const s=st(c.id), k=PEND[i]; if(k===undefined || s.rev[i]) return;
+  delete PEND[i];
   s.pick[i]=k; if(s.first[i]===undefined) s.first[i]=k; save();
   paint(c,i); stats(c);
-  if(k===c.qs[i].a){ const r=e.currentTarget.getBoundingClientRect(); celebrate(r.left+r.width/2, r.top+r.height/2); }
+  const card=$('#q'+i);
+  if(k===c.qs[i].a){ const r=card.querySelector(`.opt[data-k="${k}"]`).getBoundingClientRect(); celebrate(r.left+r.width/2, r.top+r.height/2); }
+  card.querySelector('.reveal').focus({preventScroll:true});
 }
-function reveal(c,i){ const s=st(c.id); s.rev[i]=1; if(s.first[i]===undefined) s.first[i]=-1; save(); paint(c,i); stats(c); }
+function reveal(c,i){ const s=st(c.id); delete PEND[i]; s.rev[i]=1; if(s.first[i]===undefined) s.first[i]=-1; save(); paint(c,i); stats(c); }
 
 function paint(c,i){
-  const q=c.qs[i], s=st(c.id), card=$('#q'+i), p=s.pick[i], rev=!!s.rev[i];
+  const q=c.qs[i], s=st(c.id), card=$('#q'+i), p=s.pick[i], rev=!!s.rev[i], locked=p!==undefined, pend=(!rev&&!locked)?PEND[i]:undefined;
   card.querySelectorAll('.opt').forEach(b=>{
-    const k=+b.dataset.k; b.className='opt'; b.disabled=rev; const mk=b.querySelector('.mk'); mk.textContent='';
+    const k=+b.dataset.k; b.className='opt'; b.disabled=rev||locked; const mk=b.querySelector('.mk'); mk.textContent='';
     if(rev){ if(k===q.a){b.classList.add('correct');mk.textContent='Jawapan'} else if(k===p){b.classList.add('wrong');mk.textContent='Pilihan anda'} }
-    else if(k===p) b.classList.add('picked');
+    else if(k===p){ b.classList.add('picked'); mk.textContent='Disahkan'; }
+    else if(k===pend) b.classList.add('pending');
   });
-  card.querySelector('.hint').textContent = rev ? (p===q.a?'Anda menjawab dengan betul.':p===undefined?'Anda tidak memilih jawapan.':'Jawapan anda kurang tepat.') : (p===undefined?'Pilih satu jawapan.':'Pilihan anda: '+LET[p]);
+  const cf=card.querySelector('.confirm'); cf.hidden = pend===undefined;
+  if(pend!==undefined) cf.querySelector('p').textContent=`Anda pasti dengan jawapan ${LET[pend]}?`;
+  card.querySelector('.hint').textContent = rev ? (p===q.a?'Anda menjawab dengan betul.':p===undefined?'Anda tidak memilih jawapan.':'Jawapan anda kurang tepat.') : locked ? `Jawapan ${LET[p]} disahkan. Tekan Dedah jawapan untuk melihat penerangan.` : pend!==undefined ? 'Sahkan pilihan anda.' : 'Pilih satu jawapan.';
   card.querySelector('.reveal').hidden = rev;
   const a=card.querySelector('.ans'); a.hidden=!rev;
   if(rev && !a.innerHTML){
