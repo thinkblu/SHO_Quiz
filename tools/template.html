@@ -1,0 +1,284 @@
+<title>Kuiz SHO NIOSH</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: safety-signage language — green "safe condition" bands, hazard-yellow accents, a single reading column of question cards */
+:root{
+  --bg:#f3f5f2; --surface:#ffffff; --surface-2:#e9eee8; --ink:#16201a; --muted:#56635a; --line:#d3dbd2;
+  --green:#00794a; --green-ink:#ffffff; --green-soft:#dcefe4; --yellow:#f5c400; --yellow-ink:#1c1a10;
+  --red:#b3261e; --red-soft:#f8e1de; --focus:#0b5cad;
+  --f-display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1512; --surface:#18201b; --surface-2:#202a24; --ink:#e7eee9; --muted:#9db0a3; --line:#2c3a31;
+  --green:#2fae74; --green-ink:#06130c; --green-soft:#173426; --yellow:#f5c400; --yellow-ink:#1c1a10;
+  --red:#ff8a80; --red-soft:#3a1b19; --focus:#7db7ff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1512; --surface:#18201b; --surface-2:#202a24; --ink:#e7eee9; --muted:#9db0a3; --line:#2c3a31;
+  --green:#2fae74; --green-ink:#06130c; --green-soft:#173426; --yellow:#f5c400; --yellow-ink:#1c1a10;
+  --red:#ff8a80; --red-soft:#3a1b19; --focus:#7db7ff; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--bg);color:var(--ink)}
+body{font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:820px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.hazard{height:10px;background:repeating-linear-gradient(-45deg,var(--yellow) 0 14px,var(--ink) 14px 28px)}
+header.top{background:var(--green);color:var(--green-ink)}
+header.top .wrap{padding-block:22px 20px;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-family:var(--f-display);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:14px;opacity:.9}
+h1,h2,h3{font-family:var(--f-display);margin:0;text-wrap:balance;line-height:1.08}
+h1{font-size:clamp(34px,6vw,52px);font-weight:800;letter-spacing:.005em}
+.sub{margin:0;max-width:60ch;opacity:.92}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:15px}
+.crumbs button{background:none;border:0;padding:2px 0;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+main .wrap{padding-block:24px 64px;display:flex;flex-direction:column;gap:18px}
+/* module cards */
+.modgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:600px){.modgrid{grid-template-columns:1fr}}
+.mod{display:flex;flex-direction:column;gap:10px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 16px;cursor:pointer;position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
+.mod:hover{transform:translateY(-2px);border-color:var(--green)}
+.mod .num{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:.9;color:var(--green)}
+.mod h2{font-size:24px;font-weight:700}
+.mod .en{color:var(--muted);font-size:14px}
+.mod .meta{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;font-variant-numeric:tabular-nums}
+.mod .bar{height:6px;background:var(--surface-2);border-radius:3px;overflow:hidden}
+.mod .bar i{display:block;height:100%;background:var(--green)}
+.howto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;font-size:14px;color:var(--muted)}
+.howto div{border-left:4px solid var(--yellow);padding:2px 0 2px 10px}
+.howto b{display:block;color:var(--ink);font-family:var(--f-display);font-size:17px;letter-spacing:.02em}
+@media (max-width:600px){.howto{grid-template-columns:1fr}}
+/* chapter list */
+.chlist{display:flex;flex-direction:column;gap:8px}
+.ch{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px;cursor:pointer}
+.ch:hover:not(:disabled){border-color:var(--green)}
+.ch:disabled{cursor:not-allowed;opacity:.55}
+.ch .id{font-family:var(--f-mono);font-weight:600;font-size:14px;background:var(--surface-2);padding:4px 8px;border-radius:4px;min-width:62px;text-align:center}
+.ch .t{font-weight:600;line-height:1.3}
+.ch .s{display:block;font-size:13px;color:var(--muted);font-weight:400;margin-top:2px}
+.ch .score{font-family:var(--f-mono);font-size:13px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.ch .score.done{color:var(--green);font-weight:600}
+/* quiz */
+.qbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.qbar .wrap{padding-block:10px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;justify-content:space-between}
+.qbar .stat{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted)}
+.qbar .stat b{color:var(--ink)}
+.prog{flex:1 1 160px;height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden;min-width:120px}
+.prog i{display:block;height:100%;background:var(--green);transition:width .3s}
+.btn{border:1px solid var(--line);background:var(--surface);padding:7px 12px;border-radius:5px;cursor:pointer;font-weight:600;font-size:14px}
+.btn:hover{border-color:var(--ink)}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.q .qn{display:flex;gap:12px;align-items:flex-start}
+.q .badge{flex:none;font-family:var(--f-display);font-weight:800;font-size:20px;width:40px;height:40px;display:grid;place-items:center;background:var(--yellow);color:var(--yellow-ink);border-radius:4px}
+.q .qt{font-weight:600;font-size:17px;line-height:1.4;padding-top:6px;min-width:0}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;padding:10px 12px;border:1.5px solid var(--line);border-radius:6px;background:var(--surface);cursor:pointer;line-height:1.35}
+.opt:hover:not(:disabled){border-color:var(--green)}
+.opt .L{font-family:var(--f-display);font-weight:700;font-size:17px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--surface-2)}
+.opt .mk{font-family:var(--f-display);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.opt.picked{border-color:var(--ink);background:var(--surface-2)}
+.opt.picked .L{background:var(--ink);color:var(--surface)}
+.opt.correct{border-color:var(--green);background:var(--green-soft)}
+.opt.correct .L{background:var(--green);color:var(--green-ink)}
+.opt.correct .mk{color:var(--green)}
+.opt.wrong{border-color:var(--red);background:var(--red-soft)}
+.opt.wrong .L{background:var(--red);color:var(--surface)}
+.opt.wrong .mk{color:var(--red)}
+.opt:disabled{cursor:default}
+.qfoot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.hint{font-size:14px;color:var(--muted)}
+.reveal{background:var(--ink);color:var(--surface);border:0;padding:9px 16px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:17px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.reveal:hover{background:var(--green);color:var(--green-ink)}
+.ans{border-top:2px solid var(--green);padding-top:14px;display:flex;flex-direction:column;gap:12px}
+.ans .lab{font-family:var(--f-display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:14px;color:var(--green)}
+.ans p{margin:0;max-width:68ch}
+.ref{background:var(--surface-2);border-radius:6px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.ref .where{font-family:var(--f-mono);font-size:13px;line-height:1.5;display:flex;flex-wrap:wrap;gap:4px 8px}
+.ref .where span{background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 7px;white-space:nowrap}
+.ref .where span.k{background:var(--yellow);color:var(--yellow-ink);border-color:var(--yellow);font-weight:600}
+.ref blockquote{margin:0;font-size:14px;color:var(--muted);border-left:3px solid var(--line);padding-left:10px;overflow-wrap:anywhere}
+.done-card{background:var(--green);color:var(--green-ink);border-radius:6px;padding:20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.done-card h2{font-size:28px}
+.done-card .btn{background:var(--green-ink);color:var(--green);border-color:transparent}
+.empty{background:var(--surface);border:1px dashed var(--line);border-radius:6px;padding:20px;color:var(--muted)}
+footer{color:var(--muted);font-size:13px;text-align:center;padding-block:0 40px}
+canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+</style>
+
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="hazard" aria-hidden="true"></div>
+<header class="top"><div class="wrap" id="hdr"></div></header>
+<div id="bar"></div>
+<main><div class="wrap" id="view"></div></main>
+<footer><div class="wrap">Soalan disediakan berdasarkan Buku Kursus SHO NIOSH Modul 1–4. Rujukan slaid mengikut penomboran dalam buku kursus.</div></footer>
+
+<script>
+const DATA = /*__DATA__*/null;
+const LET = ['A','B','C','D'];
+const $ = (s,el=document)=>el.querySelector(s);
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const slug = id=>'c'+id.toLowerCase().replace('.','-');
+const findCh = h=>{for(const m of DATA.modules)for(const c of m.chapters)if(slug(c.id)===h)return [m,c];return [null,null]};
+
+/* progress store (per-viewer convenience only) */
+let PROG = {};
+try{PROG = JSON.parse(localStorage.getItem('kuizsho')||'{}')||{}}catch(e){PROG={}}
+const save=()=>{try{localStorage.setItem('kuizsho',JSON.stringify(PROG))}catch(e){}};
+const st = id=>(PROG[id] ||= {pick:{},first:{},rev:{}});
+const chScore = c=>{const s=PROG[c.id];if(!s)return [0,0];let ok=0,ans=0;c.qs.forEach((q,i)=>{if(s.first[i]!==undefined){ans++;if(s.first[i]===q.a)ok++}});return [ok,ans]};
+
+function route(){
+  const h = location.hash.slice(1);
+  window.scrollTo(0,0);
+  if(/^m[1-4]$/.test(h)) return showModule(+h[1]);
+  if(h.startsWith('c')){const [m,c]=findCh(h); if(c) return showChapter(m,c);}
+  showHome();
+}
+const go = h=>{ if(location.hash==='#'+h) route(); else location.hash=h; };
+
+function showHome(){
+  $('#bar').innerHTML='';
+  $('#hdr').innerHTML=`<div class="eyebrow">Safety and Health Officer · NIOSH Malaysia</div>
+    <h1>Kuiz Latihan SHO</h1>
+    <p class="sub">Pilih modul, kemudian bab. Setiap bab mengandungi 20 soalan objektif beserta penerangan dan rujukan nombor slaid dalam buku kursus.</p>`;
+  const cards = DATA.modules.map(m=>{
+    const ready=m.chapters.filter(c=>c.qs.length);
+    const tq=ready.reduce((a,c)=>a+c.qs.length,0);
+    let ok=0,ans=0; ready.forEach(c=>{const [o,a]=chScore(c);ok+=o;ans+=a});
+    const pct = tq? Math.round(ans/tq*100):0;
+    return `<button class="mod" data-m="${m.n}">
+      <span class="num">0${m.n}</span>
+      <h2>${esc(m.title)}</h2>
+      <span class="en">${esc(m.en)}</span>
+      <span class="bar" aria-hidden="true"><i style="width:${pct}%"></i></span>
+      <span class="meta"><span>${m.chapters.length} bab · ${tq} soalan</span><span>${ans? `${ok}/${ans} betul`:'Belum mula'}</span></span>
+    </button>`}).join('');
+  $('#view').innerHTML=`<h2 style="font-size:26px">Pilih modul</h2><div class="modgrid">${cards}</div>
+    <div class="howto">
+      <div><b>1 · Pilih jawapan</b>Klik satu pilihan. Jawapan betul akan disambut dengan bunga api.</div>
+      <div><b>2 · Tukar jika perlu</b>Anda boleh menukar pilihan selagi jawapan belum didedahkan.</div>
+      <div><b>3 · Dedah jawapan</b>Lihat jawapan sebenar, penerangan dan rujukan slaid.</div>
+    </div>`;
+  document.querySelectorAll('.mod').forEach(b=>b.onclick=()=>go('m'+b.dataset.m));
+}
+
+function showModule(n){
+  const m = DATA.modules[n-1];
+  $('#bar').innerHTML='';
+  $('#hdr').innerHTML=`<div class="crumbs"><button data-h="">Utama</button><span>›</span><span>Modul ${n}</span></div>
+    <div class="eyebrow">Modul ${n}</div><h1>${esc(m.title)}</h1><p class="sub">${esc(m.en)}</p>`;
+  const rows = m.chapters.map(c=>{
+    const ready=c.qs.length>0; const [ok,ans]=chScore(c);
+    const sc = !ready?'Akan datang': ans? `${ok}/${c.qs.length}` : `${c.qs.length} soalan`;
+    return `<button class="ch" data-h="${slug(c.id)}" ${ready?'':'disabled'}>
+      <span class="id">${esc(c.id)}</span>
+      <span class="t">${esc(c.title)}<span class="s">${c.total} slaid</span></span>
+      <span class="score ${ans===c.qs.length&&ready?'done':''}">${sc}</span></button>`}).join('');
+  $('#view').innerHTML=`<h2 style="font-size:26px">Pilih bab</h2><div class="chlist">${rows}</div>`;
+  bindCrumbs();
+  document.querySelectorAll('.ch').forEach(b=>b.onclick=()=>go(b.dataset.h));
+}
+function bindCrumbs(){document.querySelectorAll('.crumbs button').forEach(b=>b.onclick=()=>go(b.dataset.h))}
+
+function showChapter(m,c){
+  const s = st(c.id);
+  $('#hdr').innerHTML=`<div class="crumbs"><button data-h="">Utama</button><span>›</span><button data-h="m${m.n}">Modul ${m.n}</button><span>›</span><span>Bab ${esc(c.id)}</span></div>
+    <div class="eyebrow">Modul ${m.n} · Bab ${esc(c.id)} · ${c.total} slaid</div><h1>${esc(c.title)}</h1>`;
+  bindCrumbs();
+  $('#bar').innerHTML=`<div class="qbar"><div class="wrap">
+    <span class="stat">Dijawab <b id="nAns">0</b>/${c.qs.length}</span>
+    <span class="prog" aria-hidden="true"><i id="pBar"></i></span>
+    <span class="stat">Betul cubaan pertama <b id="nOk">0</b></span>
+    <button class="btn" id="reset">Set semula</button></div></div>`;
+  $('#reset').onclick=()=>{ if($('#reset').dataset.arm){delete PROG[c.id];save();showChapter(m,c);} else {$('#reset').dataset.arm=1;$('#reset').textContent='Klik lagi untuk sahkan';setTimeout(()=>{const r=$('#reset');if(r){delete r.dataset.arm;r.textContent='Set semula'}},3000)} };
+  $('#view').innerHTML = c.qs.map((q,i)=>`<article class="q" id="q${i}">
+      <div class="qn"><span class="badge">${i+1}</span><div class="qt">${esc(q.q)}</div></div>
+      <div class="opts" role="group" aria-label="Pilihan jawapan soalan ${i+1}">
+        ${q.o.map((o,k)=>`<button class="opt" data-k="${k}"><span class="L">${LET[k]}</span><span>${esc(o)}</span><span class="mk"></span></button>`).join('')}
+      </div>
+      <div class="qfoot"><span class="hint"></span><button class="reveal">Dedah jawapan</button></div>
+      <div class="ans" hidden></div>
+    </article>`).join('') + `<div id="fin"></div>`;
+  c.qs.forEach((q,i)=>{
+    const card = $('#q'+i);
+    card.querySelectorAll('.opt').forEach(b=>b.onclick=e=>pick(c,i,+b.dataset.k,e));
+    card.querySelector('.reveal').onclick=()=>reveal(c,i,true);
+    paint(c,i);
+  });
+  stats(c);
+}
+
+function pick(c,i,k,e){
+  const s=st(c.id); if(s.rev[i]) return;
+  s.pick[i]=k; if(s.first[i]===undefined) s.first[i]=k; save();
+  paint(c,i); stats(c);
+  if(k===c.qs[i].a){ const r=e.currentTarget.getBoundingClientRect(); celebrate(r.left+r.width/2, r.top+r.height/2); }
+}
+function reveal(c,i){ const s=st(c.id); s.rev[i]=1; if(s.first[i]===undefined) s.first[i]=-1; save(); paint(c,i); stats(c); }
+
+function paint(c,i){
+  const q=c.qs[i], s=st(c.id), card=$('#q'+i), p=s.pick[i], rev=!!s.rev[i];
+  card.querySelectorAll('.opt').forEach(b=>{
+    const k=+b.dataset.k; b.className='opt'; b.disabled=rev; const mk=b.querySelector('.mk'); mk.textContent='';
+    if(rev){ if(k===q.a){b.classList.add('correct');mk.textContent='Jawapan'} else if(k===p){b.classList.add('wrong');mk.textContent='Pilihan anda'} }
+    else if(k===p) b.classList.add('picked');
+  });
+  card.querySelector('.hint').textContent = rev ? (p===q.a?'Anda menjawab dengan betul.':p===undefined?'Anda tidak memilih jawapan.':'Jawapan anda kurang tepat.') : (p===undefined?'Pilih satu jawapan.':'Pilihan anda: '+LET[p]);
+  card.querySelector('.reveal').hidden = rev;
+  const a=card.querySelector('.ans'); a.hidden=!rev;
+  if(rev && !a.innerHTML){
+    a.innerHTML = `<div class="lab">Jawapan: ${LET[q.a]} · ${esc(q.o[q.a])}</div>
+      <p>${esc(q.e)}</p>
+      ${q.r.map(([sl,pg,ex])=>`<div class="ref"><div class="where"><span class="k">Slaid ${sl}</span><span>Bab ${esc(c.id)} · ${esc(c.title)}</span><span>Slaid ${sl} daripada ${c.total}</span><span>Halaman ${pg}</span></div>
+        <blockquote>${ex.split(' | ').map(esc).join('<br>')}</blockquote></div>`).join('')}`;
+  }
+}
+function stats(c){
+  const s=st(c.id); let ans=0,ok=0;
+  c.qs.forEach((q,i)=>{ if(s.first[i]!==undefined && s.first[i]!==-1 || s.rev[i]){ans++} if(s.first[i]===q.a)ok++; });
+  $('#nAns').textContent=ans; $('#nOk').textContent=ok; $('#pBar').style.width=(ans/c.qs.length*100)+'%';
+  const fin=$('#fin');
+  if(ans===c.qs.length){
+    const [m] = DATA.modules.filter(m=>m.chapters.includes(c)); const idx=m.chapters.indexOf(c); const nx=m.chapters.slice(idx+1).find(x=>x.qs.length);
+    fin.innerHTML=`<div class="done-card"><div><div class="eyebrow">Bab selesai</div><h2>${ok}/${c.qs.length} betul pada cubaan pertama</h2></div>
+      ${nx?`<button class="btn" id="nxt">Bab seterusnya: ${esc(nx.id)} ›</button>`:`<button class="btn" id="nxt">Kembali ke Modul ${m.n}</button>`}</div>`;
+    $('#nxt').onclick=()=>go(nx?slug(nx.id):'m'+m.n);
+  } else fin.innerHTML='';
+}
+
+/* ---- fireworks ---- */
+const fx=$('#fx'), ctx=fx.getContext('2d'); let parts=[], rockets=[], raf=0, W=0, H=0, DPR=1;
+const COLS=['#f5c400','#2fae74','#ff5a36','#3fa9f5','#ffffff','#ff4fa3','#9b6bff'];
+function size(){DPR=Math.min(2,window.devicePixelRatio||1);W=innerWidth;H=innerHeight;fx.width=W*DPR;fx.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0)}
+addEventListener('resize',size); size();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function burst(x,y,n){const col=COLS[Math.random()*COLS.length|0], col2=COLS[Math.random()*COLS.length|0];
+  for(let j=0;j<n;j++){const a=Math.random()*Math.PI*2, sp=2+Math.random()*(reduce?3:6.5);
+    parts.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:1,decay:.008+Math.random()*.012,c:Math.random()<.7?col:col2,r:1.6+Math.random()*1.8})}}
+function celebrate(ox,oy){
+  burst(ox,oy,reduce?40:90);
+  if(!reduce){
+    const n=7; for(let k=0;k<n;k++){ const tx=W*(.1+.8*Math.random()), ty=H*(.12+.4*Math.random());
+      rockets.push({x:tx+(Math.random()-.5)*60,y:H+10,tx,ty,delay:k*140+Math.random()*120,t0:performance.now()}); }
+  }
+  if(!raf) raf=requestAnimationFrame(tick);
+}
+function tick(now){
+  ctx.globalCompositeOperation='destination-out'; ctx.fillStyle='rgba(0,0,0,0.28)'; ctx.fillRect(0,0,W,H);
+  ctx.globalCompositeOperation='lighter';
+  rockets=rockets.filter(r=>{ if(now-r.t0<r.delay) return true;
+    r.y-= (r.y-r.ty)*.09+3; r.x+=(r.tx-r.x)*.06;
+    ctx.fillStyle='#fff3c4'; ctx.beginPath(); ctx.arc(r.x,r.y,2.2,0,7); ctx.fill();
+    if(r.y-r.ty<6){burst(r.x,r.y,80); return false} return true; });
+  parts=parts.filter(p=>{ p.vx*=.985; p.vy=p.vy*.985+.06; p.x+=p.vx; p.y+=p.vy; p.life-=p.decay;
+    if(p.life<=0) return false; ctx.globalAlpha=Math.max(0,p.life); ctx.fillStyle=p.c; ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill(); return true; });
+  ctx.globalAlpha=1;
+  if(parts.length||rockets.length) raf=requestAnimationFrame(tick); else {ctx.clearRect(0,0,W,H); raf=0}
+}
+
+addEventListener('hashchange',route); route();
+</script>

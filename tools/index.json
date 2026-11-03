@@ -1,0 +1,602 @@
+[
+{
+"module": 1,
+"id": "1.01",
+"title": "OSH Introduction and Terminology",
+"total": 95,
+"pages": [
+5,
+52
+]
+},
+{
+"module": 1,
+"id": "1.02",
+"title": "Policy \u2013 Organisation & Arrangements",
+"total": 23,
+"pages": [
+54,
+65
+]
+},
+{
+"module": 1,
+"id": "1.03",
+"title": "Occupational Safety and Health Act 1994",
+"total": 97,
+"pages": [
+67,
+115
+]
+},
+{
+"module": 1,
+"id": "1.04",
+"title": "OSH (Safety and Health Officer) Regulations 1997",
+"total": 39,
+"pages": [
+117,
+136
+]
+},
+{
+"module": 1,
+"id": "1.05",
+"title": "OSH (Safety and Health Committee) Regulations 1996",
+"total": 41,
+"pages": [
+138,
+158
+]
+},
+{
+"module": 1,
+"id": "1.06",
+"title": "OSH (Control of Industrial Major Accident Hazards) Regulations 1996",
+"total": 80,
+"pages": [
+160,
+199
+]
+},
+{
+"module": 1,
+"id": "1.07",
+"title": "OSH (Use and Standards of Exposure of Chemicals Hazardous to Health) Regulations 2000",
+"total": 55,
+"pages": [
+201,
+228
+]
+},
+{
+"module": 1,
+"id": "1.08",
+"title": "OSH (Classification, Labelling and Safety Data Sheet of Hazardous Chemicals) Regulations 2013",
+"total": 20,
+"pages": [
+230,
+239
+]
+},
+{
+"module": 1,
+"id": "1.09",
+"title": "OSH (Noise Exposure) Regulations 2019",
+"total": 19,
+"pages": [
+241,
+250
+]
+},
+{
+"module": 1,
+"id": "1.10",
+"title": "OSH (Notification of Accident, Dangerous Occurrence, Occupational Poisoning and Occupational\u2026",
+"total": 29,
+"pages": [
+252,
+266
+]
+},
+{
+"module": 1,
+"id": "1.11",
+"title": "OSH (Construction Work) (Design and Management) Regulations 2024",
+"total": 57,
+"pages": [
+268,
+296
+]
+},
+{
+"module": 1,
+"id": "1.12",
+"title": "OSH (Plant Requiring Certificate of Fitness) Regulations 2024",
+"total": 38,
+"pages": [
+298,
+316
+]
+},
+{
+"module": 1,
+"id": "1.13",
+"title": "OSH (Special Scheme of Inspection) Regulations 2024",
+"total": 46,
+"pages": [
+318,
+340
+]
+},
+{
+"module": 1,
+"id": "1.14",
+"title": "OSH (Fee for Registration of Competent Person and Registered Training Provider) Regulations 2024",
+"total": 12,
+"pages": [
+342,
+347
+]
+},
+{
+"module": 1,
+"id": "1.15",
+"title": "Use of Industrial Code of Practice (ICOP) and Guidelines",
+"total": 57,
+"pages": [
+349,
+377
+]
+},
+{
+"module": 1,
+"id": "1.16",
+"title": "Social Security Management (PERKESO)",
+"total": 69,
+"pages": [
+379,
+413
+]
+},
+{
+"module": 1,
+"id": "1.17",
+"title": "Work-related Road Safety (WRRS) Management",
+"total": 42,
+"pages": [
+415,
+435
+]
+},
+{
+"module": 1,
+"id": "1.18",
+"title": "Fire Safety Management \u2013 Fire Services Act (Act 341) (Amendment) 2025",
+"total": 179,
+"pages": [
+437,
+526
+]
+},
+{
+"module": 1,
+"id": "1.19",
+"title": "Labour and Employment Management",
+"total": 48,
+"pages": [
+528,
+551
+]
+},
+{
+"module": 1,
+"id": "1.20",
+"title": "Introduction & Overview of Other Related Legislation & Codes of Practice",
+"total": 60,
+"pages": [
+553,
+582
+]
+},
+{
+"module": 2,
+"id": "2.01",
+"title": "Machinery Hazard",
+"total": 42,
+"pages": [
+4,
+24
+]
+},
+{
+"module": 2,
+"id": "2.02",
+"title": "Safeguarding of Machinery",
+"total": 58,
+"pages": [
+26,
+54
+]
+},
+{
+"module": 2,
+"id": "2.03",
+"title": "Safe Machine Operation",
+"total": 49,
+"pages": [
+56,
+80
+]
+},
+{
+"module": 2,
+"id": "2.04",
+"title": "Machinery Maintenance",
+"total": 42,
+"pages": [
+82,
+102
+]
+},
+{
+"module": 2,
+"id": "2.05",
+"title": "General Area Fencing",
+"total": 44,
+"pages": [
+104,
+125
+]
+},
+{
+"module": 2,
+"id": "2.06",
+"title": "Certificated Machinery",
+"total": 36,
+"pages": [
+127,
+144
+]
+},
+{
+"module": 2,
+"id": "2.07",
+"title": "Mechanical Handling",
+"total": 41,
+"pages": [
+146,
+166
+]
+},
+{
+"module": 2,
+"id": "2.08",
+"title": "Transportation Safety",
+"total": 32,
+"pages": [
+168,
+183
+]
+},
+{
+"module": 2,
+"id": "2.09",
+"title": "Electrical Safety",
+"total": 41,
+"pages": [
+185,
+205
+]
+},
+{
+"module": 2,
+"id": "2.10",
+"title": "Hot Work Safety",
+"total": 62,
+"pages": [
+207,
+237
+]
+},
+{
+"module": 2,
+"id": "2.11",
+"title": "Confined Space Safety",
+"total": 40,
+"pages": [
+239,
+258
+]
+},
+{
+"module": 2,
+"id": "2.12",
+"title": "Construction Safety",
+"total": 58,
+"pages": [
+260,
+288
+]
+},
+{
+"module": 2,
+"id": "2.13",
+"title": "Working at Height Safety",
+"total": 47,
+"pages": [
+290,
+313
+]
+},
+{
+"module": 2,
+"id": "2.14",
+"title": "Safe Use of Hand Tools & Portable Power Tools",
+"total": 31,
+"pages": [
+315,
+330
+]
+},
+{
+"module": 2,
+"id": "2.15",
+"title": "Office Safety",
+"total": 47,
+"pages": [
+332,
+355
+]
+},
+{
+"module": 2,
+"id": "2.16",
+"title": "Housekeeping & Workplace Physical Arrangements",
+"total": 51,
+"pages": [
+357,
+382
+]
+},
+{
+"module": 3,
+"id": "3.01A",
+"title": "Overview of Occupational Health",
+"total": 33,
+"pages": [
+5,
+21
+]
+},
+{
+"module": 3,
+"id": "3.01B",
+"title": "Overview of Systematic Occupational Health Enhancement Level Programme (SOHELP) 2025",
+"total": 50,
+"pages": [
+23,
+47
+]
+},
+{
+"module": 3,
+"id": "3.02",
+"title": "Epidemiology",
+"total": 45,
+"pages": [
+49,
+71
+]
+},
+{
+"module": 3,
+"id": "3.03",
+"title": "Occupational Health Standards",
+"total": 42,
+"pages": [
+73,
+93
+]
+},
+{
+"module": 3,
+"id": "3.04",
+"title": "Introduction and Fundamentals of Toxicology",
+"total": 55,
+"pages": [
+95,
+122
+]
+},
+{
+"module": 3,
+"id": "3.05",
+"title": "Overview & Basic Principles of Industrial Hygiene",
+"total": 37,
+"pages": [
+124,
+142
+]
+},
+{
+"module": 3,
+"id": "3.06",
+"title": "Occupational Stress",
+"total": 44,
+"pages": [
+144,
+165
+]
+},
+{
+"module": 3,
+"id": "3.07",
+"title": "Occupational Ergonomics",
+"total": 46,
+"pages": [
+167,
+189
+]
+},
+{
+"module": 3,
+"id": "3.08",
+"title": "Ergonomics Risk Factors & Assessment",
+"total": 43,
+"pages": [
+191,
+212
+]
+},
+{
+"module": 3,
+"id": "3.09",
+"title": "Ergonomics Risk Management",
+"total": 63,
+"pages": [
+214,
+245
+]
+},
+{
+"module": 3,
+"id": "3.10",
+"title": "Chemical Management",
+"total": 123,
+"pages": [
+247,
+308
+]
+},
+{
+"module": 3,
+"id": "3.11",
+"title": "Pesticides",
+"total": 46,
+"pages": [
+310,
+332
+]
+},
+{
+"module": 3,
+"id": "3.12",
+"title": "Application of Classification, Labelling and Safety Data Sheet of Hazardous Chemicals",
+"total": 74,
+"pages": [
+334,
+370
+]
+},
+{
+"module": 3,
+"id": "3.13",
+"title": "Chemical Monitoring",
+"total": 82,
+"pages": [
+372,
+412
+]
+},
+{
+"module": 3,
+"id": "3.14",
+"title": "Medical Surveillance & Biological Monitoring",
+"total": 41,
+"pages": [
+414,
+434
+]
+},
+{
+"module": 3,
+"id": "3.15",
+"title": "Ventilation",
+"total": 35,
+"pages": [
+436,
+453
+]
+},
+{
+"module": 3,
+"id": "3.16",
+"title": "Indoor Air Quality",
+"total": 36,
+"pages": [
+455,
+472
+]
+},
+{
+"module": 3,
+"id": "3.17",
+"title": "Managing Occupational Hazard \u2013 Biological Hazard",
+"total": 49,
+"pages": [
+474,
+498
+]
+},
+{
+"module": 3,
+"id": "3.18",
+"title": "Physical Hazard: Noise, Vibration, Radiation, Pressure Environment & Heat Stress",
+"total": 143,
+"pages": [
+500,
+571
+]
+},
+{
+"module": 4,
+"id": "4.01",
+"title": "Incident Prevention",
+"total": 93,
+"pages": [
+4,
+50
+]
+},
+{
+"module": 4,
+"id": "4.02",
+"title": "Occupational Risk Management at Workplace",
+"total": 48,
+"pages": [
+52,
+75
+]
+},
+{
+"module": 4,
+"id": "4.03",
+"title": "OSH Management System (ISO 45001:2018)",
+"total": 53,
+"pages": [
+77,
+103
+]
+},
+{
+"module": 4,
+"id": "4.04",
+"title": "Communication & Performance Monitoring",
+"total": 116,
+"pages": [
+105,
+162
+]
+},
+{
+"module": 4,
+"id": "4.05",
+"title": "Managing of Emergency",
+"total": 169,
+"pages": [
+164,
+248
+]
+}
+]

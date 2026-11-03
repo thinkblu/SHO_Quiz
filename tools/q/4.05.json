@@ -1,0 +1,231 @@
+[
+{
+"q": "'Kecemasan' (emergency) ditakrifkan sebagai:",
+"c": "Gabungan keadaan yang tidak dijangka yang memerlukan tindakan segera",
+"w": [
+"Kejadian yang berlaku secara kebetulan dan menyebabkan kerosakan",
+"Kejadian dahsyat yang membawa kemusnahan besar",
+"Situasi kompleks yang memerlukan 'normal baharu'"
+],
+"e": "Definisi: Accident – kejadian tidak dijangka, berlaku secara kebetulan; Emergency – an unforeseen combination of circumstances that calls for immediate action; Disaster – kejadian dahsyat membawa kerosakan besar.",
+"s": 5
+},
+{
+"q": "Kecemasan yang memerlukan bantuan luar seperti bantuan bersama (mutual aid) atau agensi daerah dikategorikan sebagai:",
+"c": "Tahap 2",
+"w": [
+"Tahap 1",
+"Tahap 3",
+"Tahap 0"
+],
+"e": "Level of emergency: Tahap 1 – dalam keupayaan organisasi; Tahap 2 – memerlukan bantuan luar (mutual aid, daerah, agensi lain), Arahan MKN 20 mungkin terpakai; Tahap 3 – bencana negeri/nasional, Arahan MKN 20 mengambil alih.",
+"s": 10
+},
+{
+"q": "Dalam objektif tindak balas kecemasan 'menyelamatkan nyawa', prinsip yang ditekankan ialah:",
+"c": "Utamakan menyelamat dan pertolongan cemas tanpa meletakkan penyelamat dalam risiko",
+"w": [
+"Selamatkan harta terlebih dahulu",
+"Tunggu pihak media tiba",
+"Penyelamat mesti mengambil risiko apa pun"
+],
+"e": "Objectives: Save lives – (i) prioritise rescue and first aid, (ii) rescuers must not be put at risk; kemudian save property, asset, reputation dan community.",
+"s": 12
+},
+{
+"q": "Organisasi yang mengambil kawalan semasa insiden kecemasan dipanggil:",
+"c": "Incident Command Organisation",
+"w": [
+"Emergency Management Committee",
+"Jawatankuasa Audit",
+"Lembaga Pengarah"
+],
+"e": "Emergency Management: Emergency Co-ordinator; Emergency Management Committee – merancang; Incident Command Organisation – mengambil kawalan semasa insiden.",
+"s": 14
+},
+{
+"q": "Dalam struktur Incident Command System, fungsi 'Operations' merangkumi:",
+"c": "Kawalan kerosakan (memadam kebakaran), menyelamat, pemindahan dan kawalan trafik",
+"w": [
+"Kewangan dan perolehan",
+"Perhubungan awam sahaja",
+"Audit dan semakan dasar"
+],
+"e": "Incident Command Organization: Incident Commander → Operations (damage control/fire fighting, rescue, evacuation, traffic control), Planning, Logistics dan Finance.",
+"s": 17
+},
+{
+"q": "Pelan kecemasan perlu dikaji semula:",
+"c": "Setiap tahun dan apabila terdapat perubahan seperti perundangan atau bahaya baharu",
+"w": [
+"Setiap 10 tahun",
+"Hanya selepas bencana",
+"Tidak perlu dikaji semula"
+],
+"e": "Evaluation: plan should be reviewed annually and updated; re-evaluate when there are changes – regulatory, new hazards identified, dsb.",
+"s": 45
+},
+{
+"q": "Yang manakah BUKAN matlamat pertolongan cemas?",
+"c": "Mendiagnosis dan merawat penyakit secara kekal",
+"w": [
+"Memelihara nyawa",
+"Mencegah keadaan menjadi lebih buruk",
+"Menggalakkan pemulihan"
+],
+"e": "Aims of first aid: preserve life, stop the condition becoming worse, protect the unconscious, promote recovery, relieve pain and suffering.",
+"s": 50
+},
+{
+"q": "Dalam tinjauan primer (primary survey), urutan yang betul ialah:",
+"c": "Danger – Response – Airway – Breathing – Circulation",
+"w": [
+"Airway – Breathing – Danger – Response – Circulation",
+"Response – Danger – Circulation – Airway – Breathing",
+"Circulation – Airway – Breathing – Danger – Response"
+],
+"e": "Systematic approach (DRABC): periksa bahaya di lokasi, nilai respons, buka saluran udara (head tilt–chin lift), periksa pernafasan, periksa peredaran.",
+"s": 55
+},
+{
+"q": "Pertolongan cemas yang betul untuk luka terbakar ialah:",
+"c": "Sejukkan di bawah air mengalir selama 20 minit dan tutup dengan pembalut bersih",
+"w": [
+"Sapukan mentega",
+"Pecahkan lepuh",
+"Balut ketat dengan kain kapas"
+],
+"e": "Burns & heat disorders: cool under water 20 minit; cover with clean dressing; rehydrate.",
+"s": 54
+},
+{
+"q": "Tempat kerja berisiko tinggi dengan 300 pekerja (satu syif) memerlukan sekurang-kurangnya berapa orang first-aider?",
+"c": "4 orang",
+"w": [
+"1 orang",
+"2 orang",
+"6 orang"
+],
+"e": "High risk ≥20 pekerja: 2 for every 150 or part thereof. 300 ÷ 150 = 2 → 2 × 2 = 4 first-aider.",
+"s": 62
+},
+{
+"q": "Bilik pertolongan cemas diperlukan apabila bilangan pekerja melebihi:",
+"c": "150 orang",
+"w": [
+"20 orang",
+"50 orang",
+"1,000 orang"
+],
+"e": "First-aid room: required when >150 employees; cukup besar untuk couch, lampu kecemasan, lantai tidak licin, akses kerusi roda/pengusung.",
+"s": 73
+},
+{
+"q": "Di kawasan penyimpanan atau pengendalian bahan kimia, kemudahan yang perlu disediakan ialah:",
+"c": "Pancuran kecemasan (flood shower) dan pancutan pencuci mata bertekanan rendah",
+"w": [
+"Kipas angin",
+"Penghawa dingin",
+"Mesin layan diri"
+],
+"e": "First-aid equipment: in areas where chemicals are stored, handled or used – emergency flood showers dan low pressure eye-wash fountains.",
+"s": 72
+},
+{
+"q": "Perbezaan 'krisis' berbanding 'kecemasan' menurut slaid ialah krisis:",
+"c": "Situasi kompleks dan berubah-ubah dengan ketidakpastian tinggi yang memerlukan 'normal baharu'",
+"w": [
+"Mempunyai punca yang diketahui dan cepat kembali normal",
+"Berlaku secara kebetulan sahaja",
+"Tidak menjejaskan operasi"
+],
+"e": "Terminology: Emergency – urgent, complicated event with known cause, aim is rapid return to normal; Crisis – complex, evolving situation, high uncertainty, requires creating a new normal.",
+"s": 79
+},
+{
+"q": "Fasa pengurusan krisis yang melibatkan perancangan, latihan dan penetapan prosedur sebelum krisis berlaku ialah:",
+"c": "Preparedness (Kesiapsiagaan)",
+"w": [
+"Mitigation",
+"Response",
+"Recovery"
+],
+"e": "Phases: 1 Mitigation – cegah/kurangkan risiko; 2 Preparedness – perancangan, latihan, prosedur; 3 Response; 4 Recovery; 5 Improvement.",
+"s": [
+88,
+90
+]
+},
+{
+"q": "Di bawah Akta Perkhidmatan Bomba 1988, Perakuan Bomba (Fire Certificate) bagi premis yang ditetapkan perlu:",
+"c": "Diperbaharui setiap tahun",
+"w": [
+"Diperbaharui setiap 5 tahun",
+"Dimohon sekali sahaja seumur hayat",
+"Dikeluarkan oleh JKKP"
+],
+"e": "Every designated premises must hold a Fire Certificate, renewable annually; permohonan memerlukan pelan dan pemeriksaan.",
+"s": 84
+},
+{
+"q": "Dalam Business Impact Analysis (BIA), 'MAO' bermaksud:",
+"c": "Maximum Acceptable Outage",
+"w": [
+"Minimum Action Order",
+"Main Assembly Operation",
+"Maximum Allowable Overtime"
+],
+"e": "Key components of BIA: kenal pasti fungsi kritikal, analisis impak, Maximum Acceptable Outage (MAO), pemetaan kebergantungan sumber, RTO dan RPO.",
+"s": 98
+},
+{
+"q": "Menurut matriks BIA, fungsi yang diberi keutamaan tertinggi ialah yang mempunyai:",
+"c": "Impak tinggi dan masa pemulihan singkat",
+"w": [
+"Impak rendah dan masa pemulihan panjang",
+"Impak sederhana dan masa pemulihan sederhana",
+"Impak rendah dan masa pemulihan singkat"
+],
+"e": "BIA Matrix: high impact, short recovery time = top priority; medium/moderate = secondary; low impact, long recovery = lower priority.",
+"s": 101
+},
+{
+"q": "Dalam hierarki kawalan, PPE dianggap sebagai:",
+"c": "Barisan pertahanan terakhir apabila bahaya tidak dapat dihapuskan melalui kawalan lebih tinggi",
+"w": [
+"Kawalan pertama yang perlu digunakan",
+"Pengganti kekal kepada persekitaran kerja selamat",
+"Kawalan paling berkesan"
+],
+"e": "PPE should be the last resort; tidak boleh digunakan secara kekal sebagai pengganti persekitaran kerja yang selamat. Kesimpulan: PPE is the last line of defense.",
+"s": [
+112,
+148
+]
+},
+{
+"q": "Bagi pemeriksaan kedap tekanan negatif (negative pressure seal check) respirator separuh muka boleh guna semula, pengguna:",
+"c": "Menutup kartrij dengan tapak tangan dan menyedut perlahan – respirator sepatutnya kempis sedikit",
+"w": [
+"Menutup injap hembusan dan menghembus – topeng mengembung",
+"Menanggalkan kartrij dan bernafas biasa",
+"Menyembur air ke topeng"
+],
+"e": "Seal check: negative pressure – tutup kartrij, sedut perlahan, respirator collapse slightly; positive pressure – tutup penutup injap hembusan, hembus perlahan, face piece bulge.",
+"s": 132
+},
+{
+"q": "Menurut slaid, pelindung pendengaran perlu dipilih berdasarkan tahap bunyi, contohnya apabila melebihi:",
+"c": "82 dBA",
+"w": [
+"60 dBA",
+"70 dBA",
+"120 dBA"
+],
+"e": "Hearing protection: selection based on noise level (e.g. >82 dBA); melindungi daripada bunyi berlebihan dan kecacatan pendengaran kekal.",
+"s": [
+143,
+144
+]
+}
+]
