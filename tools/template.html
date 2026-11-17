@@ -273,7 +273,7 @@ function route(){
   if(h.startsWith('c')){const [m,c]=findCh(h); if(c) return showChapter(m,c);}
   showHome();
 }
-const go = h=>{ if(location.hash==='#'+h) route(); else location.hash=h; };
+const go = h=>{ if(location.hash.replace(/^#/,'')===h) route(); else location.hash=h; };
 
 function showRegister(){
   $('#bar').innerHTML='';
