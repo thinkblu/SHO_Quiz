@@ -1,22 +1,225 @@
 [
-{"q":"Menurut ICOP Ruang Terkurung 2010, ruang terkurung ialah ruang yang:","c":"Tertutup atau separa tertutup, tidak direka terutamanya sebagai tempat kerja dan mempunyai laluan masuk/keluar terhad","w":["Direka khusus sebagai tempat kerja harian","Sentiasa mempunyai pengudaraan baik","Berada di bawah tekanan tinggi semasa diduduki"],"e":"Definisi: ruang tertutup/separa tertutup, pada tekanan atmosfera semasa diduduki, bukan direka sebagai tempat kerja, berpotensi mempunyai pencemar, kekurangan/lebihan oksigen, engulfment dan laluan masuk/keluar terhad.","s":4},
-{"q":"Ruang terkurung semasa diduduki berada pada tekanan:","c":"Atmosfera","w":["Tinggi","Vakum","Dua kali atmosfera"],"e":"Definisi ICOP 2010: ruang terkurung berada pada tekanan atmosfera semasa diduduki.","s":4},
-{"q":"Seksyen 15(2)(f) OSHA 1994 yang berkaitan kerja ruang terkurung menghendaki majikan:","c":"Membangunkan dan melaksanakan prosedur menangani kecemasan","w":["Menyediakan kantin","Melantik jawatankuasa","Membayar caruman PERKESO"],"e":"Seksyen 15(2)(b) susunan operasi; (c) maklumat, latihan & penyeliaan; (f) prosedur kecemasan.","s":7},
-{"q":"Gas toksik yang biasa ditemui dalam ruang terkurung termasuk:","c":"H₂S, CO dan ammonia","w":["Oksigen tulen","Nitrogen sahaja","Wap air"],"e":"Chemical hazard: gas toksik (H₂S, CO, ammonia), gas mudah terbakar (metana, propana), kekurangan/lebihan oksigen dan sisa kimia.","s":16},
-{"q":"Bakteria, kulat atau virus dalam tangki kumbahan dikategorikan sebagai bahaya:","c":"Biologi","w":["Kimia","Fizikal","Ergonomik"],"e":"Biological hazard: bakteria, kulat atau virus dalam tangki kumbahan, kulat di kawasan lembap dan serangan haiwan/serangga.","s":18},
-{"q":"Ketakutan terperangkap (klaustrofobia) di ruang gelap dan terpencil ialah bahaya:","c":"Psikososial","w":["Biologi","Fizikal","Kimia"],"e":"Psychosocial hazard: tekanan bekerja di ruang terkurung, gelap dan terpencil serta ketakutan terperangkap (claustrophobia).","s":19},
-{"q":"Banjir atau kemasukan air ke dalam terowong atau tangki ialah contoh bahaya:","c":"Persekitaran","w":["Ergonomik","Psikososial","Biologi"],"e":"Environmental hazard: banjir/kemasukan air, pengudaraan lemah dan suhu melampau; kesan lemas, hipotermia, kelesuan haba.","s":21},
-{"q":"Dalam tragedi Lenggong, Perak (6 April 2025), berapakah bilangan yang maut di dalam syaf pembetung?","c":"Tiga orang","w":["Seorang","Dua orang","Lima orang"],"e":"Tiga individu maut termasuk dua pekerja dan seorang awam yang cuba menyelamat.","s":22},
-{"q":"Penemuan siasatan JKKP dalam kes Lenggong termasuk:","c":"Kekurangan pengudaraan dan tiada prosedur kerja selamat","w":["Kebakaran elektrik","Kren tumbang","Pekerja bawah umur"],"e":"Penemuan: kekurangan pengudaraan, tiada prosedur kerja selamat untuk kemasukan ruang terkurung dan projek tidak menghantar notifikasi JKKP 12.","s":22},
-{"q":"Selepas kes Lenggong, JKKP mengarahkan tapak melantik:","c":"Penguji Gas Diberi Kuasa (AGT) yang layak","w":["Peguam syarikat","Akauntan","Pegawai perhubungan awam"],"e":"Tindakan JKKP: arahan henti kerja, notis sitaan dan mewajibkan pelantikan Authorised Gas Tester (AGT) yang layak.","s":22},
-{"q":"Dalam tragedi lurang di Ipoh, faktor kritikal yang dinyatakan ialah mangsa:","c":"Tidak memakai sebarang peralatan pernafasan","w":["Tidak memakai topi keledar","Bekerja pada waktu siang","Menggunakan tangga aluminium"],"e":"Dua lelaki 27 tahun maut semasa kerja pembersihan; secara kritikal mereka tidak memakai sebarang peralatan pernafasan.","s":23},
-{"q":"Dalam kes Cyberjaya, dua pekerja maut dipercayai akibat menghidu gas beracun di lurang sedalam:","c":"12 meter","w":["3 meter","6 meter","20 meter"],"e":"Kes Cyberjaya: dua warga India maut dipercayai menghidu gas beracun di lubang sedalam 12 meter semasa memasang kabel.","s":25},
-{"q":"Siapakah yang menjalankan ujian gas (O₂, LEL, toksik), merekod keputusan dan mengisytiharkan kemasukan selamat?","c":"Penguji Gas Diberi Kuasa (AGT)","w":["Stand-by Person (SP)","Authorised Entrant (AE)","Fire Watch (FW)"],"e":"AGT menjalankan ujian gas (O₂, LEL, toksik), mendokumenkan keputusan dan mengisytiharkan kemasukan selamat.","s":27},
-{"q":"Peranan Stand-by Person (SP) ialah:","c":"Kekal di luar, mengekalkan komunikasi, memantau entran dan membunyikan amaran semasa kecemasan","w":["Masuk dan melakukan kerja di dalam","Mengeluarkan permit","Menjalankan ujian gas"],"e":"SP kekal di luar, mengekalkan komunikasi, memantau entran dan memberi amaran ketika kecemasan.","s":27},
-{"q":"Siapakah yang mengesahkan semua kawalan, membenarkan dan mengeluarkan permit serta menggantungnya jika keadaan berubah?","c":"Permit Issuer (PI)","w":["Entry Supervisor (ES)","Authorised Entrant (AE)","Kontraktor"],"e":"Permit Issuer mengesahkan semua kawalan, membenarkan dan mengeluarkan permit, dan menggantungnya jika keadaan berubah; ES mengurus kemasukan.","s":27},
-{"q":"Sebelum memulakan kerja, injap dan sambungan ke tangki perlu diasingkan menggunakan:","c":"Sistem lock out/tag out","w":["Pita pelekat biasa","Kain buruk","Tiada pengasingan diperlukan"],"e":"Sebelum kerja: asingkan/tutup semua injap dan sambungan ke tangki menggunakan sistem LOTO.","s":31},
-{"q":"Pekerja yang dipilih untuk kerja ruang terkurung mestilah:","c":"Sihat fizikal dan mental serta terlatih, dan nama mereka direkodkan","w":["Pekerja baharu tanpa pengalaman","Pekerja paling muda sahaja","Sesiapa sahaja yang ada"],"e":"Pilih pekerja yang sihat fizikal dan mental serta terlatih dalam kerja ruang terkurung, dan rekodkan nama mereka.","s":32},
-{"q":"Semasa kerja dalam ruang terkurung, kandungan oksigen/gas perlu:","c":"Diukur secara langsung dan berterusan","w":["Diukur sekali sahaja sebelum masuk","Tidak perlu diukur","Diukur selepas kerja selesai sahaja"],"e":"Semasa kerja: ES memantau berterusan, ukur kandungan oksigen/gas secara langsung, sedut habuk berterusan dan pastikan pengudaraan mencukupi.","s":33},
-{"q":"Selepas kerja selesai, permit kerja perlu dibatalkan/ditutup oleh:","c":"Entry Supervisor (ES) yang bertugas","w":["Authorised Entrant","Pegawai bomba","Pemandu"],"e":"Selepas kerja: pastikan semua pekerja keluar, alihkan peralatan, hentikan bekalan elektrik dan batal/tutup permit oleh ES yang bertugas.","s":[35,36]},
-{"q":"Langkah pertama selepas kerja ruang terkurung selesai ialah:","c":"Memastikan dan merekod semua pekerja telah keluar dari ruang terkurung","w":["Membuka semula injap","Mengambil gambar","Menukar kunci"],"e":"After completion: pastikan dan rekod semua pekerja telah keluar, periksa kawasan kerja untuk memastikan semua peralatan dialihkan dan hentikan bekalan elektrik.","s":35}
+{
+"q": "Ciri ruang terkurung TIDAK termasuk:",
+"c": "Direka khusus sebagai tempat kerja utama",
+"w": [
+"Tertutup sepenuhnya atau sebahagian",
+"Laluan masuk dan keluar terhad",
+"Boleh mempunyai atmosfera dengan pencemar berbahaya"
+],
+"e": "Definition (ICOP 2010): enclosed or partially enclosed; atmospheric pressure during occupancy; NOT intended primarily as a place of work; may have harmful contaminants, O₂ deficiency/excess, engulfment; restricted entry/exit.",
+"s": 4
+},
+{
+"q": "Menurut ICOP 2010, ruang terkurung boleh menyebabkan 'engulfment' iaitu:",
+"c": "Pekerja ditenggelami atau ditelan oleh bahan seperti cecair atau butiran",
+"w": [
+"Pekerja terkena kejutan elektrik",
+"Pekerja terdengar bunyi kuat",
+"Pekerja tergelincir di lantai"
+],
+"e": "Confined space is liable to: harmful contaminants, oxygen deficiency or excess, cause engulfment, restricted entry/exit.",
+"s": 4
+},
+{
+"q": "Sebelum kerja dalam ruang terkurung, keselamatan alatan tangan dan elektrik perlu dipastikan:",
+"c": "Sesuai dengan tugas yang dilakukan",
+"w": [
+"Paling murah",
+"Berwarna terang",
+"Dipinjam daripada pihak lain"
+],
+"e": "Before starting: isolate valves with LOTO, exhaust system if applicable, ensure suitability of hand and electric tools with the task.",
+"s": 31
+},
+{
+"q": "Mengutip sampel gas, cecair atau habuk untuk ujian dalam ruang terkurung ialah aktiviti:",
+"c": "Pengukuran / persampelan",
+"w": [
+"Pemeriksaan",
+"Pembaikan",
+"Penggantian peralatan"
+],
+"e": "Activities: clearing & cleaning, welding, painting, inspection, replacement, repair, measurement/sampling.",
+"s": [
+8,
+15
+]
+},
+{
+"q": "Membuang enap cemar, sisa, minyak atau bahan kimia dari tangki ialah aktiviti:",
+"c": "Pembersihan",
+"w": [
+"Pengecatan",
+"Pemeriksaan",
+"Kimpalan"
+],
+"e": "Clearing and cleaning works: removing sludge, waste, oil or chemicals.",
+"s": 9
+},
+{
+"q": "Menukar pam, injap atau bahagian mekanikal di dalam ruang terkurung ialah aktiviti:",
+"c": "Penggantian peralatan",
+"w": [
+"Pengukuran",
+"Pemeriksaan",
+"Pengecatan"
+],
+"e": "Replacement of equipment: changing pumps, valves or mechanical parts inside confined spaces.",
+"s": 13
+},
+{
+"q": "Metana dan propana dalam ruang terkurung dikategorikan sebagai:",
+"c": "Gas mudah terbakar",
+"w": [
+"Gas toksik sahaja",
+"Bahaya biologi",
+"Bahaya ergonomik"
+],
+"e": "Chemical hazards: toxic gases (H₂S, CO, ammonia), flammable gases (methane, propane), O₂ deficiency/enrichment, chemical residues.",
+"s": 16
+},
+{
+"q": "Tekanan haba akibat pengudaraan lemah dan pencahayaan yang kurang dalam ruang terkurung ialah bahaya:",
+"c": "Fizikal",
+"w": [
+"Kimia",
+"Biologi",
+"Psikososial"
+],
+"e": "Physical hazard: heat stress due to poor ventilation, noise, poor lighting and visibility.",
+"s": 17
+},
+{
+"q": "Serangan tikus, ular atau tebuan di ruang terkurung dikategorikan sebagai bahaya:",
+"c": "Biologi",
+"w": [
+"Fizikal",
+"Ergonomik",
+"Kimia"
+],
+"e": "Biological hazard: bacteria, fungi, viruses in sewage; mold; animal/insect infestations (rats, snakes, wasps).",
+"s": 18
+},
+{
+"q": "Kesan bahaya psikososial dalam ruang terkurung termasuk:",
+"c": "Kebimbangan, serangan panik dan kurang tumpuan",
+"w": [
+"Patah tulang",
+"Hipotermia",
+"Lemas"
+],
+"e": "Psychosocial hazard effects: anxiety, panic attacks, reduced focus leading to mistakes.",
+"s": 19
+},
+{
+"q": "Postur badan janggal akibat ruang sempit ialah bahaya:",
+"c": "Ergonomik",
+"w": [
+"Biologi",
+"Kimia",
+"Persekitaran"
+],
+"e": "Ergonomic hazard: awkward body positions due to narrow space, manual handling, repetitive or forceful tasks.",
+"s": 20
+},
+{
+"q": "Suhu melampau (panas atau sejuk) dalam ruang terkurung boleh menyebabkan:",
+"c": "Hipotermia atau keletihan haba",
+"w": [
+"Dermatitis",
+"Kehilangan pendengaran",
+"Jangkitan virus"
+],
+"e": "Environmental hazard: flooding, poor ventilation leading to gas accumulation, extreme temperatures – drowning, hypothermia, heat exhaustion.",
+"s": 21
+},
+{
+"q": "Dalam tragedi Lenggong (6 April 2025), salah seorang mangsa ialah:",
+"c": "Orang awam yang cuba menyelamat",
+"w": [
+"Pegawai JKKP",
+"Anggota bomba",
+"Pengurus projek"
+],
+"e": "Lenggong: three died in a sealed sewer shaft at a resort construction site – two daily wage workers and one member of the public who attempted a rescue.",
+"s": 22
+},
+{
+"q": "Dalam kes lurang Ipoh, mangsa terjatuh semasa:",
+"c": "Menuruni tangga ke dalam pembetung",
+"w": [
+"Memandu forklift",
+"Memotong kabel di atas tanah",
+"Memanjat perancah"
+],
+"e": "Ipoh: workers conducting cleaning works fell while descending the stairs into the culvert; not wearing any respiratory equipment.",
+"s": 23
+},
+{
+"q": "Dalam insiden di Sibu, kedua-dua mangsa ditemui di dalam:",
+"c": "Ruang sempit di dalam badan tongkang (barge)",
+"w": [
+"Tangki air bangunan",
+"Lurang jalan raya",
+"Terowong kereta api"
+],
+"e": "Sibu (May 23): two workers fell into a narrow 12-foot-deep confined space inside a barge; suspected toxic gas inhalation.",
+"s": 24
+},
+{
+"q": "Dalam insiden Cyberjaya, sebelum operasi menyelamat dimulakan, pasukan Hazmat:",
+"c": "Mengesahkan kehadiran gas di dalam lubang",
+"w": [
+"Mengisi lubang dengan air",
+"Membakar gas",
+"Menutup lubang dengan simen"
+],
+"e": "Cyberjaya: two workers died in a 12-metre-deep hole; Hazmat confirmed the presence of gas before commencing the rescue.",
+"s": 25
+},
+{
+"q": "Pihak yang mematuhi prosedur, memakai PPE dan mengekalkan hubungan dengan SP ialah:",
+"c": "Authorised Entrant (AE)",
+"w": [
+"Permit Issuer (PI)",
+"Authorised Gas Tester (AGT)",
+"Majikan"
+],
+"e": "Duties: AE – follows procedures, wears PPE, maintains contact with SP; ES – manages entry, cancels permit; PI – verifies, issues, suspends permit.",
+"s": 27
+},
+{
+"q": "Sebelum kerja dimulakan, gas berbahaya dan pencemar perlu:",
+"c": "Disingkirkan (purge) dan pengudaraan yang mencukupi dipastikan",
+"w": [
+"Dibiarkan kerana tidak berbahaya",
+"Dibakar di dalam ruang",
+"Ditutup dengan kain"
+],
+"e": "Planning before starting: purge hazardous gas/pollutants, ensure ventilation, warning signages and fencing, fire prevention equipment near entrance.",
+"s": 29
+},
+{
+"q": "Sebelum kerja, pasukan tindak balas kecemasan perlu:",
+"c": "Ditubuhkan bersama first aider dan peralatan kecemasan",
+"w": [
+"Dibubarkan",
+"Ditempatkan di pejabat utama yang jauh",
+"Tidak diperlukan"
+],
+"e": "Before starting: establish emergency response team, first aiders and equipment; ES and SP to monitor and record AE names; provide PPE.",
+"s": 30
+},
+{
+"q": "Semasa kerja dalam ruang terkurung, komunikasi yang baik mesti dikekalkan antara:",
+"c": "Stand-by Person (SP) dan Authorised Entrant (AE)",
+"w": [
+"Pengurus dan pelanggan",
+"Pembekal dan bank",
+"Polis dan media"
+],
+"e": "During works: good communication between SP and AE, sufficient continuous ventilation, immediate emergency response.",
+"s": 34
+}
 ]

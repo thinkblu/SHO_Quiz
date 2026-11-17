@@ -137,7 +137,10 @@ const findCh = h=>{for(const m of DATA.modules)for(const c of m.chapters)if(slug
 let PROG = {};
 try{PROG = JSON.parse(localStorage.getItem('kuizsho')||'{}')||{}}catch(e){PROG={}}
 const save=()=>{try{localStorage.setItem('kuizsho',JSON.stringify(PROG))}catch(e){}};
-const st = id=>(PROG[id] ||= {pick:{},first:{},rev:{}});
+/* drop saved answers for chapters whose question set has changed (old saves carry no version = first set) */
+for(const m of DATA.modules) for(const c of m.chapters){ const s=PROG[c.id]; if(s && (s.v||c.lv)!==c.v) delete PROG[c.id]; }
+const VER = {}; for(const m of DATA.modules) for(const c of m.chapters) VER[c.id]=c.v;
+const st = id=>(PROG[id] ||= {v:VER[id],pick:{},first:{},rev:{}});
 const chScore = c=>{const s=PROG[c.id];if(!s)return [0,0];let ok=0,ans=0;c.qs.forEach((q,i)=>{if(s.first[i]!==undefined){ans++;if(s.first[i]===q.a)ok++}});return [ok,ans]};
 
 function route(){

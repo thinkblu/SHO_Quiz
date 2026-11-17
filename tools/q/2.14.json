@@ -1,22 +1,222 @@
 [
-{"q":"Alat tangan (hand tools) ditakrifkan sebagai alat yang:","c":"Memerlukan tenaga manusia untuk dimulakan, digunakan atau diselaraskan dengan bahan kerja","w":["Menggunakan elektrik","Menggunakan udara mampat","Menggunakan bahan api"],"e":"Hand tools: memerlukan tenaga manusia secara manual; power tools: memerlukan sumber tenaga lain.","s":5},
-{"q":"Alat tangan terdiri daripada dua bahagian iaitu:","c":"Kepala dan pemegang (aci/badan)","w":["Motor dan bateri","Suis dan kord","Bilah dan pengadang"],"e":"Parts of hand tools: (1) Head dan (2) Handle (shaft/body).","s":6},
-{"q":"Keperluan am bagi semua alat termasuk perlu lulus ujian berikut:","c":"Ketahanan, beban lampau, jatuh/hentaman dan kenaikan suhu","w":["Ujian warna","Ujian bau","Ujian harga"],"e":"General requirements: mesti lulus ujian endurance, overload, drop/impact dan temperature rise.","s":7},
-{"q":"Keperluan khusus bagi gergaji bulat (circular saw) ialah:","c":"Pengadang bilah dan riving knife","w":["Chuck yang kukuh","Pengapit bilah kuat","Tapak stabil"],"e":"Particular requirements: circular saws – blade guards dan riving knife; drills – chuck selamat; grinders – pengadang kuat dan auto shut-off.","s":8},
-{"q":"Keperluan khusus bagi mesin pengisar dan sander termasuk:","c":"Kekuatan pengadang dan penutupan automatik (auto shut-off)","w":["Riving knife","Pengapit bilah","Pengadang pemotong"],"e":"Grinders/Sanders: kekuatan pengadang dan auto shut-off.","s":8},
-{"q":"Tugas pengguna/majikan bagi alat tangan TIDAK termasuk:","c":"Menggunakan alat rosak sehingga benar-benar tidak berfungsi","w":["Memeriksa alat sebelum guna","Menyediakan latihan dan PPE","Menyimpan rekod servis/pemeriksaan"],"e":"User/employer duties: periksa sebelum guna, ganti alat rosak/luput, sediakan latihan dan PPE, simpan rekod servis/pemeriksaan.","s":9},
-{"q":"Alat kuasa mudah alih dikategorikan berdasarkan sumber kuasa berikut KECUALI:","c":"Solar","w":["Pneumatik","Hidraulik","Stim"],"e":"Sumber kuasa: elektrik, pneumatik, hidraulik, bahan api dan stim.","s":11},
-{"q":"Yang manakah contoh alat kuasa mudah alih?","c":"Gergaji rantai (chain saw)","w":["Pemutar skru biasa","Tukul","Playar"],"e":"Contoh portable power tools: nailer pneumatik, stapler pneumatik, gergaji bulat, gergaji rantai, pistol semburan, sander dan pengisar.","s":12},
-{"q":"Seksyen 15(2)(c) OSHA 1994 berkaitan penggunaan alat menghendaki majikan:","c":"Menyediakan maklumat, arahan, latihan dan penyeliaan","w":["Menyediakan kantin","Membayar elaun alat","Membeli alat termahal"],"e":"Seksyen 15(2)(c): menyediakan maklumat, arahan, latihan dan penyeliaan yang perlu untuk keselamatan dan kesihatan.","s":14},
-{"q":"Menggunakan berus dawai, sander atau pengisar untuk membuang karat sebelum kimpalan termasuk dalam aktiviti:","c":"Penyediaan permukaan","w":["Mengukur dan menanda","Memaku","Mengukir"],"e":"Surface preparation: menggunakan berus dawai, sander atau pengisar untuk membuang karat, cat atau kakisan sebelum kimpalan atau pengecatan.","s":17},
-{"q":"Bahaya penggunaan alat tangan dan alat kuasa mudah alih termasuk:","c":"Getaran dan pendedahan bising","w":["Radiasi nuklear","Sinaran X","Jangkitan virus"],"e":"Hazards: elektrik, luka, belitan, objek terpelanting, tersepit, getaran, dihentam alat, bising dan habuk/wap.","s":19},
-{"q":"Faktor penyebab kemalangan penggunaan alat TIDAK termasuk:","c":"Menggunakan alat yang sesuai dengan tugas","w":["Kaedah yang salah","Penyimpanan alat tidak betul","Menggunakan alat rosak"],"e":"Faktor: kaedah salah, penyimpanan tidak betul, penyelenggaraan tidak betul, alat rosak, alat tidak sesuai dengan tugas.","s":21},
-{"q":"Langkah kawalan untuk alat kuasa termasuk:","c":"Memasang pengadang pada alat kuasa","w":["Menanggalkan pengadang untuk mudah digunakan","Berkongsi PPE","Menyimpan alat di lantai laluan"],"e":"Control measures: pilih alat sesuai, latihan, SOP, periksa sebelum guna, ikut prosedur pengilang, jadual penyelenggaraan, kawasan simpanan, PPE sesuai dan pasang pengadang.","s":23},
-{"q":"Kriteria pemilihan reka bentuk dan fabrikasi alat termasuk:","c":"Kualiti bahan, faktor ergonomik dan ciri keselamatan","w":["Warna yang menarik","Jenama terkenal sahaja","Harga termurah"],"e":"General design: kualiti bahan, faktor ergonomik, bahan sesuai dan ciri keselamatan (contoh pengadang alat kuasa).","s":25},
-{"q":"Dalam kajian kes Family Products Sdn Bhd, pekerja putus berapa jari akibat mesin gergaji meja?","c":"3 jari tangan kanan","w":["1 jari","2 jari tangan kiri","Semua jari"],"e":"Mangsa menggunakan circular table saw; lebihan papan melibas tangan dan menyebabkan putus 3 jari tangan kanan.","s":27},
-{"q":"Dalam kes Family Products, kegagalan pertama majikan ialah:","c":"Tidak memagar dengan selamat mata gergaji berputar pada mesin gergaji meja","w":["Tidak menyediakan kantin","Tidak membayar gaji","Tidak menyediakan lif"],"e":"Pertuduhan pertama: gagal memastikan bahagian berbahaya mata gergaji berputar pada table saw dipagar dengan selamat.","s":27},
-{"q":"Pertuduhan kedua dalam kes Family Products adalah di bawah peraturan:","c":"NADOPOD 2004 – gagal memberitahu JKKP dengan serta-merta","w":["USECHH 2000","CIMAH 1996","Peraturan Bising 2019"],"e":"Pertuduhan kedua: gagal memberitahu pejabat JKKP terdekat dengan serta-merta di bawah Peraturan 5(1)(b)(aa) NADOPOD 2004.","s":27},
-{"q":"Jumlah denda yang dikenakan kepada Family Products Sdn Bhd bagi kedua-dua pertuduhan ialah:","c":"RM25,000","w":["RM10,000","RM50,000","RM60,000"],"e":"Denda RM20,000 bagi pertuduhan pertama dan RM5,000 bagi pertuduhan kedua; jumlah RM25,000.","s":27},
-{"q":"Dalam kes kafe di Tawau (Januari 2025), pekerja kehilangan jari kerana:","c":"Tangan tersangkut dalam mesin pengisar daging semasa menekan daging","w":["Terkena pisau dapur","Tersepit pintu peti sejuk","Terkena minyak panas"],"e":"Pekerja berumur 22 tahun menekan daging ke dalam pengisar dan jarinya masuk ke bahagian pemotong; bomba terpaksa memotong pengisar.","s":28},
-{"q":"Keperluan penggunaan selamat alat tangan dan alat kuasa mudah alih digariskan dalam piawaian:","c":"MS IEC 60745","w":["ISO 45001","MS 1722","NFPA 70E"],"e":"Kesimpulan: keperluan berkaitan penggunaan selamat alat tangan digariskan dalam MS IEC 60745.","s":29}
+{
+"q": "Alat kuasa (power tools) ditakrifkan sebagai alat yang:",
+"c": "Memerlukan sumber tenaga lain selain tenaga manusia untuk bermula atau bekerja",
+"w": [
+"Hanya menggunakan tenaga manusia",
+"Tidak mempunyai bahagian bergerak",
+"Hanya digunakan di pejabat"
+],
+"e": "Definition: hand tools – human energy; power tools – require other forces of energy to start, work or coordinate with work materials.",
+"s": 5
+},
+{
+"q": "Pemegang (handle) alat tangan juga dikenali sebagai:",
+"c": "Batang atau badan (shaft/body)",
+"w": [
+"Kepala",
+"Mata",
+"Cuk"
+],
+"e": "Parts of hand tools: 1 head; 2 handle (shaft/body).",
+"s": 6
+},
+{
+"q": "Keperluan am semua alat termasuk penandaan yang jelas seperti:",
+"c": "Pengilang, model, kadaran dan kelas keselamatan",
+"w": [
+"Nama pembeli",
+"Harga jualan",
+"Tarikh gaji"
+],
+"e": "General requirements: protection against shock, mechanical, thermal, noise & vibration; strong construction; pass tests; clear markings (manufacturer, model, rating, safety class); safety instructions.",
+"s": 7
+},
+{
+"q": "Arahan keselamatan yang perlu dibekalkan bersama alat termasuk:",
+"c": "Data bising dan getaran serta penggunaan PPE",
+"w": [
+"Resipi masakan",
+"Senarai pelanggan",
+"Promosi jualan"
+],
+"e": "General requirement 5: provide safety instructions (PPE use, handling, maintenance, noise/vibration data).",
+"s": 7
+},
+{
+"q": "Keperluan khusus bagi gerudi dan gerudi hentaman termasuk:",
+"c": "Cuk yang kukuh dan tindakan menukul yang selamat",
+"w": [
+"Pisau pemisah (riving knife)",
+"Pengepit bilah yang kuat",
+"Tapak yang stabil"
+],
+"e": "Particular requirements: drills – secure chuck, safe hammering; grinders – guard strength, auto shut-off; circular saws – blade guards, riving knife; reciprocating saws – strong blade clamp; routers – stable base, cutter guard.",
+"s": 8
+},
+{
+"q": "Pengepit bilah yang kuat dan perlindungan tangan ialah keperluan khusus bagi:",
+"c": "Gergaji salingan (reciprocating saw)",
+"w": [
+"Router/trimmer",
+"Gerudi",
+"Pengisar"
+],
+"e": "Reciprocating saws: strong blade clamp, hand protection.",
+"s": 8
+},
+{
+"q": "Tapak yang stabil dan pengadang pemotong ialah keperluan khusus bagi:",
+"c": "Router / trimmer",
+"w": [
+"Gergaji bulat",
+"Gerudi hentaman",
+"Sander"
+],
+"e": "Routers/Trimmers: stable base, cutter guard.",
+"s": 8
+},
+{
+"q": "Pengguna/majikan perlu menyimpan:",
+"c": "Rekod servis dan pemeriksaan alat",
+"w": [
+"Resit pembelian peribadi pekerja",
+"Jadual cuti pelanggan",
+"Rekod jualan"
+],
+"e": "User/employer duties: inspect before use, replace damaged tools, provide training & PPE, keep servicing/inspection records.",
+"s": 9
+},
+{
+"q": "Spana, playar dan tukul besi (sledge hammer) ialah contoh:",
+"c": "Alat tangan",
+"w": [
+"Alat kuasa pneumatik",
+"Alat kuasa hidraulik",
+"Alat kuasa elektrik"
+],
+"e": "Examples of hand tools: knife, hammer, spanner, wrench, sledge hammer, screwdriver, saw, pliers.",
+"s": 10
+},
+{
+"q": "Alat kuasa yang menggunakan cecair bertekanan dikategorikan sebagai alat kuasa:",
+"c": "Hidraulik",
+"w": [
+"Pneumatik",
+"Elektrik",
+"Wap"
+],
+"e": "Power tools by source: electric, pneumatic (compressed air), hydraulic (pressurised fluid), fuel, steam.",
+"s": 11
+},
+{
+"q": "Pistol semburan (spray gun) dan stapler pneumatik ialah contoh:",
+"c": "Alat kuasa mudah alih",
+"w": [
+"Alat tangan",
+"Jentera berperakuan",
+"Peralatan angkat"
+],
+"e": "Examples of portable power tools: pneumatic nailers, pneumatic stapler, circular saw, chain saw, spray gun, sander, grinder.",
+"s": 12
+},
+{
+"q": "Seksyen 15(2)(b) OSHA berkaitan alat tangan dan alat kuasa menghendaki majikan memastikan:",
+"c": "Penggunaan, pengendalian, penyimpanan dan pengangkutan barang yang selamat",
+"w": [
+"Penyediaan gaji",
+"Pembayaran cukai",
+"Pengiklanan produk"
+],
+"e": "Section 15(2): (a) plant and systems of work; (b) safe use, handling, storage and transport; (c) information, instruction, training, supervision.",
+"s": 14
+},
+{
+"q": "Mengetatkan atau menanggalkan skru, bolt atau nat menggunakan pemutar skru atau impact driver ialah aktiviti:",
+"c": "Mengikat dan melonggarkan (fastening and loosening)",
+"w": [
+"Mengukur dan menanda",
+"Menggerudi",
+"Mengukir"
+],
+"e": "Activities: cutting & shaping, drilling & boring, grinding & polishing, fastening & loosening, cutting & shearing metal.",
+"s": 16
+},
+{
+"q": "Menggunakan pita pengukur dan alat penanda sebelum memotong ialah aktiviti:",
+"c": "Mengukur dan menanda",
+"w": [
+"Penyediaan permukaan",
+"Memasang komponen",
+"Mengukir dan mengikir"
+],
+"e": "Measuring and marking: measuring tapes, squares, marking tools before cutting or drilling.",
+"s": 17
+},
+{
+"q": "Bahagian atau kepala alat yang terpelanting ialah bahaya jenis:",
+"c": "Objek/peralatan terbang",
+"w": [
+"Getaran",
+"Pendedahan bising",
+"Pendedahan wap"
+],
+"e": "Hazards: electric, cuts, entanglement, flying objects/equipment (parts, heads), lodged between equipment, vibration, hit by equipment, noise, dust/vapour.",
+"s": 19
+},
+{
+"q": "Menyimpan alatan dengan cara yang tidak betul ialah:",
+"c": "Faktor penyebab kemalangan",
+"w": [
+"Langkah kawalan",
+"Kriteria pemilihan",
+"Keperluan am alat"
+],
+"e": "Accident causing factors: wrong method, improper storage, improper maintenance, faulty tools, tools not suited to task.",
+"s": 21
+},
+{
+"q": "Langkah kawalan alat tangan dan alat kuasa termasuk:",
+"c": "Mengikut prosedur pengendalian yang disyorkan pengilang",
+"w": [
+"Menggunakan alat rosak sehingga patah",
+"Menyimpan alat di merata tempat",
+"Mengabaikan pemeriksaan"
+],
+"e": "Control measures: suitable equipment, training, SOP, inspect before use, follow manufacturer procedures, maintenance schedule, storage area, sufficient tools, PPE, guards.",
+"s": 23
+},
+{
+"q": "Faktor ergonomik dan kualiti bahan ialah kriteria dalam:",
+"c": "Reka bentuk dan fabrikasi alat",
+"w": [
+"Faktor penyebab kemalangan",
+"Bahaya alat",
+"Aktiviti alat"
+],
+"e": "General design and fabrication: quality of material, ergonomic factors, suitable material, safety features (e.g. guards).",
+"s": 25
+},
+{
+"q": "Pertuduhan kedua terhadap Family Products adalah kerana majikan gagal:",
+"c": "Memberitahu pejabat JKKP terdekat dengan serta-merta tentang kemalangan",
+"w": [
+"Membayar gaji",
+"Mendaftar dengan SSM",
+"Menyediakan kantin"
+],
+"e": "Second charge: failed to immediately notify the nearest DOSH office of the 17 Nov 2023 accident causing serious injury – NADOPOD Reg. 5(1)(b)(aa).",
+"s": 27
+},
+{
+"q": "Dalam kes kafe Tawau, jari mangsa termasuk ke bahagian pemotong mesin ketika dia:",
+"c": "Menekan daging ke bawah ke dalam mesin pengisar",
+"w": [
+"Membersihkan mesin selepas ditutup",
+"Membaiki motor",
+"Mengangkat mesin"
+],
+"e": "Case study 2: 22-year-old putting meat into grinder for burger patties; pressing meat down when fingers went into the cutter; firemen cut open the grinder.",
+"s": 28
+}
 ]

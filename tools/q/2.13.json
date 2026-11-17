@@ -1,22 +1,235 @@
 [
-{"q":"Menurut Garis Panduan Pencegahan Jatuh di Tempat Kerja 2007 (JKKP), kerja di tempat tinggi ialah:","c":"Situasi kerja di mana pekerja diletakkan pada kedudukan yang boleh menyebabkan jatuh","w":["Kerja melebihi 10 meter sahaja","Kerja di bangunan tinggi sahaja","Kerja menggunakan kren sahaja"],"e":"Definisi: work situations where workers are placed in a position from which falls are possible (Guidelines for the Prevention of Falls at Workplaces 2007).","s":5},
-{"q":"Menurut Work at Height Regulations 2005 (UK), sesuatu tempat dianggap 'di tempat tinggi' jika:","c":"Seseorang boleh tercedera jika jatuh daripadanya, walaupun pada atau di bawah aras tanah","w":["Melebihi 3 meter dari tanah sahaja","Di atas bumbung sahaja","Melibatkan tangga sahaja"],"e":"UK 2005: a place is 'at height' if a person could be injured falling from it, even if it is at or below ground level.","s":6},
-{"q":"Garis panduan JKKP 2007 menetapkan perlindungan jatuh mesti dibekalkan apabila pekerja berisiko jatuh dari ketinggian:","c":"2 meter atau lebih","w":["1 meter atau lebih","3 meter atau lebih","5 meter atau lebih"],"e":"Fall protection shall be supplied and used in any place where an employee is at risk of a fall of 2 metres or more.","s":15},
-{"q":"Garis Panduan Pencegahan Jatuh 2007 mengandungi berapa bahagian topik?","c":"13","w":["5","9","15"],"e":"Garis panduan mengandungi 13 topik dari keperluan reka bentuk hingga struktur penyiaran dan telekomunikasi.","s":16},
-{"q":"Lima asas pencegahan jatuh ialah fall arrest, work restraint, work positioning, fall factor dan:","c":"Prinsip memanjat (climbing principle)","w":["Prinsip berlari","Prinsip mengangkat","Prinsip ergonomik"],"e":"Fundamentals of fall prevention: Fall Arrest, Work Restraint, Work Positioning, Fall Factor dan Climbing Principle.","s":18},
-{"q":"Sistem yang direka untuk menyokong dan menahan seseorang sekiranya dia jatuh dipanggil:","c":"Fall arrest","w":["Work restraint","Work positioning","Edge protection"],"e":"Fall arrest: sistem menyokong dan menahan seseorang sekiranya jatuh dengan mengurangkan jarak jatuh, menyerap tenaga dan mengekalkan kedudukan pekerja.","s":19},
-{"q":"Fall arrest mengurangkan risiko dengan cara berikut KECUALI:","c":"Menghalang pekerja daripada sampai ke tepi","w":["Mengurangkan jarak jatuh","Menyerap tenaga jatuh","Mengekalkan kedudukan pekerja"],"e":"Fall arrest: kurangkan jarak jatuh, serap tenaga jatuh, kekalkan kedudukan pekerja. Menghalang pekerja sampai ke tepi ialah fungsi work restraint.","s":[19,20]},
-{"q":"Sistem yang menghalang seseorang daripada sampai ke tempat yang boleh menyebabkan jatuh ialah:","c":"Work restraint","w":["Fall arrest","Safety net","Catch platform"],"e":"Work restraint: sistem (tali pinggang keselamatan dan talian penambat) untuk menghalang pekerja memasuki kawasan berisiko jatuh.","s":20},
-{"q":"Sistem yang membolehkan pekerja bekerja sambil tergantung dengan tangan bebas ialah:","c":"Work positioning","w":["Work restraint","Fall arrest","Barricade"],"e":"Work positioning: sokongan dan kekangan utama yang membolehkan kerja dilakukan dengan selesa sambil tergantung dengan tangan bebas.","s":21},
-{"q":"Prinsip memanjat '3 titik sentuhan' bermaksud:","c":"Sentiasa 2 tangan 1 kaki atau 2 kaki 1 tangan","w":["3 orang memanjat serentak","Memanjat 3 anak tangga sekali gus","Berehat setiap 3 meter"],"e":"Climbing principle: 3 titik sentuhan pada setiap masa – 2 tangan 1 kaki atau 2 kaki 1 tangan, dengan bantuan lanyard.","s":23},
-{"q":"Yang manakah contoh aktiviti di tempat tinggi?","c":"Mengimpal di silo","w":["Menaip di meja","Mesyuarat di bilik","Memandu di jalan raya"],"e":"Activities at heights: membersihkan tingkap bangunan tinggi, mengecat menara, menukar mentol, mengimpal di silo dan memasang piring satelit.","s":25},
-{"q":"Anak tangga berminyak yang menyebabkan tangga atau platform licin termasuk dalam:","c":"Bahaya di tempat tinggi","w":["Bahaya kimia","Bahaya biologi","Bahaya radiasi"],"e":"Hazards at heights termasuk pekerja/alat tidak diikat, peralatan rosak, kebocoran kabel hidup, anak tangga berminyak, cuaca buruk, psikososial, tekanan haba dan ergonomik.","s":34},
-{"q":"Hujan lebat, kilat atau angin kencang dikategorikan sebagai bahaya:","c":"Persekitaran","w":["Ergonomik","Psikososial","Mekanikal"],"e":"Bahaya di tempat tinggi item 5: hujan lebat, kilat atau angin kencang (Environmental).","s":34},
-{"q":"Langkah kawalan berasaskan 'loji' (plant) untuk kerja di tempat tinggi termasuk:","c":"Perlindungan tepi, platform penangkap dan jaring keselamatan","w":["Work restraint dan fall arrest","3 titik sentuhan","Work positioning"],"e":"Plant controls: edge protection, catch platform, safety nets dan barikade kawasan kerja. Worker controls: work restraint, work positioning, fall arrest, 3 titik sentuhan.","s":35},
-{"q":"Langkah PERTAMA dalam kawalan aktiviti kerja di tempat tinggi ialah:","c":"Menjalankan HIRARC/JSA","w":["Memilih peralatan","Menyediakan prosedur menyelamat","Mendapatkan permit"],"e":"Kawalan: (1) HIRARC/JSA, (2) prosedur kerja, (3) permit diluluskan, (4) pasukan terlatih dan bertauliah, (5) peralatan, (6) prosedur menyelamat dan kecemasan.","s":40},
-{"q":"Dalam kawalan kerja di tempat tinggi, pasukan kerja yang dipilih mestilah:","c":"Terlatih dan bertauliah","w":["Pekerja paling muda","Pekerja tanpa pengalaman","Sesiapa sahaja yang ada"],"e":"Select work team – pastikan pekerja terlatih dan bertauliah.","s":40},
-{"q":"Dalam kajian kes 2 di Lebuhraya Cheras-Seremban, pekerja jatuh dari kren pada ketinggian kira-kira:","c":"70 kaki","w":["12 kaki","30 kaki","100 kaki"],"e":"Pekerja kontrak dinaikkan oleh kren 70 kaki untuk memotong dahan; kenderaan Pajero merempuh kren menyebabkan dia hilang imbangan dan jatuh.","s":43},
-{"q":"Dalam kajian kes 3 di Perai (14 Mac 2025), pekerja binaan maut selepas jatuh dari ketinggian:","c":"12 meter","w":["2 meter","5 meter","20 meter"],"e":"Pekerja binaan berusia 39 tahun terjatuh dari ketinggian 12 meter ketika membaiki bumbung kilang.","s":44},
-{"q":"Dalam kes Perai 2025, mangsa jatuh selepas memijak:","c":"Bumbung atap asbestos berusia lebih 50 tahun","w":["Perancah logam baharu","Tangga kayu","Platform kren"],"e":"Mangsa dilaporkan memijak bumbung atap asbestos berusia lebih 50 tahun sebelum terjatuh lebih 12 meter.","s":44},
-{"q":"Menurut kesimpulan, keperluan kerja minimum bagi kerja di tempat tinggi dikawal oleh:","c":"OSHA 1994 dan garis panduan","w":["Akta Kerja 1955 sahaja","Akta Pengangkutan Jalan","Akta Bekalan Gas"],"e":"Kesimpulan: keperluan kerja minimum dikawal dalam OSHA 1994 dan garis panduan.","s":45}
+{
+"q": "Menurut Work at Height Regulations 2005 (UK), 'kerja' di tempat tinggi TIDAK termasuk:",
+"c": "Perjalanan ke atau dari tempat kerja",
+"w": [
+"Bergerak di sekitar tempat kerja",
+"Kerja di bawah paras tanah yang boleh menyebabkan jatuh",
+"Kerja di atas platform"
+],
+"e": "UK 2005: 'work' includes moving around at a place of work (except by a staircase in a permanent workplace) but not travel to or from a place of work.",
+"s": 6
+},
+{
+"q": "Menurut UK 2005, bergerak menggunakan tangga (staircase) di tempat kerja kekal:",
+"c": "Dikecualikan daripada takrif kerja di tempat tinggi",
+"w": [
+"Sentiasa dianggap kerja di tempat tinggi",
+"Memerlukan abah-abah",
+"Memerlukan permit"
+],
+"e": "'Work' includes moving around at a place of work (except by a staircase in a permanent workplace).",
+"s": 6
+},
+{
+"q": "Garis panduan Kiwi (New Zealand) dan UK mentakrifkan kerja di tempat tinggi sebagai bekerja di tempat di mana seseorang boleh cedera jika:",
+"c": "Jatuh dari satu aras ke aras lain",
+"w": [
+"Terkena bunyi bising",
+"Tersentuh bahan kimia",
+"Terlalu lama berdiri"
+],
+"e": "Work at height means working in a place where a person could be injured if they fell from one level to another.",
+"s": 6
+},
+{
+"q": "Kawasan contoh kerja di tempat tinggi yang ditunjukkan termasuk:",
+"c": "Menara, tepi bumbung, perancah dan skylift",
+"w": [
+"Bilik mesyuarat",
+"Kantin",
+"Tempat letak kereta bawah tanah sahaja"
+],
+"e": "Examples area of heights: rope access & gondola, tower & confined space, roof and building edge, scaffold and skylifts.",
+"s": [
+9,
+10,
+11
+]
+},
+{
+"q": "Dalam Garis Panduan Pencegahan Jatuh 2007, bahagian 7 berkaitan dengan:",
+"c": "Jaring keselamatan (safety nets)",
+"w": [
+"Perancah",
+"Sistem akses tali",
+"Pemasangan bumbung"
+],
+"e": "Topics: 1 design & organisational; 2 general safety; 3 permanent fixed access; 4 temporary access; 5 scaffolding; 6 mechanical plant; 7 safety nets; 8 safety lines, belts, harnesses; 9 roped-access; 10 construction & maintenance; 11 steel erection; 12 roof; 13 broadcast & telecommunication structures.",
+"s": 16
+},
+{
+"q": "Bahagian dalam Garis Panduan 2007 yang berkaitan menara penyiaran dan telekomunikasi ialah bahagian:",
+"c": "13",
+"w": [
+"5",
+"9",
+"11"
+],
+"e": "Section 13: Broadcast and Telecommunication Structures.",
+"s": 16
+},
+{
+"q": "'Mechanical plant for the support of personnel' dalam Garis Panduan 2007 merujuk kepada peralatan seperti:",
+"c": "Platform kerja mudah alih (skylift / MEWP)",
+"w": [
+"Jaring keselamatan",
+"Tangga tetap",
+"Abah-abah"
+],
+"e": "Section 6: Mechanical Plant for the Support of Personnel (contoh skylift, platform kerja bergerak).",
+"s": [
+11,
+16
+]
+},
+{
+"q": "Dalam sistem fall arrest, tenaga jatuh perlu:",
+"c": "Diserap",
+"w": [
+"Digandakan",
+"Diabaikan",
+"Dipindahkan ke struktur rapuh"
+],
+"e": "Fall arrest prevents risk by: reducing distance of fall, absorbing the energy of fall, maintaining worker's position.",
+"s": 19
+},
+{
+"q": "Sistem work restraint biasanya terdiri daripada:",
+"c": "Tali pinggang keselamatan dan talian penambat (anchorage line)",
+"w": [
+"Jaring keselamatan sahaja",
+"Platform penangkap",
+"Kren"
+],
+"e": "Work restraint: prevents reaching a place where a fall is possible; can consist of a safety belt and anchorage line.",
+"s": 20
+},
+{
+"q": "Work positioning menyediakan sokongan utama supaya kerja boleh dijalankan dengan:",
+"c": "Selesa secara munasabah",
+"w": [
+"Kelajuan maksimum",
+"Tanpa sebarang peralatan",
+"Tanpa latihan"
+],
+"e": "Work positioning: primary means of support and restraint to allow work in reasonable comfort; hands free.",
+"s": 21
+},
+{
+"q": "Peralatan yang membantu prinsip memanjat termasuk:",
+"c": "Lanyard tunggal/berkembar dan lanyard work positioning",
+"w": [
+"Jaring keselamatan",
+"Pagar tepi",
+"Platform penangkap"
+],
+"e": "Climbing principle: 3 points contact; with the help of lanyard (single/double) and work positioning lanyard.",
+"s": 23
+},
+{
+"q": "Memasang piring satelit dan menukar mentol lampu di tempat tinggi ialah contoh:",
+"c": "Aktiviti di tempat tinggi",
+"w": [
+"Kerja ruang terkurung",
+"Kerja panas",
+"Pengendalian manual sahaja"
+],
+"e": "Activities at heights: window cleaning, painting tower, changing light bulb, welding at silo, installation of satellite dish.",
+"s": 25
+},
+{
+"q": "Pemasangan kren menara (tower crane erection) dan pemeriksaan bumbung ialah contoh:",
+"c": "Aktiviti di tempat tinggi",
+"w": [
+"Bahaya psikososial",
+"Kawalan pentadbiran",
+"Peralatan perlindungan"
+],
+"e": "Activities shown: lifting, tower crane erection, window cleaning, glass window installation, roof inspection, change tower bulb, rescue.",
+"s": [
+27,
+30
+]
+},
+{
+"q": "Kebocoran kabel elektrik hidup pada menara ialah bahaya di tempat tinggi jenis:",
+"c": "Elektrik",
+"w": [
+"Persekitaran",
+"Ergonomik",
+"Psikososial"
+],
+"e": "Hazards at heights: unsecured workers/tools, faulty equipment, leakage of live electric cable on tower, oily rungs, weather, psychosocial, heat stress, ergonomic.",
+"s": 34
+},
+{
+"q": "Pekerja, peralatan atau alatan yang tidak diikat semasa memanjat atau bekerja di tempat tinggi ialah:",
+"c": "Bahaya di tempat tinggi",
+"w": [
+"Langkah kawalan",
+"Prinsip memanjat",
+"Kaedah work positioning"
+],
+"e": "Hazard 1: workers, equipment or tools not secured/attached during climbing/working.",
+"s": 34
+},
+{
+"q": "Langkah kawalan untuk PEKERJA (bukan loji) di tempat tinggi termasuk:",
+"c": "Work restraint, work positioning, fall arrest dan 3 titik sentuhan",
+"w": [
+"Perlindungan tepi dan jaring keselamatan",
+"Platform penangkap",
+"Penghadang kawasan kerja"
+],
+"e": "Control measures – Workers: work restraint, work positioning, fall arrest, 3 points contact; Plant: edge protection, catch platform, safety nets, barricade.",
+"s": 35
+},
+{
+"q": "Platform penangkap (catch platform) berfungsi untuk:",
+"c": "Menangkap pekerja atau bahan yang jatuh dari aras atas",
+"w": [
+"Menyimpan alatan",
+"Menjadi tempat rehat",
+"Mengangkat beban"
+],
+"e": "Plant controls: edge protection, catch platform, safety nets, barricade of work area.",
+"s": [
+35,
+37
+]
+},
+{
+"q": "Selepas memilih peralatan kerja, kecemasan dan menyelamat, langkah kawalan seterusnya ialah:",
+"c": "Menyediakan prosedur menyelamat dan kecemasan",
+"w": [
+"Menjalankan HIRARC",
+"Memilih pasukan kerja",
+"Menyediakan prosedur kerja"
+],
+"e": "Control steps: 1 HIRARC/JSA; 2 work procedure; 3 permit approved; 4 select trained team; 5 select equipment; 6 prepare rescue and emergency procedure.",
+"s": 40
+},
+{
+"q": "Dalam kajian kes Lebuhraya Cheras-Seremban, pekerja jatuh kerana:",
+"c": "Sebuah kenderaan melanggar kren yang mengangkatnya",
+"w": [
+"Tali abah-abah putus",
+"Dahan pokok patah",
+"Angin kencang"
+],
+"e": "Case study 2: worker elevated by crane 70 ft to chop dead branches when a Mitsubishi Pajero rammed into the crane; he lost balance and fell.",
+"s": 43
+},
+{
+"q": "Dalam kes Perai (Mac 2025), mangsa ialah pekerja yang sedang:",
+"c": "Membaiki bumbung kilang pembuatan",
+"w": [
+"Memotong dahan pokok",
+"Mencuci tingkap bangunan tinggi",
+"Memasang kren menara"
+],
+"e": "Case study 3: construction worker died after falling 12 m while repairing the roof of a manufacturing factory in Perai; employer directed to conduct internal investigation.",
+"s": 44
+}
 ]

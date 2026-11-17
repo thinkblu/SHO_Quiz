@@ -1,22 +1,225 @@
 [
-{"q":"Peraturan OSH (Pegawai Keselamatan dan Kesihatan) 1997 mengandungi berapa Bahagian?","c":"6 Bahagian","w":["4 Bahagian","8 Bahagian","10 Bahagian"],"e":"Peraturan SHO 1997 mempunyai enam bahagian: Permulaan, Pendaftaran SHO, Pemberitahuan SHO, Kewajipan Majikan, Kewajipan SHO dan Pelbagai.","s":7},
-{"q":"Mengikut Peraturan 2, 'loss-time injury' ialah kecederaan yang:","c":"Menghalang pekerja melakukan kerja biasa dan menyebabkan ketidakupayaan kekal atau sementara","w":["Hanya memerlukan rawatan pertolongan cemas","Tidak menyebabkan sebarang kehilangan masa kerja","Melibatkan kerosakan harta sahaja"],"e":"Loss-time injury: kecederaan yang menghalang pekerja melakukan kerja biasa dan membawa kepada ketidakupayaan kerja kekal atau sementara.","s":8},
-{"q":"Yuran pemprosesan permohonan pendaftaran SHO di bawah Peraturan 5 ialah:","c":"RM100","w":["RM50","RM200","RM500"],"e":"Permohonan pendaftaran menggunakan borang Jadual 1 dan disertakan yuran pemprosesan RM100.","s":12},
-{"q":"Calon yang lulus kursus SHO dan peperiksaan juga perlu mempunyai pengalaman OSH minimum:","c":"3 tahun","w":["1 tahun","5 tahun","10 tahun"],"e":"Peraturan 6: lulus latihan dan peperiksaan OSH yang diluluskan serta mempunyai sekurang-kurangnya tiga tahun pengalaman dalam OSH.","s":13},
-{"q":"Tanpa diploma atau kursus, seseorang layak didaftarkan sebagai SHO jika telah bekerja dalam bidang OSH sekurang-kurangnya:","c":"10 tahun","w":["3 tahun","5 tahun","7 tahun"],"e":"Peraturan 6 juga membenarkan pendaftaran bagi mereka yang telah bekerja dalam bidang OSH sekurang-kurangnya sepuluh tahun.","s":14},
-{"q":"Seseorang TIDAK layak didaftarkan sebagai SHO jika dia:","c":"Diisytiharkan bankrap","w":["Berumur lebih 50 tahun","Bekerja di sektor awam","Memiliki ijazah kejuruteraan"],"e":"Tidak layak jika pernah disabitkan kesalahan di bawah Akta, dihukum penjara lebih 1 tahun atau denda RM2,000, atau diisytiharkan bankrap.","s":15},
-{"q":"SHO wajib menghadiri Program Pendidikan Berterusan (CEP) sekurang-kurangnya:","c":"Sekali setahun","w":["Sekali sebulan","Sekali setiap tiga tahun","Sekali setiap lima tahun"],"e":"Peraturan 8: SHO dikehendaki menghadiri CEP sekurang-kurangnya sekali setahun bagi tujuan pembaharuan pendaftaran.","s":16},
-{"q":"Tempoh sah pendaftaran SHO ialah:","c":"Tiga tahun dari tarikh pendaftaran","w":["Satu tahun","Dua tahun","Lima tahun"],"e":"Peraturan 10: pendaftaran sah selama tiga tahun dari tarikh pendaftaran melainkan dibatalkan lebih awal.","s":18},
-{"q":"Yuran pembaharuan pendaftaran SHO (Peraturan 11) ialah:","c":"RM50","w":["RM100","RM20","RM200"],"e":"Pembaharuan dibuat melalui borang Jadual II dengan yuran RM50.","s":18},
-{"q":"Ketua Pengarah boleh menolak pembaharuan pendaftaran jika pemohon:","c":"Tiada bukti CEP dalam tempoh 3 tahun terakhir","w":["Bertukar majikan","Berpindah negeri","Mengambil cuti tanpa gaji"],"e":"Peraturan 12: antara sebab penolakan ialah tiada bukti CEP dalam 3 tahun terakhir, tidak lagi menjadi SHO atau gagal melaksanakan tugas.","s":19},
-{"q":"Majikan mesti memberitahu Ketua Pengarah tentang pelantikan atau peletakan jawatan SHO dalam tempoh:","c":"Satu bulan","w":["Tujuh hari","Dua minggu","Tiga bulan"],"e":"Peraturan 14: majikan hendaklah memaklumkan KP dalam tempoh satu bulan mengenai pelantikan atau penamatan/peletakan jawatan SHO.","s":21},
-{"q":"Menurut Peraturan 17, majikan perlu mengarahkan siapa untuk membantu SHO dalam penyiasatan kemalangan?","c":"Seorang penyelia atau pengurus yang mempunyai akses terus ke tempat kerja","w":["Pegawai JKKP","Wakil kesatuan sekerja","Doktor panel"],"e":"Peraturan 17: majikan mengarahkan seorang penyelia atau pengurus yang mempunyai akses terus ke tempat kerja untuk membantu SHO menyiasat.","s":23},
-{"q":"Yang manakah merupakan tugas SHO di bawah Peraturan 18?","c":"Menjadi setiausaha kepada jawatankuasa keselamatan dan kesihatan","w":["Menjadi pengerusi jawatankuasa","Meluluskan bajet syarikat","Mengeluarkan notis larangan"],"e":"Peraturan 18(e): SHO menjadi setiausaha jawatankuasa keselamatan dan kesihatan dan melaksanakan semua fungsi setiausaha.","s":25},
-{"q":"SHO hendaklah mengemukakan laporan kepada majikan:","c":"Sebelum 10 haribulan setiap bulan","w":["Setiap minggu","Setiap tiga bulan","Setiap tahun"],"e":"Peraturan 19: SHO mengemukakan laporan kepada majikan sebelum setiap sepuluh haribulan.","s":27},
-{"q":"Selepas menerima laporan SHO, majikan perlu membincangkannya dengan SHO dalam tempoh:","c":"2 minggu","w":["3 hari","1 bulan","3 bulan"],"e":"Peraturan 20: majikan membincangkan kandungan laporan dalam tempoh 2 minggu dan menandatangani balas sebagai pengesahan penerimaan.","s":30},
-{"q":"Laporan SHO hendaklah disimpan dalam keadaan baik sekurang-kurangnya:","c":"10 tahun","w":["3 tahun","5 tahun","7 tahun"],"e":"Peraturan 20: laporan hendaklah disimpan dalam keadaan baik sekurang-kurangnya sepuluh tahun.","s":30},
-{"q":"Jika SHO meninggal dunia, sakit atau tidak hadir, KP boleh membenarkan kerja diteruskan tanpa SHO untuk tempoh tidak melebihi:","c":"Tiga bulan","w":["Satu bulan","Enam bulan","Satu tahun"],"e":"Peraturan 21: KP boleh membenarkan secara bertulis kerja dijalankan tanpa SHO untuk tempoh tidak melebihi tiga bulan.","s":31},
-{"q":"Perintah OSH (SHO) 1997 diwartakan sebagai:","c":"P.U.(A) 316","w":["P.U.(A) 131","P.U.(A) 106","P.U.(A) 514"],"e":"Slaid menyatakan Occupational Safety and Health (Safety and Health Officer) Order 1997 (P.U.(A)316).","s":32},
-{"q":"Industri kerja kayu yang melibatkan pemotongan atau penggergajian memerlukan SHO jika menggaji:","c":"Lebih 100 pekerja","w":["Lebih 40 pekerja","Lebih 250 pekerja","Lebih 500 pekerja"],"e":"Perintah SHO (h): industri kerja kayu dengan pemotongan, penggergajian, pengetaman dan sebagainya yang menggaji lebih 100 pekerja.","s":35},
-{"q":"Salah satu objektif Peraturan SHO 1997 ialah:","c":"Mengawal industri berisiko tinggi","w":["Menetapkan gaji SHO","Menghapuskan semua kemalangan","Mengawal harga peralatan keselamatan"],"e":"Objektif peraturan: mengawal industri berisiko tinggi, membantu meningkatkan tahap OSH, mewujudkan sistem pengurusan keselamatan berkesan dan memudahkan kerja dijalankan dengan selamat.","s":6}
+{
+"q": "Peraturan 9 Peraturan SHO 1997 membolehkan Ketua Pengarah:",
+"c": "Menolak pendaftaran jika pemohon tidak memenuhi keperluan yang ditetapkan",
+"w": [
+"Membatalkan Akta",
+"Melantik SHO bagi pihak majikan",
+"Mengenakan denda kepada pekerja"
+],
+"e": "Refusal to register (Reg. 9): the DG may refuse to register any application if satisfied that the applicant does not meet the prescribed requirements.",
+"s": 17
+},
+{
+"q": "Bahagian III Peraturan SHO 1997 berkaitan dengan:",
+"c": "Pemberitahuan tentang SHO",
+"w": [
+"Pendaftaran SHO",
+"Tugas majikan",
+"Pelbagai"
+],
+"e": "Part I Preliminary; II Registration; III Notification of a SHO; IV Duties of an Employer; V Duties of SHO; VI Miscellaneous.",
+"s": 7
+},
+{
+"q": "Menurut tafsiran Peraturan 2, 'no loss-time injury' ialah kecederaan yang:",
+"c": "Tiada masa kerja hilang melebihi yang diperlukan untuk rawatan perubatan",
+"w": [
+"Menyebabkan hilang upaya kekal",
+"Menyebabkan kematian",
+"Menghalang pekerja bekerja lebih 4 hari"
+],
+"e": "No loss-time injury: an injury where no work is lost beyond that required for medical attention.",
+"s": 8
+},
+{
+"q": "Menurut Peraturan 2, 'near-miss accident' ialah:",
+"c": "Kemalangan di tempat kerja yang berpotensi mencederakan orang atau merosakkan harta",
+"w": [
+"Kemalangan yang menyebabkan kematian",
+"Penyakit pekerjaan",
+"Kecederaan yang dirawat di hospital"
+],
+"e": "Near-miss accident: any accident at a place of work which has the potential of causing injury to any person or damage to any property.",
+"s": 10
+},
+{
+"q": "Peraturan SHO 1997 terpakai kepada:",
+"c": "Orang yang bertindak sebagai SHO dan majikan industri yang diwajibkan menggaji SHO",
+"w": [
+"Semua pekerja sektor awam",
+"Kontraktor asing sahaja",
+"Pelajar latihan industri"
+],
+"e": "Application (Reg. 3): a person who acts as SHO required under the Act; an employer of industries required to employ a SHO.",
+"s": 11
+},
+{
+"q": "Borang permohonan pendaftaran SHO ditetapkan dalam:",
+"c": "Jadual 1",
+"w": [
+"Jadual II",
+"Jadual III",
+"Jadual Keempat OSHA"
+],
+"e": "Registration application (Reg. 5): to use the Form as specified in Schedule 1; pembaharuan menggunakan borang Jadual II.",
+"s": [
+12,
+18
+]
+},
+{
+"q": "Seseorang tidak layak didaftarkan sebagai SHO jika dia pernah disabitkan kesalahan dan dihukum penjara melebihi:",
+"c": "1 tahun atau denda melebihi RM2,000",
+"w": [
+"1 bulan atau denda RM100",
+"5 tahun sahaja",
+"Denda RM50,000 sahaja"
+],
+"e": "Reg. 6: not entitled if convicted of any offence under the Act, or convicted and sentenced to over 1 year imprisonment or RM2000 fine, or declared bankrupt.",
+"s": 15
+},
+{
+"q": "Sijil pendaftaran SHO dikeluarkan oleh:",
+"c": "Ketua Pengarah selepas semua keperluan dipenuhi",
+"w": [
+"NIOSH selepas tamat kursus",
+"Majikan",
+"Menteri Sumber Manusia"
+],
+"e": "Certificate of Registration (Reg. 7): issued by the Director General after all requirements have been fulfilled.",
+"s": 16
+},
+{
+"q": "Ketua Pengarah boleh MEMBATALKAN pendaftaran SHO (Peraturan 13) jika SHO itu:",
+"c": "Disabitkan atas kesalahan di bawah Akta atau peraturannya",
+"w": [
+"Bertukar alamat rumah",
+"Mengambil cuti tahunan",
+"Menghadiri CEP"
+],
+"e": "Cancellation (Reg. 13): ceased to be SHO, convicted under the Act or Regulations, not met requirements, obtained registration by fraud, dsb.",
+"s": 20
+},
+{
+"q": "Peraturan 15 mewajibkan majikan menyediakan kepada SHO:",
+"c": "Kemudahan mencukupi termasuk peralatan latihan dan maklumat",
+"w": [
+"Kenderaan syarikat",
+"Elaun keraian",
+"Pembantu peribadi"
+],
+"e": "Facilities (Reg. 15): employer to provide adequate facilities, including training equipment and information.",
+"s": 22
+},
+{
+"q": "Peraturan 16 menetapkan majikan perlu:",
+"c": "Membenarkan SHO menghadiri program pendidikan berterusan",
+"w": [
+"Membayar yuran pendaftaran SHO",
+"Menilai prestasi SHO setiap minggu",
+"Menghadkan cuti SHO"
+],
+"e": "Continuous Education Programme (Reg. 16): employer shall permit the SHO to attend any continuous education programme.",
+"s": 22
+},
+{
+"q": "Antara tugas SHO di bawah Peraturan 18(a) ialah:",
+"c": "Menasihati majikan tentang langkah-langkah demi keselamatan",
+"w": [
+"Menetapkan gaji pekerja",
+"Meluluskan bajet syarikat",
+"Mengambil pekerja baharu"
+],
+"e": "Reg. 18: (a) advise employer, (b) conduct workplace safety inspection, (c) investigate accidents, near-miss, dangerous occurrence, poisoning, disease.",
+"s": 24
+},
+{
+"q": "Menurut Peraturan 18(h), SHO perlu:",
+"c": "Membantu mana-mana pegawai dalam menjalankan tugasnya di bawah Akta",
+"w": [
+"Menentukan gaji pekerja",
+"Menjadi pengerusi jawatankuasa",
+"Meluluskan bajet keselamatan"
+],
+"e": "Reg. 18: (g) collect statistics; (h) assist any officer in carrying out his duty under the Act or regulations; (i) carry out other instructions by employer.",
+"s": 26
+},
+{
+"q": "Mengumpul, menganalisis dan menyimpan statistik kemalangan dan penyakit ialah tugas SHO di bawah Peraturan:",
+"c": "18(g)",
+"w": [
+"18(a)",
+"18(e)",
+"19(i)"
+],
+"e": "Reg. 18: (g) collect, analyse and maintain statistics; (h) assist any officer; (i) carry out other instructions by employer.",
+"s": 26
+},
+{
+"q": "Laporan bulanan SHO perlu mengandungi:",
+"c": "Bilangan dan jenis kemalangan, keracunan dan penyakit termasuk bilangan orang tercedera",
+"w": [
+"Laporan jualan bulanan",
+"Senarai cuti pekerja",
+"Prestasi saham syarikat"
+],
+"e": "Reg. 19 report contents termasuk (c) number and types of accidents, poisoning, disease including number of persons injured.",
+"s": 28
+},
+{
+"q": "Laporan SHO juga perlu mengandungi:",
+"c": "Cadangan pengubahsuaian struktur atau susun atur demi keselamatan",
+"w": [
+"Cadangan kenaikan pangkat",
+"Pelan pemasaran",
+"Senarai pembekal"
+],
+"e": "Reg. 19: (f) recommendations on alterations to structure or layout in the interest of safety; (h) outstanding matters from previous report.",
+"s": 29
+},
+{
+"q": "Bagi mengesahkan penerimaan laporan SHO, majikan perlu:",
+"c": "Menandatangani balas (countersign) laporan tersebut",
+"w": [
+"Menghantar salinan kepada polis",
+"Memfailkan di mahkamah",
+"Mengemukakan kepada SSM"
+],
+"e": "Reg. 20: discuss report with SHO within 2 weeks; countersign the report to confirm receipt; keep at least ten years.",
+"s": 30
+},
+{
+"q": "Perintah SHO 1997 mewajibkan SHO bagi kerja pembinaan bangunan apabila harga kontrak:",
+"c": "Melebihi RM20 juta",
+"w": [
+"Melebihi RM5 juta",
+"Melebihi RM10 juta",
+"Melebihi RM50 juta"
+],
+"e": "Industries required: building operation and work of engineering construction where contract price exceeds RM20 million.",
+"s": 33
+},
+{
+"q": "Aktiviti dandang atau pengandung tekanan memerlukan SHO apabila menggaji lebih daripada:",
+"c": "100 pekerja",
+"w": [
+"40 pekerja",
+"200 pekerja",
+"500 pekerja"
+],
+"e": "Order: chemical or allied, boiler/pressure vessel, metal industry (canning, stamping, dsb.) – employing over 100 employees.",
+"s": 34
+},
+{
+"q": "Menurut kesimpulan Perintah SHO 1997, industri berisiko SEDERHANA diwajibkan melantik SHO apabila pekerjanya melebihi:",
+"c": "500 orang",
+"w": [
+"100 orang",
+"40 orang",
+"1,000 orang"
+],
+"e": "Conclusion: SHO required for high risk with over 100 workers and medium risk with over 500 workers.",
+"s": 37
+}
 ]

@@ -1,4 +1,4 @@
-import json, re, random, glob, os, sys
+import json, re, random, glob, os, sys, hashlib
 B = os.path.dirname(os.path.abspath(__file__))
 index = json.load(open(f'{B}/index.json'))
 MODS = {1: 'Akta OSH 1994, Peraturan & Perundangan Berkaitan', 2: 'Keselamatan Pekerjaan',
@@ -19,6 +19,12 @@ for m in [1, 2, 3, 4]:
                 slides[int(mm.group(1))] = (int(mm.group(2)), mm.group(3))
         entry = {'id': cid, 'title': ch['title'], 'total': ch['total'], 'qs': []}
         qf = f'{B}/q/{cid}.json'
+        # version hashes: saved answers are discarded when a chapter's question set changes
+        hv = lambda f: hashlib.md5(json.dumps([[x['q'], x['c']] for x in json.load(open(f))], ensure_ascii=False).encode()).hexdigest()[:8]
+        if os.path.exists(qf):
+            entry['v'] = hv(qf)
+            lf = f'{B}/q_v1/{cid}.json'
+            entry['lv'] = hv(lf) if os.path.exists(lf) else entry['v']
         if os.path.exists(qf):
             try:
                 qs = json.load(open(qf))

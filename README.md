@@ -29,3 +29,7 @@ pip install pymupdf
 python3 tools/prep.py    # ekstrak teks slaid ke tools/src/
 python3 tools/build.py   # semak 20 soalan/bab dan tulis index.html
 ```
+
+## Set soalan lama
+
+Soalan asal Modul 1 dan 2 (sebelum dikemas kini) disimpan dalam `tools/q_v1/`. Apabila set soalan sesuatu bab berubah, jawapan yang tersimpan dalam pelayar bagi bab itu dikosongkan secara automatik.

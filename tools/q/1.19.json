@@ -1,22 +1,225 @@
 [
-{"q":"Akta Kerja 1955 (Akta 265) terpakai kepada:","c":"Sektor swasta di Semenanjung Malaysia","w":["Sektor awam di seluruh Malaysia","Semua sektor di Sabah dan Sarawak","Pekerja badan berkanun sahaja"],"e":"Akta Kerja 1955 dikuatkuasakan oleh Jabatan Tenaga Kerja Semenanjung dan terpakai kepada sektor swasta di Semenanjung Malaysia.","s":5},
-{"q":"Seksyen 101C Akta Kerja menyenaraikan faktor anggapan siapa pekerja dan majikan. Yang manakah salah satu faktornya?","c":"Kawalan ke atas waktu kerja","w":["Pekerja memiliki syarikat sendiri","Pekerja bekerja secara sukarela","Pekerja tidak menerima bayaran"],"e":"Faktor seksyen 101C: kawalan cara kerja, kawalan waktu kerja, kerja sebahagian perniagaan, disediakan alatan, kerja bahagian penting perniagaan, bayaran tetap yang menjadi sebahagian besar pendapatan.","s":7},
-{"q":"Di bawah seksyen 14, pekerja boleh menamatkan kontrak tanpa notis apabila:","c":"Dia atau tanggungannya diancam serta-merta oleh bahaya keganasan atau penyakit yang tidak dipersetujui dalam kontrak","w":["Dia mendapat tawaran gaji lebih tinggi","Dia tidak berpuas hati dengan rakan sekerja","Majikan lewat membayar elaun makan"],"e":"Seksyen 14: pekerja boleh menamatkan kontrak tanpa notis jika dia atau tanggungannya diancam serta-merta oleh bahaya keganasan atau penyakit yang tidak dipersetujui dalam kontrak; majikan pula boleh menamatkan atas alasan salah laku.","s":12},
-{"q":"Gaji mesti dibayar tidak lewat daripada hari ke berapa selepas hari terakhir tempoh gaji?","c":"Hari ke-7","w":["Hari ke-3","Hari ke-10","Hari ke-14"],"e":"Seksyen 18–21: gaji dibayar tidak lewat dari hari ke-7 selepas hari terakhir tempoh gaji; OT dibayar selewat-lewatnya pada hari terakhir tempoh gaji berikutnya.","s":13},
-{"q":"Jika pekerja menamatkan kontrak tanpa notis, gajinya mesti dibayar tidak lewat daripada:","c":"Hari ke-3 selepas penamatan","w":["Hari terakhir perkhidmatan","Hari ke-7 selepas penamatan","Hujung bulan berikutnya"],"e":"Apabila pekerja menamatkan kontrak tanpa notis, gaji dibayar tidak lewat hari ke-3 selepas penamatan.","s":13},
-{"q":"Potongan gaji yang sah tanpa permintaan pekerja termasuk bayaran lebih akibat kesilapan majikan dalam tempoh:","c":"3 bulan sebelumnya","w":["1 bulan sebelumnya","6 bulan sebelumnya","12 bulan sebelumnya"],"e":"Seksyen 24: potongan sah bagi bayaran lebih yang dibuat dalam tempoh 3 bulan sebelumnya akibat kesilapan majikan.","s":14},
-{"q":"Seksyen 60A menetapkan pekerja tidak boleh dikehendaki bekerja lebih daripada 5 jam tanpa rehat sekurang-kurangnya:","c":"30 minit","w":["15 minit","45 minit","60 minit"],"e":"Seksyen 60A: tidak lebih 5 jam tanpa rehat sekurang-kurangnya 30 minit, tidak lebih 8 jam sehari, spread over 10 jam dan 45 jam seminggu.","s":17},
-{"q":"Had maksimum waktu kerja biasa seminggu di bawah seksyen 60A ialah:","c":"45 jam","w":["40 jam","48 jam","50 jam"],"e":"Seksyen 60A(1)(d): tidak lebih 45 jam dalam seminggu.","s":17},
-{"q":"Pekerja separuh masa tidak boleh dikehendaki bekerja melebihi berapa peratus waktu kerja biasa pekerja sepenuh masa?","c":"70%","w":["50%","60%","80%"],"e":"Peraturan Pekerja Separuh Masa 2010: tidak melebihi 70% waktu kerja biasa pekerja sepenuh masa dalam kapasiti serupa.","s":17},
-{"q":"Dalam apa jua keadaan, majikan tidak boleh mengkehendaki pekerja bekerja lebih daripada:","c":"12 jam sehari","w":["10 jam sehari","14 jam sehari","16 jam sehari"],"e":"Seksyen 60A(7): tiada majikan boleh mengkehendaki pekerja bekerja lebih 12 jam sehari dalam apa jua keadaan.","s":20},
-{"q":"Kadar bayaran kerja lebih masa pada hari kelepasan am ialah:","c":"3.0 kali kadar sejam","w":["1.5 kali","2.0 kali","2.5 kali"],"e":"Kadar OT: hari biasa 1.5, hari rehat 2.0 dan hari kelepasan am 3.0 kali kadar gaji sejam.","s":22},
-{"q":"Had maksimum kerja lebih masa sebulan (tidak termasuk hari rehat dan kelepasan am) ialah:","c":"104 jam","w":["64 jam","72 jam","120 jam"],"e":"Employment (Limitation of Overtime Work) Regulations 1980: had OT sebulan ialah 104 jam.","s":22},
-{"q":"Majikan mesti meluluskan atau menolak permohonan Pengaturan Kerja Fleksibel (FWA) dalam tempoh:","c":"60 hari","w":["14 hari","30 hari","90 hari"],"e":"Seksyen 60P & 60Q: majikan meluluskan atau menolak permohonan dalam 60 hari dan menyatakan sebab jika ditolak.","s":23},
-{"q":"Bilangan minimum hari kelepasan am bergazet yang layak bagi pekerja sepenuh masa ialah:","c":"11 hari","w":["7 hari","10 hari","14 hari"],"e":"Seksyen 60D: sekurang-kurangnya 11 hari kelepasan am, 5 daripadanya wajib (Hari Kebangsaan, Hari Malaysia, Hari Keputeraan Agong, Hari Keputeraan Sultan/Hari Wilayah dan Hari Pekerja).","s":26},
-{"q":"Cuti tahunan minimum bagi pekerja yang berkhidmat 5 tahun atau lebih ialah:","c":"16 hari","w":["8 hari","12 hari","22 hari"],"e":"Seksyen 60E: kurang 2 tahun 8 hari; 2 hingga kurang 5 tahun 12 hari; 5 tahun atau lebih 16 hari.","s":27},
-{"q":"Cuti sakit (tanpa kemasukan hospital) bagi pekerja yang berkhidmat kurang 2 tahun ialah:","c":"14 hari","w":["8 hari","18 hari","22 hari"],"e":"Seksyen 60F: kurang 2 tahun 14 hari; 2–5 tahun 18 hari; 5 tahun atau lebih 22 hari. Kemasukan hospital 60 hari setahun.","s":28},
-{"q":"Cuti bersalin di bawah seksyen 37 Akta Kerja ialah:","c":"98 hari","w":["60 hari","90 hari","120 hari"],"e":"Seksyen 37: 98 hari bagi setiap kelahiran selepas sekurang-kurangnya 22 minggu kehamilan.","s":29},
-{"q":"Cuti paterniti di bawah seksyen 60FA ialah:","c":"7 hari berturut-turut bagi setiap kelahiran, terhad kepada 5 kelahiran","w":["3 hari bagi setiap kelahiran","14 hari bagi setiap kelahiran","7 hari, tanpa had bilangan kelahiran"],"e":"Seksyen 60FA: 7 hari berturut-turut setiap kelahiran, terhad 5 kelahiran; syarat berkahwin dan bekerja dengan majikan sama sekurang-kurangnya 12 bulan.","s":31},
-{"q":"Di bawah Akta 446, majikan perlu memeriksa penginapan pekerja sekurang-kurangnya:","c":"Dua kali sebulan","w":["Sekali seminggu","Sekali sebulan","Sekali setiap tiga bulan"],"e":"Tanggungjawab keselamatan dan kesihatan Akta 446: memeriksa penginapan sekurang-kurangnya dua kali sebulan.","s":38},
-{"q":"Di bawah Akta Kanak-Kanak dan Orang Muda (Pekerjaan) 1966, 'orang muda' ialah mereka yang berumur:","c":"15 hingga bawah 18 tahun","w":["Bawah 15 tahun","12 hingga 15 tahun","18 hingga 21 tahun"],"e":"Akta 350 mengawal pekerjaan kanak-kanak (bawah 15 tahun) dan orang muda (15 hingga bawah 18 tahun) di Semenanjung Malaysia.","s":40}
+{
+"q": "Akta Kerja 1955 dikuatkuasakan oleh:",
+"c": "Jabatan Tenaga Kerja Semenanjung Malaysia",
+"w": [
+"JKKP",
+"PERKESO",
+"Jabatan Bomba dan Penyelamat"
+],
+"e": "Introduction: an Act enforced by Department of Labour Peninsular Malaysia; applies to private sector; provides minimum rights and benefits.",
+"s": 5
+},
+{
+"q": "Pekerja yang dikecualikan daripada Akta Kerja 1955 termasuk mereka yang digaji terus oleh:",
+"c": "Badan berkanun dan pihak berkuasa tempatan",
+"w": [
+"Syarikat swasta tempatan",
+"Kilang milik asing",
+"Kedai runcit"
+],
+"e": "Employee covered: local/foreign, full/part-time, permanent/temporary, contract, probation. EXCLUDE: employees directly engaged by statutory body, local authorities (Exclusion Order).",
+"s": 8
+},
+{
+"q": "Pekerja dalam tempoh percubaan (probation) di bawah Akta Kerja:",
+"c": "Diliputi oleh Akta",
+"w": [
+"Dikecualikan sehingga disahkan",
+"Diliputi hanya jika warganegara",
+"Diliputi selepas 2 tahun"
+],
+"e": "Employee covered by the Act: … confirm or under probation.",
+"s": 8
+},
+{
+"q": "Menurut Akta Kerja, 'kontrak perkhidmatan' boleh dibuat:",
+"c": "Secara lisan atau bertulis, nyata atau tersirat",
+"w": [
+"Secara bertulis sahaja",
+"Di hadapan peguam sahaja",
+"Di mahkamah sahaja"
+],
+"e": "Contract of service: any agreement, whether oral or in writing and whether express or implied.",
+"s": 9
+},
+{
+"q": "Kontrak perkhidmatan TIDAK boleh mengandungi terma yang:",
+"c": "Menyekat hak pekerja untuk menyertai kesatuan sekerja",
+"w": [
+"Menyatakan gaji",
+"Menyatakan waktu kerja",
+"Menyatakan peruntukan penamatan"
+],
+"e": "Content of contract: must stipulate terms per Employment Regulations 1957 including termination; not to restrict rights to join, participate in or organize trade unions.",
+"s": 10
+},
+{
+"q": "Potongan gaji yang memerlukan permintaan pekerja DAN permit termasuk:",
+"c": "Bayaran kepada pihak ketiga bagi pihak pekerja",
+"w": [
+"Lebihan bayaran akibat kesilapan majikan dalam 3 bulan lepas",
+"Potongan yang dibenarkan oleh undang-undang bertulis lain",
+"Pendahuluan tanpa faedah di bawah seksyen 22"
+],
+"e": "Sec. 24(3): at request of employee and with permit – schemes for benefit of employee, advance with interest, payments to third party, goods of employer, rental of accommodation.",
+"s": 15
+},
+{
+"q": "Cara pembayaran gaji yang utama di bawah Seksyen 25 ialah:",
+"c": "Melalui institusi kewangan ke akaun atas nama pekerja",
+"w": [
+"Tunai sahaja",
+"Baucar membeli-belah",
+"Mata ganjaran"
+],
+"e": "Sec. 25: paid into an account in the name of the employee; tunai atau cek hanya dengan permintaan bertulis pekerja dan kelulusan KP Tenaga Kerja.",
+"s": 16
+},
+{
+"q": "Jika kerja perlu dijalankan secara berterusan, pekerja boleh bekerja 8 jam berturut-turut dengan rehat sekurang-kurangnya:",
+"c": "45 minit secara agregat",
+"w": [
+"15 minit",
+"30 minit",
+"2 jam"
+],
+"e": "Sec. 60A(1) exception: continuous work – 8 consecutive hours with at least 45 minutes break in aggregate.",
+"s": 18
+},
+{
+"q": "Pekerja boleh dikehendaki bekerja melebihi had dan pada hari rehat (Seksyen 60A(2)) dalam kes:",
+"c": "Kerja segera pada jentera atau gangguan kerja yang tidak dijangka",
+"w": [
+"Majikan mahu menambah keuntungan",
+"Pekerja ingin bonus",
+"Musim perayaan"
+],
+"e": "Special case: accident, work essential to life of community or security of Malaysia, urgent work to machinery, unforeseen interruption, dsb.",
+"s": 19
+},
+{
+"q": "Had 12 jam sehari di bawah Seksyen 60A(7) TIDAK terpakai kepada pekerja yang:",
+"c": "Terlibat dalam kerja tidak aktif atau siap sedia (stand-by) yang panjang",
+"w": [
+"Bekerja syif malam",
+"Bekerja di kilang",
+"Bekerja separuh masa"
+],
+"e": "Sec. 60A(8): 12-hour limit does not apply to employees engaged in work involving long hours of inactive or stand-by employment.",
+"s": 20
+},
+{
+"q": "Bagi pekerja syif (Seksyen 60C), purata jam kerja dikira bagi tempoh:",
+"c": "3 minggu",
+"w": [
+"1 hari",
+"1 tahun",
+"6 bulan"
+],
+"e": "Shift work: may work more than 8 hrs/day or 45 hrs/week but the average over any period of 3 weeks (or longer as approved by DG) must comply.",
+"s": 21
+},
+{
+"q": "Bagi pekerja syif, hari rehat ialah tempoh sekurang-kurangnya:",
+"c": "30 jam berterusan",
+"w": [
+"12 jam",
+"24 jam",
+"48 jam"
+],
+"e": "Rest day (Sec. 59): one whole day per week; for shift work – at least 30 hours.",
+"s": 24
+},
+{
+"q": "Kerja melebihi waktu biasa pada hari rehat dibayar sekurang-kurangnya:",
+"c": "2 kali kadar gaji sejam",
+"w": [
+"1.5 kali",
+"3 kali",
+"Sama dengan kadar biasa"
+],
+"e": "Sec. 60: work done in excess of normal hours on a rest day shall be paid at least two times hourly rate of pay.",
+"s": 25
+},
+{
+"q": "Pekerja hamil boleh ditamatkan perkhidmatannya hanya atas alasan:",
+"c": "Pelanggaran syarat kontrak dengan sengaja, salah laku atau penutupan perniagaan",
+"w": [
+"Kehamilannya",
+"Mengambil cuti bersalin",
+"Meminta kerja fleksibel"
+],
+"e": "Restrictions on termination during pregnancy: except on grounds of wilful breach (13(2)), misconduct (14(1)), or closure of business.",
+"s": 30
+},
+{
+"q": "Majikan mesti memaklumkan Jabatan Tenaga Kerja tentang cadangan pemberhentian (retrenchment) dalam tempoh:",
+"c": "30 hari sebelum pelaksanaan",
+"w": [
+"7 hari",
+"3 hari",
+"1 tahun"
+],
+"e": "Termination and Lay-off Benefits Regulations 1980: notify Department of Labour within 30 days prior to execution.",
+"s": 32
+},
+{
+"q": "Pekerja TIDAK layak menerima faedah penamatan jika:",
+"c": "Dipecat kerana salah laku",
+"w": [
+"Diberhentikan kerana lebihan pekerja",
+"Majikan menutup perniagaan",
+"Majikan memindahkan kilang ke luar negara"
+],
+"e": "Not entitled: retirement (if age stipulated), dismissed for misconduct, voluntary resignation (other than s.13(2)/14(3)), contract renewed with continuous service.",
+"s": 33
+},
+{
+"q": "Untuk mencegah gangguan seksual, majikan dikehendaki:",
+"c": "Mempamerkan notis kesedaran dan menyediakan mekanisme siasatan aduan",
+"w": [
+"Melarang pekerja wanita bekerja",
+"Menghadkan komunikasi pekerja",
+"Tidak mengambil tindakan"
+],
+"e": "Prohibitions: sexual harassment – exhibit notice to raise awareness and provide mechanism to inquire into complaints; discrimination; forced labour.",
+"s": 34
+},
+{
+"q": "Akta 446 terpakai kepada majikan dan pembekal penginapan berpusat di:",
+"c": "Semenanjung Malaysia",
+"w": [
+"Sabah sahaja",
+"Sarawak sahaja",
+"Seluruh ASEAN"
+],
+"e": "Act 446: applies to all employers and centralized accommodation providers who provide housing and accommodation in Peninsular Malaysia.",
+"s": 36
+},
+{
+"q": "Di bawah Akta 350, kanak-kanak dan orang muda TIDAK boleh melakukan:",
+"c": "Kerja berbahaya yang disenaraikan dalam Jadual Keempat",
+"w": [
+"Kerja ringan dalam perusahaan keluarga",
+"Perantisan yang diluluskan kerajaan",
+"Kerja yang diluluskan kerajaan"
+],
+"e": "Prohibited employment (Sec. 3): employment contrary to FMA 1967, OSHA 1994 or ESA 1990; hazardous work in Fourth Schedule; Fifth Schedule – employment affecting morals.",
+"s": [
+43,
+44
+]
+},
+{
+"q": "Kanak-kanak di bawah Akta 350 TIDAK boleh bekerja di antara jam:",
+"c": "8 malam hingga 7 pagi",
+"w": [
+"8 malam hingga 6 pagi",
+"10 malam hingga 5 pagi",
+"6 petang hingga 8 pagi"
+],
+"e": "Working hours: children cannot work between 8 PM and 7 AM; young persons between 8 PM and 6 AM (with exceptions); children max 6 hrs/day (7 if attending school).",
+"s": 42
+}
 ]

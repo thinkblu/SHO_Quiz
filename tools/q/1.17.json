@@ -1,22 +1,222 @@
 [
-{"q":"Menurut WHO (2023), nahas jalan raya menyebabkan berapa kematian di seluruh dunia pada tahun 2021?","c":"1.19 juta","w":["119 ribu","11.9 juta","5.4 juta"],"e":"Status global: nahas jalan raya menyebabkan 1.19 juta kematian pada 2021, kadar 15 kematian per 100,000 populasi.","s":3},
-{"q":"Nahas jalan raya kekal sebagai punca kematian nombor satu dalam kalangan golongan berumur:","c":"5 – 29 tahun","w":["30 – 45 tahun","45 – 60 tahun","Lebih 60 tahun"],"e":"WHO: nahas jalan raya kekal punca nombor 1 kematian dalam kalangan orang muda 5–29 tahun.","s":3},
-{"q":"Berapakah peratus kematian nahas jalan raya global berlaku di negara berpendapatan rendah dan sederhana?","c":"92%","w":["50%","75%","99%"],"e":"92% kematian berlaku di negara berpendapatan rendah dan sederhana.","s":3},
-{"q":"Jumlah kematian akibat nahas jalan raya di Malaysia pada tahun 2023 ialah:","c":"6,473","w":["4,539","6,080","7,152"],"e":"Indeks keselamatan jalan raya: 6,473 kematian pada 2023 (17–19 kematian sehari).","s":4},
-{"q":"Pada tahun manakah Malaysia merekodkan kematian jalan raya tertinggi dalam tempoh 2010–2023?","c":"2016","w":["2010","2019","2023"],"e":"Jadual menunjukkan 7,152 kematian pada 2016, angka tertinggi dalam tempoh tersebut.","s":4},
-{"q":"Kategori pengguna jalan raya yang mencatatkan kematian paling tinggi di Malaysia ialah:","c":"Penunggang motosikal","w":["Pejalan kaki","Kenderaan penumpang","Pemandu lori"],"e":"Statistik kematian 2010–2023 menunjukkan motosikal menyumbang majoriti kematian (sekitar 4,000 setahun).","s":5},
-{"q":"Peruntukan undang-undang yang mentakrifkan kemalangan semasa perjalanan sebagai berkaitan pekerjaan ialah:","c":"Seksyen 24 Akta Keselamatan Sosial Pekerja 1969","w":["Seksyen 15 OSHA 1994","Seksyen 37 OSHA 1994","Seksyen 23 Akta APAD 2010"],"e":"Sumber slaid: Seksyen 24 AKSP 1969 menetapkan kemalangan dalam perjalanan yang disifatkan berlaku semasa menjalankan pekerjaan.","s":8},
-{"q":"Kemalangan perjalanan TIDAK dilindungi jika berlaku semasa:","c":"Perhentian atau lencongan untuk urusan peribadi","w":["Perjalanan dari rumah ke tempat kerja","Perjalanan ke tempat makan semasa rehat","Perjalanan atas urusan kerja"],"e":"Seksyen 24 AKSP: perjalanan antara kediaman dan tempat kerja dilindungi, tidak termasuk dalam masa perhentian atau apa-apa lencongan.","s":8},
-{"q":"Kajian profil kemalangan perjalanan 2018 menunjukkan majoriti kemalangan berlaku dalam jarak:","c":"Kurang daripada 5 km","w":["5 – 10 km","15 – 50 km","Lebih 50 km"],"e":"Kajian profil 2018 (PERKESO, UiTM, MIROS) menunjukkan 52.9% kemalangan berlaku dalam jarak kurang 5 km.","s":11},
-{"q":"Teori 'Iceberg' bagi kesan nahas jalan raya menyatakan bahawa kos yang tidak kelihatan adalah sebanyak:","c":"9/10","w":["1/10","1/2","3/4"],"e":"Teori iceberg: 1/10 yang kita nampak (kecederaan, kematian, kos hospital) dan 9/10 yang tidak kelihatan (kecacatan, tekanan, reputasi, produktiviti).","s":18},
-{"q":"Kerugian ekonomi negara akibat nahas jalan raya pada tahun 2023 dianggarkan:","c":"RM19.7 bilion","w":["RM3.12 bilion","RM6.4 bilion","RM50 bilion"],"e":"MIROS: kerugian RM19.7 bilion pada 2023; kerugian satu kematian RM3.12 juta.","s":19},
-{"q":"Value of Statistical Life (VOSL) bagi satu kematian akibat nahas jalan raya dianggarkan:","c":"RM3.12 juta","w":["RM312 ribu","RM1 juta","RM19.7 juta"],"e":"Kerugian satu kematian akibat nahas jalan raya dianggarkan RM3.12 juta berdasarkan konsep VOSL.","s":19},
-{"q":"Faktor manusia menyumbang berapa peratus kepada nahas jalan raya?","c":"93%","w":["36%","57%","75%"],"e":"Faktor manusia 93%: kesalahan pemandu 57% dan interaksi pemandu dengan kenderaan & jalan raya 36%.","s":20},
-{"q":"Pendekatan Sistem Selamat (Safe System Approach) berasaskan prinsip bahawa:","c":"Manusia sering melakukan kesilapan dan terdedah kepada kecederaan","w":["Manusia tidak pernah melakukan kesilapan","Kenderaan sahaja punca kemalangan","Jalan raya tidak mempengaruhi keselamatan"],"e":"Safe system approach (WHO 2009): manusia sering melakukan kesilapan dan terdedah kepada kecederaan.","s":21},
-{"q":"Tiga elemen pengurusan WRRS ialah pengurusan:","c":"Pemandu, kenderaan dan perjalanan","w":["Kewangan, pemasaran dan operasi","Majikan, kerajaan dan polis","Bahan api, tayar dan enjin"],"e":"Pengurusan WRRS: Pengurusan Pemandu (pemandu selamat), Kenderaan (kenderaan selamat) dan Perjalanan (perjalanan selamat).","s":23},
-{"q":"Tataamalan Industri KKP bagi Aktiviti Pengangkutan Jalan 2010 diwartakan di bawah:","c":"Subseksyen 37(4) AKKP 1994","w":["Seksyen 24 AKSP 1969","Seksyen 23(1) Akta APAD 2010","Seksyen 66 AKKP 1994"],"e":"ICOP Pengangkutan Jalan 2010 diwartakan di bawah subseksyen 37(4) AKKP 1994 (Akta 514).","s":25},
-{"q":"Seksyen 23(1) Akta APAD 2010 mewajibkan pengendali bas berlesen untuk:","c":"Memberi keutamaan tertinggi kepada keselamatan penumpang dan menyenggara bas dalam keadaan baik","w":["Menurunkan tambang","Menggaji SHO sepenuh masa","Membina hentian bas"],"e":"Seksyen 23(1) Akta APAD 2010: pengendali berlesen memberi keutamaan tertinggi kepada keselamatan penumpang dan memastikan bas disenggara dengan baik.","s":31},
-{"q":"ISO 39001 ialah piawaian bagi:","c":"Sistem Pengurusan Keselamatan Lalu Lintas Jalan Raya","w":["Pengurusan Keselamatan Perjalanan Ulang-alik","Sistem Pengurusan Kualiti","Sistem Pengurusan Alam Sekitar"],"e":"ISO 39001 – Road Traffic Safety Management System untuk mengurangkan dan menghapuskan kematian dan kecederaan serius akibat nahas jalan raya.","s":36},
-{"q":"ISO 39002 (Commuting Safety Management) diterbitkan pada:","c":"April 2020","w":["Januari 2018","Jun 2017","Disember 2022"],"e":"ISO 39002 diterbitkan pada April 2020 dan terpakai kepada organisasi yang ingin melindungi pekerja berulang-alik.","s":39},
-{"q":"Garis Panduan Keselamatan dan Kesihatan dalam Industri Perkhidmatan Kurier diterbitkan pada tahun:","c":"2015","w":["2010","2013","2020"],"e":"Garis panduan keselamatan dan kesihatan dalam industri perkhidmatan kurier 2015 menetapkan amalan baik pengurusan KKP industri kurier.","s":35}
+{
+"q": "Menurut WHO (2023), kadar kematian nahas jalan raya global pada 2021 ialah:",
+"c": "15 kematian bagi setiap 100,000 populasi",
+"w": [
+"1.5 kematian bagi setiap 100,000 populasi",
+"150 kematian bagi setiap 100,000 populasi",
+"15 kematian bagi setiap 1,000 populasi"
+],
+"e": "Status global (WHO 2023): 1.19 juta kematian (2021), kadar 15 kematian per 100,000 populasi, 92% di negara berpendapatan rendah & sederhana.",
+"s": 3
+},
+{
+"q": "Risiko kematian nahas jalan raya di negara berpendapatan rendah adalah:",
+"c": "3 kali ganda",
+"w": [
+"Sama seperti negara maju",
+"10 kali ganda",
+"Separuh"
+],
+"e": "WHO (2023): 3x ganda risiko kematian di negara berpendapatan rendah.",
+"s": 3
+},
+{
+"q": "Purata kematian jalan raya di Malaysia dianggarkan:",
+"c": "17–19 kematian sehari",
+"w": [
+"1–2 kematian sehari",
+"50 kematian sehari",
+"100 kematian seminggu"
+],
+"e": "Indeks keselamatan jalan raya: '17-19 Kematian Sehari!'.",
+"s": 4
+},
+{
+"q": "Kadar kematian per 10,000 kenderaan di Malaysia pada tahun 2010 ialah:",
+"c": "3.40",
+"w": [
+"1.77",
+"23.8",
+"16.21"
+],
+"e": "2010: 6,872 kematian; 3.40 per 10,000 kenderaan; 23.8 per 100,000 populasi; 16.21 per bilion VKT.",
+"s": 4
+},
+{
+"q": "Kadar kematian per 100,000 populasi di Malaysia pada tahun 2023 ialah:",
+"c": "19.4",
+"w": [
+"23.8",
+"14.2",
+"1.77"
+],
+"e": "2023: 6,473 kematian, 1.77 per 10,000 kenderaan, 19.4 per 100,000 populasi.",
+"s": 4
+},
+{
+"q": "Berdasarkan statistik kematian 2010–2023, kumpulan pengguna jalan raya dengan bilangan kematian tertinggi ialah penunggang:",
+"c": "Motosikal",
+"w": [
+"Basikal",
+"Bas",
+"Lori"
+],
+"e": "Statistik kematian: motosikal mencatatkan bilangan tertinggi setiap tahun (contoh 4,000+ setahun).",
+"s": 5
+},
+{
+"q": "Pada tahun 2023, kematian jalan raya paling tinggi mengikut kategori jalan berlaku di:",
+"c": "Jalan negeri",
+"w": [
+"Lebuh raya",
+"Jalan perbandaran",
+"Jalan persekutuan"
+],
+"e": "Klasifikasi 2023 (kategori jalan): State 1,664; Federal 1,570; Municipal 1,118; Expressway 930.",
+"s": 7
+},
+{
+"q": "Menurut klasifikasi 2023, kebanyakan kematian jalan raya berlaku di kawasan:",
+"c": "Luar bandar (rural) – 56%",
+"w": [
+"Bandar raya – 8%",
+"Bandar – 24%",
+"Kawasan tepu bina – 12%"
+],
+"e": "Area type 2023: Rural 56%, Urban 24%, Built-up 12%, City 8%.",
+"s": 7
+},
+{
+"q": "Di bawah Seksyen 24 AKSP 1969, kemalangan semasa perjalanan antara tempat kerja dengan tempat makan:",
+"c": "Dilindungi jika berlaku dalam masa rehat yang dibenarkan",
+"w": [
+"Tidak pernah dilindungi",
+"Dilindungi pada bila-bila masa",
+"Hanya dilindungi pada hujung minggu"
+],
+"e": "Seksyen 24 AKSP: perjalanan di antara tempat kerja dengan tempat dia pergi makan dalam masa rehat yang dibenarkan.",
+"s": 8
+},
+{
+"q": "Skop sektor pekerjaan berkaitan jalan raya termasuk kerja yang:",
+"c": "Sangat bergantung kepada kenderaan atau dijalankan di atas/berdekatan jalan raya",
+"w": [
+"Dijalankan sepenuhnya dalam pejabat",
+"Tidak melibatkan pergerakan",
+"Dijalankan dari rumah"
+],
+"e": "Skop: pekerjaan yang sangat 'bergantung' pada 'kenderaan' dan kerja-kerja 'di atas atau berdekatan jalan raya' – risiko jauh lebih tinggi.",
+"s": 12
+},
+{
+"q": "Dalam teori 'iceberg', yang manakah kesan nahas yang TIDAK kelihatan (9/10)?",
+"c": "Masalah kesihatan mental dan penurunan produktiviti",
+"w": [
+"Kos hospital",
+"Kerosakan kenderaan",
+"Kos pampasan"
+],
+"e": "Iceberg: 1/10 nampak – kecederaan, kematian, kos hospital, pampasan, kerosakan kenderaan; 9/10 tak nampak – yatim piatu, kecacatan, kesunyian, sakit mental, penurunan produktiviti.",
+"s": 18
+},
+{
+"q": "Menurut MIROS, jumlah kerugian ekonomi negara akibat nahas jalan raya pada tahun 2023 ialah:",
+"c": "RM19.7 bilion",
+"w": [
+"RM3.12 bilion",
+"RM6.47 bilion",
+"RM1.97 bilion"
+],
+"e": "Kerugian akibat nahas jalan raya 2023: RM19.7 bilion; 6,473 kematian; RM3.12 juta bagi satu kematian.",
+"s": 19
+},
+{
+"q": "Daripada faktor manusia, kesalahan pemandu sahaja menyumbang:",
+"c": "57%",
+"w": [
+"93%",
+"36%",
+"10%"
+],
+"e": "Faktor manusia 93%: kesalahan pemandu 57%; interaksi pemandu dengan kenderaan & jalan raya 36% (Rumar).",
+"s": 20
+},
+{
+"q": "Antara manfaat pengurusan WRRS kepada perniagaan ialah:",
+"c": "Kecekapan bahan api lebih baik dan jangka hayat kenderaan lebih panjang",
+"w": [
+"Kenaikan kos insurans",
+"Lebih banyak kemalangan",
+"Penambahan tekanan kerja"
+],
+"e": "WRRS penting bagi: kurangkan kecederaan, budaya keselamatan jalan raya, persekitaran kerja selamat, kurangkan tekanan, tingkatkan keuntungan (bahan api, hayat kenderaan, perkhidmatan pelanggan).",
+"s": 22
+},
+{
+"q": "Tiga elemen utama pengurusan WRRS bertujuan memastikan:",
+"c": "Pemandu selamat, kenderaan selamat dan perjalanan selamat",
+"w": [
+"Gaji tinggi, bonus dan cuti",
+"Pelanggan, pembekal dan pelabur",
+"Jalan, lampu isyarat dan tol"
+],
+"e": "Pengurusan pemandu → pemandu selamat; pengurusan kenderaan → kenderaan selamat; pengurusan perjalanan → perjalanan selamat.",
+"s": 23
+},
+{
+"q": "Tataamalan Industri KKP bagi Aktiviti Pengangkutan Jalan 2010 bertujuan, antara lain:",
+"c": "Memastikan orang selain pekerja tidak terdedah kepada risiko akibat aktiviti pengangkutan",
+"w": [
+"Menetapkan harga tambang",
+"Mengeluarkan lesen memandu",
+"Menentukan had laju lebuh raya"
+],
+"e": "Tataamalan 2010: panduan kepada majikan dan pekerja; memastikan orang selain pekerjanya tidak terdedah kepada risiko; mendorong pendidikan dan kesedaran.",
+"s": 26
+},
+{
+"q": "Dalam elemen pengurusan kenderaan, perkara yang perlu diberi perhatian termasuk:",
+"c": "Spesifikasi kenderaan semasa perolehan dan penyenggaraan",
+"w": [
+"Penjadualan cuti pemandu",
+"Pemetaan hazard laluan",
+"Kawasan rehat"
+],
+"e": "Pengurusan kenderaan: spesifikasi semasa perolehan, peralatan keselamatan, penyenggaraan, pemeriksaan, laporan kerosakan, pembawaan muatan selamat, rekod.",
+"s": 29
+},
+{
+"q": "Pemetaan hazard dan penyediaan kawasan rehat & rawat termasuk dalam elemen:",
+"c": "Pengurusan perjalanan",
+"w": [
+"Pengurusan pemandu",
+"Pengurusan kenderaan",
+"Pengurusan kewangan"
+],
+"e": "Pengurusan perjalanan: analisa risiko, pemetaan hazard, kawasan rehat & rawat, perlindungan insurans, audit, siasatan nahas, pemantauan operasi.",
+"s": 30
+},
+{
+"q": "Garis Panduan KKP dalam Industri Perkhidmatan Kurier 2015 meliputi aktiviti:",
+"c": "Penerimaan, penyusunan & pergudangan serta penghantaran",
+"w": [
+"Pembinaan jalan",
+"Penerbangan kargo",
+"Perlombongan"
+],
+"e": "Garis panduan kurier 2015: amalan teknikal baik bagi penerimaan, penyusunan & pergudangan, dan penghantaran.",
+"s": 35
+},
+{
+"q": "ISO 39002 terpakai kepada organisasi yang ingin melindungi pekerja yang:",
+"c": "Berulang-alik ke dan dari tempat kerja",
+"w": [
+"Bekerja di pejabat sahaja",
+"Bekerja dari rumah",
+"Bekerja di luar negara"
+],
+"e": "ISO 39002 (April 2020): terpakai kepada semua organisasi yang ingin melindungi pekerja berulang-alik; juga syarikat pengangkutan dan sekolah.",
+"s": 39
+}
 ]

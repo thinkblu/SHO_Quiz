@@ -1,22 +1,225 @@
 [
-{"q":"Di bawah Peraturan 2, seseorang yang memohon pendaftaran sebagai Orang Kompeten perlu membayar yuran apa terlebih dahulu?","c":"Yuran pemprosesan","w":["Yuran pendaftaran","Yuran pembaharuan","Yuran peperiksaan"],"e":"Peraturan 2(1): pemohon membayar yuran pemprosesan; selepas permohonan diluluskan, yuran pendaftaran dibayar sebelum didaftarkan.","s":5},
-{"q":"Bilakah yuran pendaftaran Orang Kompeten dibayar?","c":"Selepas permohonan diproses dan diluluskan, sebelum didaftarkan","w":["Bersama borang permohonan","Selepas tiga tahun","Semasa memperbaharui pendaftaran"],"e":"Peraturan 2(2): selepas permohonan diproses dan diluluskan, pemohon membayar yuran pendaftaran sebelum didaftarkan sebagai orang kompeten.","s":5},
-{"q":"Peraturan manakah menetapkan yuran bagi pendaftaran penyedia latihan?","c":"Peraturan 3","w":["Peraturan 2","Peraturan 4","Peraturan 6"],"e":"Peraturan 3: pemohon pendaftaran penyedia latihan membayar yuran pemprosesan dan kemudian yuran pendaftaran selepas diluluskan.","s":6},
-{"q":"Peraturan 4 berkaitan dengan:","c":"Yuran pembaharuan","w":["Pengecualian yuran","Kaedah pembayaran","Yuran pemprosesan"],"e":"Peraturan 4: orang kompeten dan penyedia latihan berdaftar boleh memperbaharui pendaftaran dengan membayar yuran pembaharuan.","s":7},
-{"q":"Kaedah pembayaran yuran yang dibenarkan di bawah Peraturan 5 TIDAK termasuk:","c":"Mata wang kripto","w":["Tunai","Kad kredit atau debit","Draf bank"],"e":"Peraturan 5: tunai; kiriman wang, wang pos atau draf bank kepada KP JKKP; kad kredit, kad debit atau pindahan dana elektronik.","s":7},
-{"q":"Kiriman wang, wang pos atau draf bank untuk yuran hendaklah dibayar atas nama:","c":"Ketua Pengarah JKKP","w":["Menteri Sumber Manusia","NIOSH","Akauntan Negara"],"e":"Peraturan 5(b): money order, postal order atau bank draft dibayar kepada Ketua Pengarah DOSH.","s":7},
-{"q":"Siapakah yang boleh mengecualikan sebahagian atau keseluruhan yuran (Peraturan 6)?","c":"Ketua Pengarah","w":["Menteri","Pengarah Negeri","NIOSH"],"e":"Peraturan 6: Ketua Pengarah boleh, mengikut budi bicaranya, mengecualikan sepenuhnya atau sebahagian mana-mana yuran.","s":8},
-{"q":"Yuran pemprosesan bagi Orang Kompeten berstatus INDIVIDU ialah:","c":"RM50","w":["RM150","RM200","RM300"],"e":"Jadual 1: individu – yuran pemprosesan RM50; yuran pendaftaran/pembaharuan RM200.","s":9},
-{"q":"Yuran pendaftaran/pembaharuan bagi Orang Kompeten berstatus INDIVIDU ialah:","c":"RM200","w":["RM50","RM1,500","RM3,000"],"e":"Jadual 1: individu – pemprosesan RM50, pendaftaran/pembaharuan RM200.","s":9},
-{"q":"Yuran pemprosesan bagi Orang Kompeten berstatus SYARIKAT ialah:","c":"RM300","w":["RM50","RM150","RM3,000"],"e":"Jadual 1: syarikat – yuran pemprosesan RM300; pendaftaran/pembaharuan RM3,000.","s":9},
-{"q":"Yuran pendaftaran/pembaharuan bagi Orang Kompeten berstatus SYARIKAT ialah:","c":"RM3,000","w":["RM300","RM1,500","RM200"],"e":"Jadual 1: syarikat – pendaftaran/pembaharuan RM3,000.","s":9},
-{"q":"Yuran pemprosesan bagi Penyedia Latihan Berdaftar (syarikat) ialah:","c":"RM150","w":["RM50","RM300","RM1,500"],"e":"Jadual 2: penyedia latihan berdaftar (syarikat) – pemprosesan RM150, pendaftaran/pembaharuan RM1,500.","s":9},
-{"q":"Yuran pendaftaran/pembaharuan bagi Penyedia Latihan Berdaftar (syarikat) ialah:","c":"RM1,500","w":["RM150","RM3,000","RM200"],"e":"Jadual 2: syarikat – yuran pendaftaran/pembaharuan RM1,500.","s":9},
-{"q":"Jadual manakah menetapkan jumlah yuran bagi Orang Kompeten?","c":"Jadual Pertama","w":["Jadual Kedua","Jadual Ketiga","Jadual Kelima"],"e":"Kesimpulan: yuran orang kompeten mengikut Jadual Pertama, manakala yuran penyedia latihan berdaftar mengikut Jadual Kedua.","s":10},
-{"q":"Jadual manakah menetapkan jumlah yuran bagi Penyedia Latihan Berdaftar?","c":"Jadual Kedua","w":["Jadual Pertama","Jadual Keenam","Jadual Kesepuluh"],"e":"Yuran penyedia latihan berdaftar ditetapkan dalam Jadual Kedua.","s":10},
-{"q":"Berapakah jumlah yuran (pemprosesan + pendaftaran) yang perlu dibayar oleh seorang individu untuk didaftarkan sebagai Orang Kompeten?","c":"RM250","w":["RM200","RM350","RM3,300"],"e":"Berdasarkan Jadual 1: RM50 (pemprosesan) + RM200 (pendaftaran) = RM250.","s":9},
-{"q":"Berapakah jumlah yuran (pemprosesan + pendaftaran) bagi syarikat untuk didaftarkan sebagai Penyedia Latihan Berdaftar?","c":"RM1,650","w":["RM1,500","RM3,300","RM1,800"],"e":"Berdasarkan Jadual 2: RM150 (pemprosesan) + RM1,500 (pendaftaran) = RM1,650.","s":9},
-{"q":"Skop peraturan yuran ini merangkumi perkara berikut KECUALI:","c":"Yuran pemeriksaan loji","w":["Yuran pendaftaran orang kompeten","Pengecualian yuran","Kaedah pembayaran"],"e":"Skop: yuran pendaftaran orang kompeten dan penyedia latihan, yuran pembaharuan, kaedah pembayaran, pengecualian yuran dan Jadual 1 & 2. Yuran pemeriksaan loji di bawah peraturan CF.","s":4},
-{"q":"Siapakah yang boleh memperbaharui pendaftaran dengan membayar yuran pembaharuan di bawah peraturan ini?","c":"Orang Kompeten dan Penyedia Latihan Berdaftar","w":["Pegawai JKKP","Pengilang loji","Klien projek pembinaan"],"e":"Peraturan 4: orang kompeten dan penyedia latihan berdaftar boleh memperbaharui pendaftaran dengan membayar yuran pembaharuan.","s":7},
-{"q":"Salah satu hasil pembelajaran bab ini ialah:","c":"Memahami yuran pendaftaran orang kompeten","w":["Mengira kadar kemalangan","Menyediakan pelan kecemasan","Menjalankan ujian audiometri"],"e":"Hasil pembelajaran: memahami yuran pendaftaran orang kompeten, mentakrif yuran penyedia latihan dan mengenal pasti proses berkaitan yuran.","s":3}
+{
+"q": "Pemohon pendaftaran Orang Kompeten membayar dua jenis yuran secara berperingkat, iaitu:",
+"c": "Yuran pemprosesan semasa memohon, kemudian yuran pendaftaran selepas diluluskan",
+"w": [
+"Yuran pendaftaran dahulu, kemudian yuran pemprosesan",
+"Yuran tahunan dan yuran denda",
+"Yuran latihan dan yuran peperiksaan"
+],
+"e": "Reg. 2: (1) pay a processing fee on application; (2) once processed and approved, pay a registration fee before being registered.",
+"s": 5
+},
+{
+"q": "Tiga individu memohon pendaftaran sebagai Orang Kompeten. Berapakah jumlah yuran PEMPROSESAN yang dibayar oleh mereka?",
+"c": "RM150",
+"w": [
+"RM50",
+"RM600",
+"RM900"
+],
+"e": "Schedule 1: processing fee for individual RM50 × 3 = RM150.",
+"s": 9
+},
+{
+"q": "Peraturan 3 menetapkan bahawa penyedia latihan yang permohonannya diluluskan mesti membayar yuran pendaftaran:",
+"c": "Sebelum didaftarkan sebagai penyedia latihan",
+"w": [
+"Selepas tamat tempoh pendaftaran",
+"Selepas kursus pertama dijalankan",
+"Hanya jika diminta oleh pelatih"
+],
+"e": "Reg. 3(2): applicant shall pay a registration fee before being registered as a training provider.",
+"s": 6
+},
+{
+"q": "Berapakah perbezaan yuran pendaftaran/pembaharuan antara Orang Kompeten syarikat dan individu?",
+"c": "RM2,800",
+"w": [
+"RM250",
+"RM3,200",
+"RM1,500"
+],
+"e": "Schedule 1: RM3,000 (company) − RM200 (individual) = RM2,800.",
+"s": 9
+},
+{
+"q": "Pembayaran melalui pemindahan dana elektronik (EFT) bagi yuran ini:",
+"c": "Dibenarkan di bawah Peraturan 5",
+"w": [
+"Dilarang sama sekali",
+"Hanya untuk syarikat asing",
+"Hanya untuk yuran pemprosesan"
+],
+"e": "Reg. 5: cash; money order, postal order or bank draft payable to DG DOSH; credit card, debit card or electronic fund transfer.",
+"s": 7
+},
+{
+"q": "Pembayaran yuran menggunakan kad kredit:",
+"c": "Dibenarkan",
+"w": [
+"Tidak dibenarkan",
+"Dibenarkan dengan caj tambahan 10%",
+"Hanya untuk individu"
+],
+"e": "Reg. 5(c): credit card, debit card or electronic fund transfer.",
+"s": 7
+},
+{
+"q": "Pengecualian yuran oleh Ketua Pengarah di bawah Peraturan 6 boleh dibuat:",
+"c": "Mengikut budi bicaranya, bagi kes tertentu, sepenuhnya atau sebahagian",
+"w": [
+"Secara automatik untuk semua pemohon",
+"Hanya oleh Menteri",
+"Hanya untuk syarikat kerajaan"
+],
+"e": "Reg. 6: DG may, in his discretion, in any particular case, waive wholly or in part any fee specified in the Schedule.",
+"s": 8
+},
+{
+"q": "Sebuah syarikat Orang Kompeten memperbaharui pendaftarannya sebanyak dua kali. Berapakah jumlah yuran pembaharuan yang dibayar?",
+"c": "RM6,000",
+"w": [
+"RM3,000",
+"RM600",
+"RM3,300"
+],
+"e": "Schedule 1: renewal fee for company RM3,000 × 2 = RM6,000.",
+"s": [
+7,
+9
+]
+},
+{
+"q": "Yuran pemprosesan Penyedia Latihan Berdaftar (syarikat) ialah berapa kali ganda yuran pemprosesan Orang Kompeten individu?",
+"c": "3 kali",
+"w": [
+"2 kali",
+"10 kali",
+"Sama"
+],
+"e": "RM150 (Schedule 2) ÷ RM50 (Schedule 1 individual) = 3 kali.",
+"s": 9
+},
+{
+"q": "Sebuah syarikat berjaya didaftarkan sebagai Orang Kompeten DAN Penyedia Latihan. Berapakah jumlah keseluruhan yuran (pemprosesan + pendaftaran)?",
+"c": "RM4,950",
+"w": [
+"RM4,500",
+"RM3,300",
+"RM1,650"
+],
+"e": "CP company RM300 + RM3,000 = RM3,300; training provider RM150 + RM1,500 = RM1,650; jumlah RM4,950.",
+"s": 9
+},
+{
+"q": "Berapa kali gandakah yuran pendaftaran Orang Kompeten syarikat berbanding yuran pemprosesannya?",
+"c": "10 kali",
+"w": [
+"5 kali",
+"2 kali",
+"15 kali"
+],
+"e": "Schedule 1: Company – RM3,000 ÷ RM300 = 10 kali.",
+"s": 9
+},
+{
+"q": "Yuran pendaftaran Orang Kompeten syarikat ialah berapa kali ganda yuran pendaftaran Penyedia Latihan syarikat?",
+"c": "2 kali",
+"w": [
+"10 kali",
+"1.5 kali",
+"20 kali"
+],
+"e": "RM3,000 (CP company) ÷ RM1,500 (training provider company) = 2 kali.",
+"s": 9
+},
+{
+"q": "Perbezaan yuran pemprosesan antara Orang Kompeten syarikat dan individu ialah:",
+"c": "RM250",
+"w": [
+"RM150",
+"RM2,800",
+"RM50"
+],
+"e": "Schedule 1: RM300 (company) − RM50 (individual) = RM250.",
+"s": 9
+},
+{
+"q": "Sebuah syarikat memohon pendaftaran sebagai Orang Kompeten DAN Penyedia Latihan. Berapakah jumlah yuran pemprosesan sahaja?",
+"c": "RM450",
+"w": [
+"RM350",
+"RM4,500",
+"RM200"
+],
+"e": "Processing fees: CP company RM300 + training provider company RM150 = RM450.",
+"s": 9
+},
+{
+"q": "Dua individu memohon pendaftaran Orang Kompeten dan kedua-duanya diluluskan. Berapakah jumlah keseluruhan yuran yang dibayar?",
+"c": "RM500",
+"w": [
+"RM250",
+"RM400",
+"RM6,600"
+],
+"e": "Setiap individu: RM50 + RM200 = RM250; dua orang = RM500.",
+"s": 9
+},
+{
+"q": "Yuran pemprosesan Penyedia Latihan syarikat (RM150) berbanding Orang Kompeten syarikat (RM300) ialah:",
+"c": "Separuh daripadanya",
+"w": [
+"Sama",
+"Dua kali ganda",
+"Satu per sepuluh"
+],
+"e": "Schedule 2 RM150 vs Schedule 1 RM300 → separuh.",
+"s": 9
+},
+{
+"q": "Jadual Kedua peraturan yuran ini hanya menyenaraikan Penyedia Latihan Berdaftar berstatus:",
+"c": "Syarikat",
+"w": [
+"Individu",
+"Syarikat dan individu",
+"Kerajaan"
+],
+"e": "Schedule 2 lists Registered Training Provider – Company: processing RM150, registration/renewal RM1,500.",
+"s": 9
+},
+{
+"q": "Proses yang berkaitan yuran dalam bab ini TIDAK merangkumi:",
+"c": "Denda kerana gagal hadir CEP",
+"w": [
+"Yuran pembaharuan",
+"Kaedah pembayaran",
+"Pengecualian yuran"
+],
+"e": "Scope: fee for registration of CP, fee for registration of training provider, renewal fee, mode of payment, waiver of fee, Schedules 1 & 2.",
+"s": 4
+},
+{
+"q": "Objektif pembelajaran bab ini termasuk mengenal pasti:",
+"c": "Proses berkaitan yuran Orang Kompeten dan penyedia latihan",
+"w": [
+"Prosedur siasatan kemalangan",
+"Kaedah pemantauan bising",
+"Syarat pelesenan kenderaan"
+],
+"e": "Learning objectives: understand CP registration fee, define training provider registration fee, identify processes related to fees.",
+"s": 3
+},
+{
+"q": "Peraturan 6 peraturan yuran ini berkaitan dengan:",
+"c": "Pengecualian yuran",
+"w": [
+"Kaedah pembayaran",
+"Yuran pembaharuan",
+"Yuran pendaftaran Penyedia Latihan"
+],
+"e": "Reg. 2 CP fee; Reg. 3 training provider fee; Reg. 4 renewal fee; Reg. 5 method of payment; Reg. 6 waiver of fee.",
+"s": 8
+}
 ]

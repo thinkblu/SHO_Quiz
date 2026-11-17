@@ -1,22 +1,222 @@
 [
-{"q":"Operasi mesin (machine operation) merujuk kepada:","c":"Proses menggunakan peralatan mekanikal untuk melaksanakan tugas seperti memotong, membentuk, mengangkat, menekan atau memasang","w":["Proses membeli mesin baharu","Kerja pentadbiran kilang","Proses menjual produk"],"e":"Machine operation: proses menggunakan peralatan mekanikal, alat atau mesin industri untuk memotong, membentuk, mengangkat, menekan atau memasang bahan.","s":5},
-{"q":"Seksyen 15(2)(b) OSHA 1994 berkaitan dengan:","c":"Susunan bagi operasi, pengendalian, penyimpanan dan pengangkutan loji dan bahan","w":["Kewajipan pekerja memakai PPE","Pelantikan SHO","Penubuhan jawatankuasa"],"e":"Seksyen 15(2)(b): membuat susunan bagi operasi, pengendalian, penyimpanan dan pengangkutan loji dan bahan.","s":7},
-{"q":"Di bawah Seksyen 24 OSHA 1994, pekerja perlu:","c":"Menggunakan PPE dan peranti keselamatan yang disediakan","w":["Menyediakan dasar keselamatan","Membeli mesin yang selamat","Melantik orang kompeten"],"e":"Seksyen 24: menjaga diri dan orang lain, bekerjasama dengan majikan, menggunakan PPE dan peranti keselamatan serta mematuhi arahan.","s":8},
-{"q":"Contoh mengubah kaedah kerja untuk keselamatan operasi mesin yang dinyatakan dalam slaid ialah:","c":"Menggunakan blok penolak (push block)","w":["Menanggalkan pengadang","Bekerja tanpa sarung tangan","Menambah kelajuan mesin"],"e":"Kaedah pencegahan: tukar cara kerja jika perlu, contohnya menggunakan push block.","s":13},
-{"q":"Yang manakah langkah pencegahan yang dinyatakan berkaitan pakaian pekerja?","c":"Melarang pemakaian pakaian longgar dan rambut panjang","w":["Mewajibkan pakaian berwarna gelap","Membenarkan barang kemas","Mewajibkan pakaian lengan pendek sahaja"],"e":"Langkah pencegahan termasuk mewajibkan laporan insiden berbahaya dan melarang pakaian longgar serta rambut panjang.","s":17},
-{"q":"Pemeriksaan pengadang, suis, bekalan kuasa, kebocoran dan bunyi dilakukan pada peringkat:","c":"Sebelum operasi (pre-operation)","w":["Penutupan (shutdown)","Penyelenggaraan","Selepas kemalangan"],"e":"Pre-operation: pemeriksaan sebelum guna (pengadang, suis, bekalan kuasa, kebocoran, bunyi), memakai PPE dan membaca manual.","s":20},
-{"q":"Pada peringkat penyediaan mesin (machine setup), langkah yang perlu dilakukan sebelum operasi sebenar ialah:","c":"Melakukan larian ujian (test run)","w":["Menanggalkan pengadang","Mematikan lampu","Mengosongkan buku log"],"e":"Machine setup: laraskan tetapan, kukuhkan bahan kerja dan lakukan test run sebelum operasi sebenar.","s":21},
-{"q":"Semasa operasi selamat, pekerja TIDAK boleh:","c":"Memintas pengadang keselamatan atau butang henti kecemasan","w":["Mematuhi SOP","Peka terhadap bunyi luar biasa","Mengekalkan jarak selamat"],"e":"Safe operation: kendalikan hanya jika terlatih, ikut SOP, jauhkan tangan/rambut/pakaian, jangan pintas pengadang atau henti kecemasan.","s":22},
-{"q":"Pada peringkat penutupan (shutdown), pekerja perlu:","c":"Mematikan dan memutuskan kuasa apabila tidak digunakan","w":["Membiarkan mesin terus beroperasi","Menanggalkan semua pengadang","Melaraskan kelajuan maksimum"],"e":"Shutdown: matikan dan putuskan kuasa, bersihkan mesin dan kawasan kerja, dan laporkan kerosakan dengan segera.","s":23},
-{"q":"Tiga pertimbangan utama dalam pengendalian jentera yang selamat ialah faktor:","c":"Manusia, persekitaran dan jentera","w":["Kos, masa dan kualiti","Majikan, pekerja dan kerajaan","Bahan, kaedah dan wang"],"e":"Main considerations: Human, Environment dan Machinery.","s":26},
-{"q":"Menurut faktor manusia, umur minimum operator mesin ialah:","c":"16 tahun dan ke atas","w":["14 tahun","18 tahun","21 tahun"],"e":"Faktor manusia: berpengalaman, terlatih, sihat fizikal dan mental, kompeten dan berumur 16 tahun ke atas.","s":27},
-{"q":"Yang manakah termasuk faktor jentera bagi operasi selamat?","c":"Butang kawalan yang direka secara ergonomik","w":["Umur operator","Pencahayaan bilik","Pengalaman pekerja"],"e":"Faktor jentera: kestabilan, bebas getaran, kawalan kelajuan, struktur kukuh, pengadang, butang kawalan ergonomik dan reka bentuk selamat.","s":29},
-{"q":"Getaran berterusan daripada mesin boleh menyebabkan:","c":"Hand-Arm Vibration Syndrome (HAVS)","w":["Silikosis","Dermatitis","Asma pekerjaan"],"e":"Noise and vibration: bunyi bising berpanjangan menyebabkan kehilangan pendengaran, getaran berterusan boleh menyebabkan HAVS atau keletihan.","s":34},
-{"q":"Pembumian yang lemah atau penebat rosak meningkatkan risiko bahaya:","c":"Elektrik","w":["Terma","Ergonomik","Kimia"],"e":"Electrical hazards: sentuhan wayar hidup atau sambungan rosak boleh menyebabkan renjatan, kelecuran atau elektrokusi; pembumian lemah meningkatkan risiko.","s":32},
-{"q":"Letupan mesin di kilang pemprosesan getah di Tangkak, Johor pada 24 Februari 2025 menyebabkan:","c":"2 kematian dan 7 cedera","w":["1 kematian dan 3 cedera","4 kematian","Tiada kecederaan"],"e":"Dua pekerja maut dan tujuh cedera apabila mesin meletup semasa penyelenggaraan; faktor termasuk LOTO yang lemah.","s":40},
-{"q":"Faktor utama dalam kemalangan letupan kilang getah Tangkak 2025 TIDAK termasuk:","c":"Pekerja tidak memakai kasut keselamatan","w":["Penyelenggaraan tidak selamat","Pembentukan tekanan","Amalan lock-out/tag-out yang lemah"],"e":"Faktor utama: penyelenggaraan tidak selamat, sumber pencucuhan, pembentukan tekanan dan amalan LOTO yang lemah.","s":40},
-{"q":"Dalam kes tangan pekerja tersepit dalam mesin penghancur tebu di Ipoh (28 Januari 2025), faktor utamanya ialah:","c":"Kekurangan pengadang mesin, latihan dan penyeliaan","w":["Kebakaran elektrik","Kebocoran gas","Lantai licin"],"e":"Faktor utama: tiada pengadang mesin, penggunaan tidak selamat, latihan lemah dan penyeliaan tidak mencukupi.","s":41},
-{"q":"Dalam kemalangan mesin pengering pasir di Miri (30 Ogos 2024), pekerja kehilangan ibu jari ketika mengendalikan bahagian:","c":"Takal dan tali sawat","w":["Panel elektrik","Tangki air","Cerobong asap"],"e":"Ibu jari kanan pekerja tertarik masuk ketika mengendalikan bahagian pulley dan belting; faktor termasuk tiada sistem kerja selamat dan pengadang tidak mencukupi.","s":42},
-{"q":"Pemandu forklift yang maut di Kuching pada 16 Mac 2025 berumur:","c":"70 tahun","w":["32 tahun","47 tahun","55 tahun"],"e":"Pemandu forklift berumur 70 tahun ditemui tersepit di antara timbunan palet dan garpu forklift dan meninggal dunia di tempat kejadian.","s":43},
-{"q":"Pada peringkat penyelenggaraan, salah satu amalan yang disyorkan ialah:","c":"Menyimpan buku log penyelenggaraan","w":["Membenarkan sesiapa sahaja membaiki mesin","Mengabaikan servis rutin","Menghidupkan mesin semasa pembaikan"],"e":"Maintenance: lakukan pembersihan dan servis rutin, hanya personel diberi kuasa membuat pembaikan, dan simpan buku log penyelenggaraan.","s":24}
+{
+"q": "Menurut bab ini, mesin membantu kita untuk:",
+"c": "Bekerja dengan lebih cepat dan mudah",
+"w": [
+"Menghapuskan semua bahaya",
+"Menggantikan semua pekerja",
+"Mengelakkan latihan"
+],
+"e": "Introduction: machine operation – using mechanical equipment for cutting, shaping, lifting, pressing, assembling; machines help us work faster and easier.",
+"s": 5
+},
+{
+"q": "Seksyen 15(2)(b) OSHA berkaitan operasi mesin menghendaki majikan:",
+"c": "Membuat pengaturan bagi operasi, pengendalian, penyimpanan dan pengangkutan loji dan bahan",
+"w": [
+"Menyediakan pengangkutan pekerja",
+"Membayar insurans kenderaan",
+"Membeli mesin terbaharu"
+],
+"e": "Section 15(2): (a) provide and maintain plant and safe system of work; (b) arrangements for operation, handling, storage and transportation of plant and substances.",
+"s": 7
+},
+{
+"q": "Kaedah pencegahan yang berkaitan pengurusan termasuk:",
+"c": "Merangka Dasar Keselamatan dan Kesihatan serta penyeliaan yang betul",
+"w": [
+"Mengurangkan latihan",
+"Menanggalkan papan tanda",
+"Menghentikan penyelenggaraan"
+],
+"e": "Prevention: formulate Safety and Health Policy, proper supervision, training on safe handling, install safety warning signages.",
+"s": 12
+},
+{
+"q": "Penyediaan senarai semak pemeriksaan (inspection checklist) termasuk dalam:",
+"c": "Kaedah pencegahan dan perlindungan",
+"w": [
+"Tindakan selepas kemalangan sahaja",
+"Proses pemasaran",
+"Pengurusan kewangan"
+],
+"e": "Prevention: prepare SOP, inspect machinery before use, prepare inspection checklist, formulate safety regulations, change work methods.",
+"s": 13
+},
+{
+"q": "Menyediakan skrin pengadang mesin dan program penyelenggaraan pencegahan adalah:",
+"c": "Kaedah pencegahan dan perlindungan",
+"w": [
+"Faktor manusia",
+"Bahaya terma",
+"Jenis kemalangan"
+],
+"e": "Prevention: implement preventive maintenance programme, provide screen guard for machines, regular inspections of workplace environment.",
+"s": 15
+},
+{
+"q": "Sebelum operasi (pre-operation), pekerja perlu:",
+"c": "Membaca dan memahami manual mesin serta arahan keselamatan",
+"w": [
+"Menanggalkan pengadang",
+"Melaraskan kelajuan maksimum",
+"Menukar alat ganti"
+],
+"e": "Pre-operation: pre-use inspection, wear PPE, read and understand manuals & safety instructions, ensure workspace clean.",
+"s": 20
+},
+{
+"q": "Melaraskan tetapan seperti kelajuan, tekanan dan kedalaman potongan dilakukan pada peringkat:",
+"c": "Penyediaan mesin (machine setup)",
+"w": [
+"Penutupan",
+"Penyelenggaraan",
+"Selepas kemalangan"
+],
+"e": "Machine setup: adjust settings (speed, pressure, cutting depth), secure work piece, perform a test run.",
+"s": 21
+},
+{
+"q": "Semasa operasi, pekerja perlu peka terhadap:",
+"c": "Bunyi luar biasa, getaran atau pemanasan berlebihan",
+"w": [
+"Warna mesin",
+"Muzik latar",
+"Harga bahan mentah"
+],
+"e": "Safe operation: trained and authorised, follow SOP, keep hands/hair/clothing away, don't bypass guards, stay alert to unusual noises, vibrations, overheating.",
+"s": 22
+},
+{
+"q": "Kerosakan atau kecacatan mesin yang dikesan semasa penutupan perlu:",
+"c": "Dilaporkan dengan segera",
+"w": [
+"Dibaiki sendiri oleh operator",
+"Diabaikan sehingga audit",
+"Disembunyikan"
+],
+"e": "Shutdown: switch off and disconnect power, clean machine and area, report malfunctions or defects immediately.",
+"s": 23
+},
+{
+"q": "Pada peringkat penyelenggaraan, pembaikan mesin hanya boleh dikendalikan oleh:",
+"c": "Kakitangan yang diberi kuasa",
+"w": [
+"Mana-mana operator",
+"Pelawat",
+"Pembekal bahan mentah"
+],
+"e": "Maintenance: routine cleaning and servicing; only authorised personnel handle repairs; keep a maintenance logbook.",
+"s": 24
+},
+{
+"q": "Faktor manusia bagi operasi mesin selamat termasuk operator yang:",
+"c": "Sihat dari segi fizikal dan mental serta kompeten",
+"w": [
+"Bekerja tanpa rehat",
+"Tidak pernah dilatih",
+"Baru berumur 14 tahun"
+],
+"e": "Human factors: experienced, trained, physically and mentally fit, competent, age 16 years and above.",
+"s": 27
+},
+{
+"q": "Butang kawalan yang direka secara ergonomik ialah contoh faktor:",
+"c": "Jentera",
+"w": [
+"Manusia",
+"Persekitaran",
+"Kewangan"
+],
+"e": "Machinery factors: stability, free from vibration, speed control, sturdy structure, guards, ergonomically designed control button, safe design.",
+"s": 29
+},
+{
+"q": "Barang kemas atau pakaian longgar yang tersangkut pada bahagian berputar ialah bahaya mekanikal jenis:",
+"c": "Belitan (entanglement)",
+"w": [
+"Hentaman",
+"Penghimpitan",
+"Ricih"
+],
+"e": "Mechanical hazards: entanglement (loose clothing, jewelry, hair), crushing, shearing/cutting, impact.",
+"s": 31
+},
+{
+"q": "Sentuhan dengan wayar hidup atau sambungan rosak boleh menyebabkan:",
+"c": "Kejutan, lecur atau renjatan elektrik maut",
+"w": [
+"Sindrom getaran tangan-lengan",
+"Kehilangan pendengaran",
+"Dermatitis"
+],
+"e": "Electrical hazards: contact with live wires or faulty connections can cause shocks, burns or electrocution.",
+"s": 32
+},
+{
+"q": "Mesin yang menghasilkan haba, percikan atau bahan lebur boleh menyebabkan bahaya:",
+"c": "Terma (lecur)",
+"w": [
+"Ergonomik",
+"Biologi",
+"Psikososial"
+],
+"e": "Thermal hazards: machines that generate heat, sparks or molten material can cause burns; hot surfaces, steam, friction.",
+"s": 33
+},
+{
+"q": "Pendedahan berpanjangan kepada aras bunyi tinggi daripada mesin boleh menyebabkan:",
+"c": "Kehilangan pendengaran",
+"w": [
+"Lecur kimia",
+"Patah tulang",
+"Keracunan makanan"
+],
+"e": "Noise and vibration: prolonged high noise exposure can cause hearing loss; continuous vibration may lead to HAVS or fatigue.",
+"s": 34
+},
+{
+"q": "Cecair, gas mudah terbakar atau percikan dari mesin boleh mencetuskan bahaya:",
+"c": "Kebakaran dan letupan",
+"w": [
+"Ergonomik",
+"Bising",
+"Biologi"
+],
+"e": "Fire and explosion hazards: flammable liquids, gases or sparks from machines can ignite if safety measures are ignored.",
+"s": 36
+},
+{
+"q": "Dalam kes mesin penghancur tebu di Ipoh (28 Januari 2025), kecederaan mangsa ialah:",
+"c": "Patah tulang berbilang dari pergelangan tangan hingga siku",
+"w": [
+"Kehilangan ibu jari",
+"Kematian",
+"Kecederaan kepala"
+],
+"e": "Sugar crusher: foreign worker's hand caught, multiple fractures from wrist to elbow; factors – lack of guarding, unsafe use, poor training, inadequate supervision.",
+"s": 41
+},
+{
+"q": "Punca utama kes mesin pengering pasir di Miri termasuk:",
+"c": "Ketiadaan sistem kerja selamat dan LOTO semasa penyelenggaraan",
+"w": [
+"Pemandu mengantuk",
+"Kebocoran gas",
+"Litar pintas elektrik"
+],
+"e": "Miri 30 Aug 2024: lack of safe work system for maintenance around pulleys and belts, inadequate guarding, no lock-out/tag-out or isolation.",
+"s": 42
+},
+{
+"q": "Dalam kes forklift di Kuching (16 Mac 2025), mangsa tersepit antara:",
+"c": "Susunan palet dan garpu forklift",
+"w": [
+"Dua lori",
+"Pintu dan dinding",
+"Mesin penghancur"
+],
+"e": "Kuching: 70-year-old driver pinned between pallet stacks and the forklift's fork; fork hit his left chest – tight working spaces, lack of barriers.",
+"s": 43
+}
 ]

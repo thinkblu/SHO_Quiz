@@ -1,22 +1,222 @@
 [
-{"q":"Elektrik ialah satu bentuk tenaga yang dihasilkan daripada aliran:","c":"Elektron","w":["Proton","Neutron","Ion positif sahaja"],"e":"Elektrik ialah tenaga yang dihasilkan daripada aliran elektron; apabila elektron terlepas dan dihantar melalui litar, terhasil sistem elektrik.","s":5},
-{"q":"Kelebihan elektrik yang disenaraikan TIDAK termasuk:","c":"Boleh dilihat dan dihidu","w":["Kos efektif","Bersih","Tidak memerlukan penyimpanan"],"e":"Kelebihan: kos efektif, bersih, mudah digunakan dan tidak memerlukan penyimpanan. Elektrik sebenarnya tidak boleh dilihat, didengar atau dihidu.","s":[6,13]},
-{"q":"Dalam Hukum Ohm, 'Ampere' merujuk kepada:","c":"Aliran sebenar elektrik","w":["Daya tenaga elektrik","Rintangan litar","Kuasa yang digunakan"],"e":"Volt: daya tenaga elektrik; Ampere: aliran sebenar elektrik; Ohm: rintangan litar terhadap arus.","s":7},
-{"q":"Arus elektrik sebanyak 0.1 – 0.2 A melalui badan manusia boleh menyebabkan:","c":"Fibrilasi ventrikel yang boleh membawa maut","w":["Rasa geli sedikit sahaja","Kekejangan otot yang menyakitkan sahaja","Tiada kesan"],"e":"Jadual kesan: 0.001 A ambang rasa; 0.01–0.02 A kontraksi otot; 0.05–0.1 A lumpuh pernafasan; 0.1–0.2 A fibrilasi ventrikel; >0.2 A melecur teruk dan henti jantung.","s":8},
-{"q":"Ambang persepsi (rasa geli sedikit) arus elektrik ialah kira-kira:","c":"0.001 A","w":["0.01 A","0.1 A","1 A"],"e":"0.001 A ialah perception threshold (slight tingling).","s":8},
-{"q":"Rintangan kulit manusia yang BASAH ialah lebih kurang:","c":"1,000 ohm","w":["100,000 ohm","400 ohm","600,000 ohm"],"e":"Kulit kering 100,000–600,000 ohm; kulit basah sekitar 1,000 ohm; dalaman tangan ke kaki 400–800 ohm; telinga ke telinga sekitar 100 ohm.","s":9},
-{"q":"Ambang voltan minimum untuk mula merasa kejutan pada 50 Hz ialah:","c":"10 – 12 V","w":["15 V","20 – 25 V","50 V"],"e":"Ambang: rasa 10–12 V; sakit 15 V; sakit melampau 20 V; genggaman voltan 20–25 V.","s":10},
-{"q":"Akta yang menubuhkan Suruhanjaya Tenaga untuk mengawal selia perundangan elektrik ialah:","c":"Akta Suruhanjaya Tenaga 2001","w":["Akta Bekalan Elektrik 1990","OSHA 1994","Akta Kilang dan Jentera 1967"],"e":"Energy Commission Act 2001 menubuhkan Suruhanjaya Tenaga yang mengawal selia Akta Bekalan Elektrik 1990, Peraturan Elektrik 1994 dan lain-lain.","s":16},
-{"q":"Di bawah Akta Bekalan Elektrik 1990, kemalangan atau kebakaran elektrik perlu dilaporkan kepada:","c":"Suruhanjaya Tenaga","w":["PERKESO","Jabatan Alam Sekitar","Pihak berkuasa tempatan"],"e":"ESA 1990: orang yang menjaga – orang kompeten; notifikasi kemalangan atau kebakaran – lapor kepada Energy Commissioner.","s":16},
-{"q":"Piawaian NFPA 70E berkaitan dengan:","c":"Keselamatan elektrik di tempat kerja (arc flash, PPE, zon kerja)","w":["Sistem pengecasan kenderaan elektrik","Pengiraan bahaya arc flash sahaja","Keselamatan fungsian automotif"],"e":"NFPA 70E: electrical safety in the workplace; IEEE 1584 untuk pengiraan arc flash; IEC 61851/62196 untuk pengecasan EV.","s":17},
-{"q":"Pelepasan tenaga elektrik secara tiba-tiba melalui udara yang menghasilkan haba, cahaya dan tekanan melampau dipanggil:","c":"Arc flash / arc blast","w":["Elektrik statik","Litar pintas","Kejutan elektrik ringan"],"e":"Arc flash/blast: pelepasan tenaga melalui udara apabila wujud jurang voltan tinggi; boleh menyebabkan melecur teruk atau buta.","s":21},
-{"q":"Elektrik statik amat berbahaya di kawasan:","c":"Pemprosesan kimia atau pengendalian bahan api","w":["Pejabat berhawa dingin","Kantin","Bilik mesyuarat"],"e":"Static electricity boleh menyalakan wap mudah terbakar jika tidak dibumikan, terutamanya di kawasan pemprosesan kimia atau bahan api.","s":22},
-{"q":"Kejutan elektrik semasa kerja penyelenggaraan sering berpunca daripada:","c":"Kegagalan melaksanakan lockout–tagout (LOTO)","w":["Pencahayaan berlebihan","Memakai sarung tangan bertebat","Membaca manual"],"e":"Semasa penyelenggaraan: kejutan elektrik akibat kegagalan LOTO, arc blast semasa servis peralatan hidup dan kebakaran akibat penggantian fius yang salah.","s":23},
-{"q":"Objektif utama prinsip keselamatan elektrik ialah melindungi orang daripada:","c":"Kejutan elektrik, kebakaran dan kesan melecur","w":["Bunyi bising","Debu","Getaran"],"e":"Main objective: melindungi orang daripada kejutan elektrik, kebakaran dan kesan melecur akibat sentuhan elektrik.","s":26},
-{"q":"Perlindungan daripada sentuhan TIDAK langsung (indirect contact) dicapai melalui:","c":"Pembumian berkesan bagi logam yang boleh dicas jika penebat utama gagal","w":["Menebat bahagian hidup","Memakai kasut sahaja","Menutup suis utama"],"e":"Indirect contact: pembumian berkesan untuk mengasingkan logam yang boleh dicas sekiranya penebat utama gagal; direct contact: pengasingan bahagian berpotensi melepaskan cas.","s":27},
-{"q":"Suis pengasing (isolating switch) yang selamat mestilah:","c":"Berlabel, mudah dicapai, dipasang pada setiap mesin dan mempunyai kunci keselamatan pada kedudukan 'off'","w":["Disembunyikan daripada pekerja","Dikongsi oleh semua mesin","Dipasang di siling"],"e":"Isolating switch: berlabel, mudah dicapai dari lantai, dipasang pada setiap mesin dan mempunyai safety lock pada kedudukan 'off'.","s":28},
-{"q":"Peranti perlindungan kebocoran ke bumi (earth leakage) yang disyorkan ialah:","c":"Residual Current Device (RCD)","w":["Fius kaca","Suis lampu","Soket berbilang"],"e":"Protection: sediakan perlindungan kebocoran bumi seperti RCD, suis henti kecemasan/interlock, asingkan konduktor dan pamer papan tanda.","s":30},
-{"q":"Dalam kemalangan di Serian, Sarawak (7 Ogos), pekerja berumur 40 tahun maut kerana:","c":"Disambar arka elektrik akibat bekerja terlalu dekat dengan kabel elektrik hidup","w":["Terjatuh dari tangga 10 meter","Dilanggar lori","Keracunan gas"],"e":"Pekerja menanggalkan klip kabel gentian optik di atas tiang 3 meter dan disambar arka elektrik kerana terlalu dekat dengan kabel hidup.","s":32},
-{"q":"Pengajaran daripada kemalangan arka elektrik termasuk menggunakan PPE berkadar arka (arc-rated) seperti:","c":"Sarung tangan, pelindung muka dan pakaian tahan arc flash","w":["Topi keledar plastik biasa sahaja","Baju kapas biasa","Kasut sukan"],"e":"Lesson learnt: gunakan PPE arc-rated (sarung tangan, pelindung muka, pakaian tahan arc flash) dan alat bertebat dengan capaian mencukupi.","s":34},
-{"q":"Bagi kerja berhampiran pemasangan elektrik hidup, pengajaran kemalangan menekankan penggunaan:","c":"Permit kerja dan kawalan LOTO","w":["Kerja bersendirian","Kerja tanpa perancangan","Alat tidak bertebat"],"e":"Safe work procedures & permit systems: gunakan permit kerja untuk tugas berhampiran pemasangan hidup dan kuatkuasakan LOTO.","s":34}
+{
+"q": "Sistem elektrik terhasil apabila:",
+"c": "Elektron terlepas daripada atom dan dihantar melalui litar",
+"w": [
+"Proton bergabung dengan neutron",
+"Atom dipanaskan",
+"Air mengalir dalam paip"
+],
+"e": "What is electricity: electrons spin around the nucleus and are easily broken away; when sent on a circuit, we have an electrical system.",
+"s": 5
+},
+{
+"q": "Dalam faktor yang mempengaruhi elektrik, 'Volt' ialah:",
+"c": "Daya tenaga elektrik",
+"w": [
+"Aliran sebenar elektrik",
+"Rintangan litar",
+"Kuasa yang digunakan"
+],
+"e": "Ohm's Law: Volt – force of electric energy; Ampere – actual flow; Ohm – resistance of the circuit.",
+"s": 7
+},
+{
+"q": "Arus 0.05 – 0.1 A melalui badan manusia boleh menyebabkan:",
+"c": "Lumpuh pernafasan dan kekejangan otot yang teruk",
+"w": [
+"Rasa geli sahaja",
+"Tiada kesan",
+"Fibrilasi ventrikel"
+],
+"e": "Effect: 0.001 perception; 0.01–0.02 muscle contraction, painful shock; 0.05–0.1 respiratory paralysis, severe spasms; 0.1–0.2 ventricular fibrillation; >0.2 severe burns, cardiac arrest.",
+"s": 8
+},
+{
+"q": "Arus melebihi 0.2 A boleh menyebabkan:",
+"c": "Lecur teruk, serangan jantung dan kematian",
+"w": [
+"Rasa geli ringan",
+"Kontraksi otot ringan",
+"Tiada kesan"
+],
+"e": "> 0.2 A: severe burns, cardiac arrest, death.",
+"s": 8
+},
+{
+"q": "Rintangan kulit manusia yang KERING ialah:",
+"c": "100,000 – 600,000 ohm",
+"w": [
+"Lebih kurang 1,000 ohm",
+"400 – 800 ohm",
+"Lebih kurang 100 ohm"
+],
+"e": "Body resistance: dry skin 100,000–600,000 Ω; wet skin ≈1,000 Ω; hand to feet 400–800 Ω; ear to ear ≈100 Ω.",
+"s": 9
+},
+{
+"q": "Rintangan dalaman badan dari tangan ke kaki ialah:",
+"c": "400 – 800 ohm",
+"w": [
+"100,000 ohm",
+"Lebih kurang 1,000 ohm",
+"Lebih kurang 100 ohm"
+],
+"e": "Internal body – hand to feet: 400–800 ohms.",
+"s": 9
+},
+{
+"q": "Ambang voltan minimum untuk mula merasa sakit pada 50 Hz ialah:",
+"c": "15 V",
+"w": [
+"10–12 V",
+"20–25 V",
+"50 V"
+],
+"e": "Voltage shock threshold at 50 Hz: feel 10–12 V; pain 15 V; excessive pain 20 V; voltage grip 20–25 V.",
+"s": 10
+},
+{
+"q": "Elektrik amat berbahaya kerana ia:",
+"c": "Tidak dapat dilihat, didengar atau dihidu",
+"w": [
+"Sentiasa berbau kuat",
+"Bergerak perlahan",
+"Mudah dilihat dengan mata kasar"
+],
+"e": "Why it matters: electricity is invisible, fast-acting, potentially deadly; cannot be seen, heard or smelt.",
+"s": 13
+},
+{
+"q": "Peraturan yang dikawal selia oleh Suruhanjaya Tenaga termasuk:",
+"c": "Peraturan Pengurusan Tenaga Elektrik dengan Cekap 2008",
+"w": [
+"Peraturan USECHH 2000",
+"Peraturan Bising 2019",
+"Peraturan CIMAH 1996"
+],
+"e": "Energy Commission regulates ESA 1990, Electricity Regulations 1994 and Efficient Management of Electrical Energy Regulations 2008.",
+"s": 16
+},
+{
+"q": "Piawaian IEEE 1584 berkaitan dengan:",
+"c": "Pengiraan bahaya arka elektrik (arc flash)",
+"w": [
+"Sistem pengecasan kenderaan elektrik",
+"Keselamatan fungsian automotif",
+"Kod keselamatan utiliti"
+],
+"e": "Standards: NFPA 70E; OSHA 1910 Subpart S; IEC 61851/62196 EV charging; ISO 26262 automotive; IEEE 1584 arc flash hazard calculations; NESC utilities.",
+"s": 17
+},
+{
+"q": "Mengendalikan penjana siap sedia (standby generator) dan UPS termasuk dalam aktiviti elektrik:",
+"c": "Operasi",
+"w": [
+"Pemasangan",
+"Penyelenggaraan",
+"Pembaikan"
+],
+"e": "Operation activities: switching on/off, monitoring load and power quality, operating standby generators, UPS, controlling motor drives.",
+"s": 19
+},
+{
+"q": "Menguji rintangan penebat, keselanjaran dan sistem pembumian termasuk dalam aktiviti:",
+"c": "Penyelenggaraan",
+"w": [
+"Operasi",
+"Pengubahsuaian",
+"Pemasangan"
+],
+"e": "Maintenance: routine inspection, testing insulation resistance, continuity and earthing, servicing breakers, replacing fuses.",
+"s": 19
+},
+{
+"q": "Memasang semula pendawaian lama mengikut piawaian semasa termasuk dalam aktiviti:",
+"c": "Naik taraf / pengubahsuaian",
+"w": [
+"Pengujian dan pentauliahan",
+"Operasi",
+"Pembaikan"
+],
+"e": "Upgrading/modification: retrofitting old wiring, upgrading distribution, installing energy-efficient devices, modifying layouts.",
+"s": 20
+},
+{
+"q": "Lecur elektrik boleh berlaku pada bahagian:",
+"c": "Dalaman atau luaran badan",
+"w": [
+"Luaran sahaja",
+"Rambut sahaja",
+"Kuku sahaja"
+],
+"e": "Electrical burns: caused by contact with live wiring; burns can be internal or external, affecting skin and tissues.",
+"s": 21
+},
+{
+"q": "Percikan elektrik dalam atmosfera mudah letup seperti stesen minyak boleh menyebabkan:",
+"c": "Letupan",
+"w": [
+"Hipotermia",
+"Kehilangan pendengaran",
+"Dermatitis"
+],
+"e": "Explosions: caused by sparks in explosive atmospheres (chemical plants, fuel stations).",
+"s": 22
+},
+{
+"q": "Arka elektrik semasa penukaran suis gear voltan tinggi ialah contoh kemalangan semasa kerja:",
+"c": "Operasi",
+"w": [
+"Pemasangan",
+"Pembaikan",
+"Pentauliahan"
+],
+"e": "During operation works: arc flash during switching of HV switchgear, shock from faulty control panels, burns from overheated busbars.",
+"s": 23
+},
+{
+"q": "Lecur akibat penggunaan penguji rintangan penebat (megger) yang salah berlaku semasa kerja:",
+"c": "Pengujian dan pentauliahan",
+"w": [
+"Operasi",
+"Pemasangan",
+"Penyelenggaraan rutin"
+],
+"e": "Testing & commissioning: arc flash from improper HV testing, shock from exposed test leads, burns from incorrect use of megger.",
+"s": 24
+},
+{
+"q": "Bagi keselamatan elektrik, setiap litar perlu mempunyai pelindung litar seperti:",
+"c": "Fius dan pemutus litar yang sesuai untuk mengelakkan beban lampau",
+"w": [
+"Pita pelekat",
+"Kipas penyejuk",
+"Lampu hiasan"
+],
+"e": "Safe use: 1 circuit protector – suitable fuse and circuit breaker to prevent overloading; 2 isolating switch labelled, reachable, lockable.",
+"s": 28
+},
+{
+"q": "Pembumian (earthing) yang betul bermaksud litar disambung:",
+"c": "Secara terus, bukan melalui suis",
+"w": [
+"Melalui suis",
+"Melalui fius sahaja",
+"Melalui palam dua pin"
+],
+"e": "Earthing: for all electrical items; circuit is connected direct, not through a switch.",
+"s": 30
+},
+{
+"q": "Pengajaran daripada kemalangan arka elektrik menekankan penggunaan:",
+"c": "Permit kerja dan LOTO bagi tugas berhampiran pemasangan elektrik hidup",
+"w": [
+"Peralatan tanpa penebat",
+"Kerja tanpa penilaian risiko",
+"Sarung tangan kain biasa"
+],
+"e": "Lesson learnt: risk assessment, isolation/de-energization, safe work procedures & permit systems (work permits, LOTO), arc-rated PPE, insulated tools, training, emergency preparedness.",
+"s": 34
+}
 ]
