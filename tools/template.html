@@ -131,6 +131,10 @@ main .wrap{padding-block:24px 64px;display:flex;flex-direction:column;gap:18px}
 .reg .go{align-self:flex-start;background:var(--green);color:var(--green-ink);border:0;padding:11px 20px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
 .reg .err{color:var(--red);font-size:14px;min-height:1.2em}
 .reg [hidden]{display:none}
+.reg form{display:flex;flex-direction:column;gap:14px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--surface-2);border-radius:7px;padding:4px}
+.seg button{border:0;background:transparent;padding:9px 8px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.03em;cursor:pointer;color:var(--muted)}
+.seg button[aria-selected="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
 .reg .acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .reg .go:disabled{opacity:.6;cursor:wait}
 .link{background:none;border:0;padding:0;color:var(--green);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;font-weight:600}
@@ -237,7 +241,7 @@ function renderWho(){
 }
 /* sign in: merge this device's saves with the copy kept in the sheet, then upload whatever the sheet is missing */
 function signIn(email, name, remote, isNew){
-  ME = {email, name}; LS.set('kuizsho:me', JSON.stringify(ME));
+  ME = {email, name}; LS.set('kuizsho:me', JSON.stringify(ME)); LS.set('kuizsho:last', email); LS.set('kuizsho:lastme', JSON.stringify(ME));
   const [merged, won] = mergeProg(prune(remote||{}), localProg(email, name));
   PROG = merged; LS.set(pkey(email), JSON.stringify(PROG));
   if(isNew) queue({action:'register', email, name, t:Date.now()});
@@ -275,52 +279,88 @@ function showRegister(){
   $('#bar').innerHTML='';
   $('#hdr').innerHTML=`<div class="eyebrow">Safety and Health Officer · NIOSH Malaysia</div>
     <h1>Kuiz Latihan SHO</h1>
-    <p class="sub">Masukkan e-mel anda untuk mula atau menyambung kuiz. Markah setiap bab direkodkan untuk penganjur kursus.</p>`;
-  $('#view').innerHTML=`<form class="reg" id="regf" novalidate>
-      <h2 id="rt">Mula atau sambung</h2>
-      <p id="rp">Peserta baharu akan diminta mendaftar nama. Jika e-mel anda sudah berdaftar, anda boleh terus menyambung dari tempat anda berhenti, di mana-mana peranti.</p>
-      <label id="le">Alamat e-mel<input id="em" name="em" type="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="nama@contoh.com"></label>
-      <div class="emline" id="emline" hidden><span>E-mel: <b id="emv"></b></span><button type="button" class="link" id="chg">Tukar e-mel</button></div>
-      <label id="ln" hidden>Nama penuh<input id="nm" name="nm" autocomplete="name" maxlength="80" placeholder="Contoh: Ahmad bin Ali"></label>
-      <div class="err" id="err" role="alert"></div>
-      <div class="acts"><button class="go" id="gob" type="submit">Seterusnya</button><button type="button" class="link" id="offl" hidden>Teruskan tanpa semakan</button></div>
-    </form>
+    <p class="sub">Daftar dengan nama dan e-mel pada kali pertama. Selepas itu, masukkan e-mel sahaja untuk menyambung dari tempat anda berhenti.</p>`;
+  $('#view').innerHTML=`<div class="reg">
+      <div class="seg" role="tablist" aria-label="Pilih jenis masuk">
+        <button type="button" role="tab" id="tNew">Peserta baharu</button>
+        <button type="button" role="tab" id="tOld">Sudah berdaftar</button>
+      </div>
+      <form id="fNew" novalidate>
+        <h2>Daftar peserta</h2>
+        <p>Gunakan nama penuh seperti dalam senarai kursus. Nama ini akan dicatat bersama markah anda.</p>
+        <label>Nama penuh<input id="nm" autocomplete="name" maxlength="80" placeholder="Contoh: Ahmad bin Ali"></label>
+        <label>Alamat e-mel<input id="em1" type="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="nama@contoh.com"></label>
+        <div class="err" id="err1" role="alert"></div>
+        <div class="acts"><button class="go" id="go1" type="submit">Daftar &amp; mula</button></div>
+      </form>
+      <form id="fOld" novalidate hidden>
+        <h2>Sambung kuiz</h2>
+        <p>Masukkan e-mel yang anda gunakan semasa mendaftar. Kemajuan anda akan dimuatkan, di mana-mana peranti.</p>
+        <label>Alamat e-mel<input id="em2" type="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="nama@contoh.com"></label>
+        <div class="err" id="err2" role="alert"></div>
+        <div class="acts"><button class="go" id="go2" type="submit">Sambung</button><button type="button" class="link" id="offl" hidden>Teruskan tanpa semakan</button></div>
+      </form>
+    </div>
     <div class="howto">
       <div><b>1 markah setiap soalan</b>Jawapan betul yang disahkan pada cubaan pertama diberi 1 markah. Setiap bab bernilai 20 markah.</div>
       <div><b>Sambung bila-bila masa</b>Kemajuan anda disimpan. Masukkan e-mel yang sama untuk menyambung di peranti lain.</div>
       <div><b>Markah terbaik dikira</b>Jika anda set semula bab dan mencuba lagi, markah tertinggi disimpan.</div>
     </div>`;
-  const em=$('#em'), nm=$('#nm'), err=$('#err'), gob=$('#gob');
-  let step='email', email='';
-  const toName = ()=>{
-    step='name'; $('#le').hidden=true; $('#emline').hidden=false; $('#emv').textContent=email;
-    $('#ln').hidden=false; $('#offl').hidden=true; $('#rt').textContent='Daftar peserta baharu';
-    $('#rp').textContent='E-mel ini belum berdaftar. Masukkan nama penuh anda seperti dalam senarai kursus.';
-    gob.textContent='Daftar & mula'; err.textContent=''; if(!nm.value && LEGACY_NAME) nm.value=LEGACY_NAME; nm.focus();
+  const tab = which=>{
+    const isNew = which==='new';
+    $('#tNew').setAttribute('aria-selected', isNew); $('#tOld').setAttribute('aria-selected', !isNew);
+    $('#fNew').hidden = !isNew; $('#fOld').hidden = isNew;
+    (isNew ? ($('#nm').value ? $('#em1') : $('#nm')) : $('#em2')).focus();
   };
-  $('#chg').onclick = ()=>{ step='email'; $('#le').hidden=false; $('#emline').hidden=true; $('#ln').hidden=true; $('#rt').textContent='Mula atau sambung'; gob.textContent='Seterusnya'; err.textContent=''; em.focus(); };
-  $('#offl').onclick = toName;
-  em.focus();
-  $('#regf').onsubmit = async e=>{
+  $('#tNew').onclick = ()=>tab('new'); $('#tOld').onclick = ()=>tab('old');
+  const lastEmail = LS.get('kuizsho:last') || '';
+  if(lastEmail){ $('#em2').value = lastEmail; }
+  if(LEGACY_NAME) $('#nm').value = LEGACY_NAME;
+  tab(lastEmail ? 'old' : 'new');
+
+  const busy = (b, on, label)=>{ b.disabled = on; b.textContent = label; };
+  const check = async email=>{ // → {found,name,progress} | throws 'old' / network error
+    const d = await lookup(email);
+    if(!d || !(d.version>=2)) throw new Error('old');
+    return d;
+  };
+  const failMsg = x=> x.message==='old' ? 'Sistem rekod sedang dikemas kini. Sila cuba sebentar lagi.' : 'Tidak dapat menyambung ke sistem rekod. Semak sambungan internet dan cuba lagi.';
+
+  /* new participant: name + e-mail; an e-mail that is already registered simply continues */
+  $('#fNew').onsubmit = async e=>{
     e.preventDefault();
-    if(step==='name'){
-      const n = cleanName(nm.value);
-      if(n.replace(/[^\p{L}]/gu,'').length < 3){ err.textContent='Sila masukkan nama penuh anda.'; nm.focus(); return; }
-      return signIn(email, n, {}, true);
-    }
-    email = cleanEmail(em.value);
-    if(!email){ err.textContent='Sila masukkan alamat e-mel yang sah.'; em.focus(); return; }
-    if(!SHEET_URL) return toName();
-    gob.disabled=true; gob.textContent='Menyemak…'; err.textContent='';
+    const n = cleanName($('#nm').value), email = cleanEmail($('#em1').value), err = $('#err1'), b = $('#go1');
+    if(n.replace(/[^\p{L}]/gu,'').length < 3){ err.textContent='Sila masukkan nama penuh anda.'; $('#nm').focus(); return; }
+    if(!email){ err.textContent='Sila masukkan alamat e-mel yang sah.'; $('#em1').focus(); return; }
+    err.textContent='';
+    if(!SHEET_URL) return signIn(email, n, {}, true);
+    busy(b, true, 'Menyemak…');
     try{
-      const d = await lookup(email);
-      if(!d || !(d.version>=2)) throw new Error('old');
+      const d = await check(email);
+      if(d.found) return signIn(email, cleanName(d.name)||n, d.progress, false);
+      signIn(email, n, {}, true);
+    }catch(x){ err.textContent = failMsg(x); }
+    finally{ busy(b, false, 'Daftar & mula'); }
+  };
+
+  /* returning participant: e-mail only */
+  $('#fOld').onsubmit = async e=>{
+    e.preventDefault();
+    const email = cleanEmail($('#em2').value), err = $('#err2'), b = $('#go2');
+    if(!email){ err.textContent='Sila masukkan alamat e-mel yang sah.'; $('#em2').focus(); return; }
+    err.textContent=''; $('#offl').hidden = true;
+    if(!SHEET_URL){ const known = LS.get(pkey(email)) && LEGACY_NAME; if(known) return signIn(email, LEGACY_NAME, {}, false); err.textContent='Sila daftar sebagai peserta baharu.'; return; }
+    busy(b, true, 'Menyemak…');
+    try{
+      const d = await check(email);
       if(d.found) return signIn(email, cleanName(d.name)||email, d.progress, false);
-      toName();
+      err.innerHTML = 'E-mel ini belum berdaftar. <button type="button" class="link" id="toNew">Daftar sebagai peserta baharu</button>';
+      $('#toNew').onclick = ()=>{ $('#em1').value = email; tab('new'); };
     }catch(x){
-      err.textContent = x.message==='old' ? 'Sistem rekod sedang dikemas kini. Sila cuba sebentar lagi.' : 'Tidak dapat menyemak e-mel sekarang. Semak sambungan internet dan cuba lagi.';
-      $('#offl').hidden = x.message==='old';
-    }finally{ gob.disabled=false; if(step==='email') gob.textContent='Seterusnya'; }
+      err.textContent = failMsg(x);
+      const me = LS.get('kuizsho:lastme'); let prev = null; try{ prev = JSON.parse(me||'null') }catch(_){}
+      if(x.message!=='old' && prev && prev.email===email){ $('#offl').hidden = false; $('#offl').onclick = ()=>signIn(prev.email, prev.name, {}, false); }
+    }finally{ busy(b, false, 'Sambung'); }
   };
 }
 
