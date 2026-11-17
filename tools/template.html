@@ -253,8 +253,7 @@ function signIn(email, name, remote, isNew){
   const [merged, won] = mergeProg(prune(remote||{}), localProg(email, name));
   PROG = merged; LS.set(pkey(email), JSON.stringify(PROG));
   if(isNew) queue({action:'register', email, name, t:Date.now()});
-  won.forEach(id=>{ if(answered(PROG[id])) sendScore(modOf(id), chOf(id)); });
-  if(won.length) pushProgress();
+  if(Object.keys(PROG).length) pushProgress();   // also re-sends every chapter's mark, repairing any mark that did not arrive
   WELCOME = isNew ? '' : name;
   renderWho(); route();
 }
@@ -555,7 +554,7 @@ async function refreshFromSheet(){
     const [, fromRemote] = mergeProg(PROG, remote);
     const [merged, fromLocal] = mergeProg(remote, PROG);
     PROG = merged; LS.set(pkey(ME.email), JSON.stringify(PROG));
-    if(fromLocal.length) pushProgress();
+    if(Object.keys(PROG).length) pushProgress();   // keeps the sheet's copy and marks in step with this device
     if(fromRemote.length && !Object.keys(PEND).length) route();
   }catch(e){}
 }
