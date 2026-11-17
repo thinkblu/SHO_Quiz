@@ -144,6 +144,13 @@ main .wrap{padding-block:24px 64px;display:flex;flex-direction:column;gap:18px}
 .resume .k{font-family:var(--f-display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--muted)}
 .resume .t{font-weight:600;font-size:17px;line-height:1.3}
 .resume .go2{background:var(--green);color:var(--green-ink);border:0;padding:9px 16px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.danger{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;border:1px dashed var(--line);border-radius:6px;padding:14px 16px;margin-top:8px}
+.danger h3{font-size:19px}
+.danger p{margin:2px 0 0;color:var(--muted);font-size:14px;max-width:52ch}
+.danger .confirm{flex-basis:100%;border-left-color:var(--red)}
+.danger .confirm p{color:var(--ink);font-size:15px}
+.danger .btn{color:var(--red);border-color:var(--red)}
+.confirm .danger-yes{background:var(--red);color:#fff}
 .welcome{background:var(--green-soft);border-radius:6px;padding:10px 14px;font-weight:600}
 footer{color:var(--muted);font-size:13px;text-align:center;padding-block:0 40px}
 canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
@@ -179,7 +186,7 @@ const LEGACY_NAME = LS.get('kuizsho:user');            // name-only registration
 let PROG = {}, WELCOME = '';
 const pkey = em=>'kuizsho:e:'+em.toLowerCase();
 /* keep only chapters whose question set is unchanged (old saves carry no version = first set) */
-function prune(p){ const o={}; for(const [id,s] of Object.entries(p||{})) if(VER[id] && s && s.first && (s.v||LV[id])===VER[id]) o[id]={v:VER[id],pick:s.pick||{},first:s.first||{},rev:s.rev||{}}; return o; }
+function prune(p){ const o={}; for(const [id,s] of Object.entries(p||{})) if(VER[id] && s && s.first && (s.v||LV[id])===VER[id]) o[id]={v:VER[id],pick:s.pick||{},first:s.first||{},rev:s.rev||{},t:+s.t||0}; return o; }
 const readLS = k=>{ const raw=LS.get(k); if(!raw) return {}; try{ return prune(JSON.parse(raw)) }catch(e){ return {} } };
 function localProg(email, name){ // this device's saves for this participant, including saves made before e-mail registration
   let p = readLS(pkey(email));
@@ -187,9 +194,12 @@ function localProg(email, name){ // this device's saves for this participant, in
   return p;
 }
 const answered = s=>Object.keys((s&&s.first)||{}).length;
-function mergeProg(base, extra){ // per chapter, keep the attempt with more answered questions
+/* per chapter, keep the most recently changed attempt (a reset counts as a change);
+   saves made before change times were recorded fall back to the attempt with more answers */
+const newer = (a,b)=> (a.t||b.t) ? (a.t||0) > (b.t||0) : answered(a) > answered(b);
+function mergeProg(base, extra){
   const out = {...base}, won = [];
-  for(const [id,s] of Object.entries(extra)) if(!out[id] || answered(s) > answered(out[id])){ out[id] = s; won.push(id); }
+  for(const [id,s] of Object.entries(extra)) if(!out[id] || newer(s, out[id])){ out[id] = s; won.push(id); }
   return [out, won];
 }
 let saveT = 0;
@@ -269,7 +279,12 @@ function lookup(email){
     document.head.appendChild(s);
   });
 }
-const st = id=>(PROG[id] ||= {v:VER[id],pick:{},first:{},rev:{}});
+const blank = id=>({v:VER[id],pick:{},first:{},rev:{},t:Date.now()});
+const st = id=>(PROG[id] ||= blank(id));
+const touch = id=>{ st(id).t = Date.now(); };
+/* reset keeps an empty, time-stamped entry so other devices and the sheet's copy cannot bring the old answers back */
+function resetChapter(id){ PROG[id] = blank(id); }
+function resetAll(){ for(const id of Object.keys(PROG)) PROG[id] = blank(id); save(); }
 const chScore = c=>{const s=PROG[c.id];if(!s)return [0,0];let ok=0,ans=0;c.qs.forEach((q,i)=>{if(s.first[i]!==undefined){ans++;if(s.first[i]===q.a)ok++}});return [ok,ans]};
 
 function route(){
@@ -410,6 +425,18 @@ function showHome(){
       <div><b>3 · Dedah jawapan</b>Lihat jawapan sebenar, penerangan dan rujukan slaid.</div>
     </div>`;
   document.querySelectorAll('.mod').forEach(b=>b.onclick=()=>go('m'+b.dataset.m));
+  const any = Object.values(PROG).some(s=>answered(s));
+  if(any){
+    $('#view').insertAdjacentHTML('beforeend', `<section class="danger" id="rall">
+      <div><h3>Set semula semua jawapan</h3><p>Padam semua jawapan anda dalam keempat-empat modul dan mula semula dari awal.</p></div>
+      <button class="btn" id="rallb">Set semula semua</button>
+      <div class="confirm" id="rallc" hidden><p>Padam semua jawapan anda? Tindakan ini tidak boleh dibatalkan. Markah tertinggi yang telah direkodkan untuk penganjur tidak akan dipadam.</p>
+        <div class="acts"><button class="yes danger-yes" id="rally">Ya, set semula</button><button class="no" id="rallno">Batal</button></div></div>
+    </section>`);
+    $('#rallb').onclick=()=>{ $('#rallc').hidden=false; $('#rallb').hidden=true; $('#rallno').focus(); };
+    $('#rallno').onclick=()=>{ $('#rallc').hidden=true; $('#rallb').hidden=false; };
+    $('#rally').onclick=()=>{ resetAll(); route(); };
+  }
   if(nx) $('#cont').onclick=()=>go(slug(nx[1].id));
 }
 
@@ -442,7 +469,7 @@ function showChapter(m,c){
     <span class="prog" aria-hidden="true"><i id="pBar"></i></span>
     <span class="stat">Markah <b id="nOk">0</b>/${c.qs.length}</span>
     <button class="btn" id="reset">Set semula</button></div></div>`;
-  $('#reset').onclick=()=>{ if($('#reset').dataset.arm){delete PROG[c.id];save();showChapter(m,c);} else {$('#reset').dataset.arm=1;$('#reset').textContent='Klik lagi untuk sahkan';setTimeout(()=>{const r=$('#reset');if(r){delete r.dataset.arm;r.textContent='Set semula'}},3000)} };
+  $('#reset').onclick=()=>{ if($('#reset').dataset.arm){resetChapter(c.id);save();showChapter(m,c);} else {$('#reset').dataset.arm=1;$('#reset').textContent='Klik lagi untuk sahkan';setTimeout(()=>{const r=$('#reset');if(r){delete r.dataset.arm;r.textContent='Set semula'}},3000)} };
   $('#view').innerHTML = c.qs.map((q,i)=>`<article class="q" id="q${i}">
       <div class="qn"><span class="badge">${i+1}</span><div class="qt">${esc(q.q)}</div></div>
       <div class="opts" role="group" aria-label="Pilihan jawapan soalan ${i+1}">
@@ -473,14 +500,14 @@ function pick(c,i,k){
 function confirmPick(c,i){
   const s=st(c.id), k=PEND[i]; if(k===undefined || s.rev[i]) return;
   delete PEND[i];
-  s.pick[i]=k; if(s.first[i]===undefined) s.first[i]=k; save();
+  s.pick[i]=k; if(s.first[i]===undefined) s.first[i]=k; touch(c.id); save();
   paint(c,i); stats(c);
   sendScore(DATA.modules.find(m=>m.chapters.includes(c)), c);
   const card=$('#q'+i);
   if(k===c.qs[i].a){ const r=card.querySelector(`.opt[data-k="${k}"]`).getBoundingClientRect(); celebrate(r.left+r.width/2, r.top+r.height/2); }
   card.querySelector('.reveal').focus({preventScroll:true});
 }
-function reveal(c,i){ const s=st(c.id); delete PEND[i]; s.rev[i]=1; if(s.first[i]===undefined) s.first[i]=-1; save(); paint(c,i); stats(c); }
+function reveal(c,i){ const s=st(c.id); delete PEND[i]; s.rev[i]=1; if(s.first[i]===undefined) s.first[i]=-1; touch(c.id); save(); paint(c,i); stats(c); }
 
 function paint(c,i){
   const q=c.qs[i], s=st(c.id), card=$('#q'+i), p=s.pick[i], rev=!!s.rev[i], locked=p!==undefined, pend=(!rev&&!locked)?PEND[i]:undefined;
