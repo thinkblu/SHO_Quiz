@@ -285,6 +285,19 @@ const touch = id=>{ st(id).t = Date.now(); };
 /* reset keeps an empty, time-stamped entry so other devices and the sheet's copy cannot bring the old answers back */
 function resetChapter(id){ PROG[id] = blank(id); }
 function resetAll(){ for(const id of Object.keys(PROG)) PROG[id] = blank(id); save(); }
+function resetModule(m){ for(const c of m.chapters) if(PROG[c.id]) PROG[c.id] = blank(c.id); save(); }
+/* "danger" panel with an inline confirmation step */
+function resetPanel(title, desc, ask, onYes){
+  $('#view').insertAdjacentHTML('beforeend', `<section class="danger" id="rall">
+    <div><h3>${title}</h3><p>${desc}</p></div>
+    <button class="btn" id="rallb">${title}</button>
+    <div class="confirm" id="rallc" hidden><p>${ask} Tindakan ini tidak boleh dibatalkan. Markah tertinggi yang telah direkodkan untuk penganjur tidak akan dipadam.</p>
+      <div class="acts"><button class="yes danger-yes" id="rally">Ya, set semula</button><button class="no" id="rallno">Batal</button></div></div>
+  </section>`);
+  $('#rallb').onclick=()=>{ $('#rallc').hidden=false; $('#rallb').hidden=true; $('#rallno').focus(); };
+  $('#rallno').onclick=()=>{ $('#rallc').hidden=true; $('#rallb').hidden=false; };
+  $('#rally').onclick=onYes;
+}
 const chScore = c=>{const s=PROG[c.id];if(!s)return [0,0];let ok=0,ans=0;c.qs.forEach((q,i)=>{if(s.first[i]!==undefined){ans++;if(s.first[i]===q.a)ok++}});return [ok,ans]};
 
 function route(){
@@ -426,17 +439,8 @@ function showHome(){
     </div>`;
   document.querySelectorAll('.mod').forEach(b=>b.onclick=()=>go('m'+b.dataset.m));
   const any = Object.values(PROG).some(s=>answered(s));
-  if(any){
-    $('#view').insertAdjacentHTML('beforeend', `<section class="danger" id="rall">
-      <div><h3>Set semula semua jawapan</h3><p>Padam semua jawapan anda dalam keempat-empat modul dan mula semula dari awal.</p></div>
-      <button class="btn" id="rallb">Set semula semua</button>
-      <div class="confirm" id="rallc" hidden><p>Padam semua jawapan anda? Tindakan ini tidak boleh dibatalkan. Markah tertinggi yang telah direkodkan untuk penganjur tidak akan dipadam.</p>
-        <div class="acts"><button class="yes danger-yes" id="rally">Ya, set semula</button><button class="no" id="rallno">Batal</button></div></div>
-    </section>`);
-    $('#rallb').onclick=()=>{ $('#rallc').hidden=false; $('#rallb').hidden=true; $('#rallno').focus(); };
-    $('#rallno').onclick=()=>{ $('#rallc').hidden=true; $('#rallb').hidden=false; };
-    $('#rally').onclick=()=>{ resetAll(); route(); };
-  }
+  if(any) resetPanel('Set semula semua jawapan', 'Padam semua jawapan anda dalam keempat-empat modul dan mula semula dari awal.',
+    'Padam semua jawapan anda dalam semua modul?', ()=>{ resetAll(); route(); });
   if(nx) $('#cont').onclick=()=>go(slug(nx[1].id));
 }
 
@@ -453,6 +457,8 @@ function showModule(n){
       <span class="t">${esc(c.title)}<span class="s">${c.total} slaid</span></span>
       <span class="score ${ans===c.qs.length&&ready?'done':''}">${sc}</span></button>`}).join('');
   $('#view').innerHTML=`<h2 style="font-size:26px">Pilih bab</h2><div class="chlist">${rows}</div>`;
+  if(m.chapters.some(c=>answered(PROG[c.id]))) resetPanel(`Set semula Modul ${n}`, `Padam semua jawapan anda dalam Modul ${n} sahaja. Modul lain tidak terjejas.`,
+    `Padam semua jawapan anda dalam Modul ${n}?`, ()=>{ resetModule(m); route(); });
   bindCrumbs();
   document.querySelectorAll('.ch').forEach(b=>b.onclick=()=>go(b.dataset.h));
 }
