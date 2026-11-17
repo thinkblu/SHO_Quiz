@@ -130,6 +130,17 @@ main .wrap{padding-block:24px 64px;display:flex;flex-direction:column;gap:18px}
 .reg input:focus{border-color:var(--green);outline:none}
 .reg .go{align-self:flex-start;background:var(--green);color:var(--green-ink);border:0;padding:11px 20px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
 .reg .err{color:var(--red);font-size:14px;min-height:1.2em}
+.reg [hidden]{display:none}
+.reg .acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.reg .go:disabled{opacity:.6;cursor:wait}
+.link{background:none;border:0;padding:0;color:var(--green);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14px;font-weight:600}
+.emline{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;background:var(--surface-2);border-radius:6px;padding:10px 12px;font-size:15px;overflow-wrap:anywhere}
+.whobar .em{opacity:.7;font-size:13px;overflow-wrap:anywhere}
+.resume{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--yellow);border-radius:6px;padding:14px 16px}
+.resume .k{font-family:var(--f-display);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;color:var(--muted)}
+.resume .t{font-weight:600;font-size:17px;line-height:1.3}
+.resume .go2{background:var(--green);color:var(--green-ink);border:0;padding:9px 16px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.welcome{background:var(--green-soft);border-radius:6px;padding:10px 14px;font-weight:600}
 footer{color:var(--muted);font-size:13px;text-align:center;padding-block:0 40px}
 canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
 </style>
@@ -155,26 +166,40 @@ const SHEET_URL = '/*__SHEET_URL__*/';
 const LS = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}, del(k){try{localStorage.removeItem(k)}catch(e){}}};
 const VER = {}; for(const m of DATA.modules) for(const c of m.chapters) VER[c.id]=c.v;
 
-/* participant + progress (stored per participant name on this device) */
-let USER = LS.get('kuizsho:user') || null;
-let PROG = {};
-const pkey = n=>'kuizsho:p:'+n.toLowerCase();
-function loadProg(){
-  PROG = {}; if(!USER) return;
-  let raw = LS.get(pkey(USER));
-  if(raw===null && LS.get('kuizsho')!==null){ raw = LS.get('kuizsho'); LS.set(pkey(USER), raw); LS.del('kuizsho'); } // progress saved before registration existed
-  try{ PROG = JSON.parse(raw||'{}')||{} }catch(e){ PROG = {} }
-  /* drop saved answers for chapters whose question set has changed (old saves carry no version = first set) */
-  for(const m of DATA.modules) for(const c of m.chapters){ const s=PROG[c.id]; if(s && (s.v||c.lv)!==c.v) delete PROG[c.id]; }
-}
-const save=()=>{ if(USER) LS.set(pkey(USER), JSON.stringify(PROG)); };
-loadProg();
+const LV = {}; for(const m of DATA.modules) for(const c of m.chapters) LV[c.id]=c.lv;
 
-/* outbox: marks waiting to be sent to the sheet; survives reloads and offline periods */
+/* participant (identified by e-mail) + progress: kept per e-mail on this device and copied to the sheet so it can be resumed anywhere */
+let ME = null; try{ ME = JSON.parse(LS.get('kuizsho:me')||'null') }catch(e){ ME = null }
+if(ME && !(ME.email && ME.name)) ME = null;
+const LEGACY_NAME = LS.get('kuizsho:user');            // name-only registration from the previous version
+let PROG = {}, WELCOME = '';
+const pkey = em=>'kuizsho:e:'+em.toLowerCase();
+/* keep only chapters whose question set is unchanged (old saves carry no version = first set) */
+function prune(p){ const o={}; for(const [id,s] of Object.entries(p||{})) if(VER[id] && s && s.first && (s.v||LV[id])===VER[id]) o[id]={v:VER[id],pick:s.pick||{},first:s.first||{},rev:s.rev||{}}; return o; }
+const readLS = k=>{ const raw=LS.get(k); if(!raw) return {}; try{ return prune(JSON.parse(raw)) }catch(e){ return {} } };
+function localProg(email, name){ // this device's saves for this participant, including saves made before e-mail registration
+  let p = readLS(pkey(email));
+  for(const k of [name && 'kuizsho:p:'+name.toLowerCase(), 'kuizsho']) if(k) p = mergeProg(p, readLS(k))[0];
+  return p;
+}
+const answered = s=>Object.keys((s&&s.first)||{}).length;
+function mergeProg(base, extra){ // per chapter, keep the attempt with more answered questions
+  const out = {...base}, won = [];
+  for(const [id,s] of Object.entries(extra)) if(!out[id] || answered(s) > answered(out[id])){ out[id] = s; won.push(id); }
+  return [out, won];
+}
+let saveT = 0;
+const save=()=>{ if(!ME) return; LS.set(pkey(ME.email), JSON.stringify(PROG)); clearTimeout(saveT); saveT = setTimeout(pushProgress, 2500); };
+function pushProgress(){ if(ME) queue({action:'progress', email:ME.email, name:ME.name, progress:PROG, t:Date.now()}); }
+if(ME) PROG = readLS(pkey(ME.email));
+
+/* outbox: messages waiting to be sent to the sheet; survives reloads and offline periods */
 let OUTBOX = []; try{ OUTBOX = JSON.parse(LS.get('kuizsho:outbox')||'[]')||[] }catch(e){ OUTBOX = [] }
+OUTBOX = OUTBOX.filter(x=>x.email);                     // drop name-only messages from the previous version
 let flushT = 0, flushing = false, lastErr = false;
 function queue(msg){
-  if(msg.action==='score') OUTBOX = OUTBOX.filter(x=>!(x.action==='score' && x.name===msg.name && x.chapter===msg.chapter));
+  if(msg.action==='score') OUTBOX = OUTBOX.filter(x=>!(x.action==='score' && x.email===msg.email && x.chapter===msg.chapter));
+  if(msg.action==='progress') OUTBOX = OUTBOX.filter(x=>!(x.action==='progress' && x.email===msg.email));
   OUTBOX.push(msg); LS.set('kuizsho:outbox', JSON.stringify(OUTBOX)); schedule(1200);
 }
 function schedule(ms){ clearTimeout(flushT); flushT = setTimeout(flush, ms); }
@@ -191,21 +216,47 @@ async function flush(){
 }
 addEventListener('online', ()=>schedule(300));
 function syncUI(){
-  const el = $('#sync'); if(!el) return;
-  const mine = OUTBOX.filter(x=>x.name===USER).length;
-  el.textContent = !SHEET_URL ? 'Markah disimpan dalam peranti ini' : mine ? (lastErr ? `Tiada sambungan · ${mine} markah menunggu` : 'Menghantar markah…') : 'Markah telah dihantar ✓';
+  const el = $('#sync'); if(!el || !ME) return;
+  const mine = OUTBOX.filter(x=>x.email===ME.email).length;
+  el.textContent = !SHEET_URL ? 'Kemajuan disimpan dalam peranti ini' : mine ? (lastErr ? `Tiada sambungan · ${mine} kemas kini menunggu` : 'Menyimpan…') : 'Disimpan ✓';
 }
 function sendScore(m,c){
-  if(!USER) return;
+  if(!ME) return;
   const [ok] = chScore(c);
-  queue({action:'score', name:USER, module:m.n, chapter:c.id, score:ok, t:Date.now()});
+  queue({action:'score', email:ME.email, name:ME.name, module:m.n, chapter:c.id, score:ok, t:Date.now()});
 }
+const modOf = id=>DATA.modules.find(m=>m.chapters.some(c=>c.id===id));
+const chOf = id=>modOf(id).chapters.find(c=>c.id===id);
 const cleanName = s=>String(s||'').replace(/\s+/g,' ').trim().replace(/^[=+\-@']+/,'').slice(0,80);
+const cleanEmail = s=>{ const e=String(s||'').trim().toLowerCase(); return /^[^\s@=+]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length<=120 ? e : ''; };
 function renderWho(){
-  const w = $('#who'); w.hidden = !USER; if(!USER){ w.innerHTML=''; return; }
-  w.innerHTML = `<div class="wrap"><span>Peserta: <b>${esc(USER)}</b> <span class="sync" id="sync"></span></span><button id="sw">Tukar peserta</button></div>`;
-  $('#sw').onclick = ()=>{ USER = null; LS.del('kuizsho:user'); PROG = {}; renderWho(); go(''); };
+  const w = $('#who'); w.hidden = !ME; if(!ME){ w.innerHTML=''; return; }
+  w.innerHTML = `<div class="wrap"><span>Peserta: <b>${esc(ME.name)}</b> <span class="em">${esc(ME.email)}</span> <span class="sync" id="sync"></span></span><button id="sw">Tukar peserta</button></div>`;
+  $('#sw').onclick = ()=>{ ME = null; LS.del('kuizsho:me'); PROG = {}; renderWho(); go(''); };
   syncUI();
+}
+/* sign in: merge this device's saves with the copy kept in the sheet, then upload whatever the sheet is missing */
+function signIn(email, name, remote, isNew){
+  ME = {email, name}; LS.set('kuizsho:me', JSON.stringify(ME));
+  const [merged, won] = mergeProg(prune(remote||{}), localProg(email, name));
+  PROG = merged; LS.set(pkey(email), JSON.stringify(PROG));
+  if(isNew) queue({action:'register', email, name, t:Date.now()});
+  won.forEach(id=>{ if(answered(PROG[id])) sendScore(modOf(id), chOf(id)); });
+  if(won.length) pushProgress();
+  WELCOME = isNew ? '' : name;
+  renderWho(); route();
+}
+/* look up a registered e-mail (JSONP, so it works from any page origin) */
+function lookup(email){
+  return new Promise((resolve, reject)=>{
+    const cb = '__kz'+Date.now(), s = document.createElement('script'); let done = false;
+    const end = ()=>{ done = true; clearTimeout(t); delete window[cb]; s.remove(); };
+    const t = setTimeout(()=>{ if(!done){ end(); reject(new Error('timeout')) } }, 20000);
+    window[cb] = d=>{ end(); resolve(d) };
+    s.onerror = ()=>{ if(!done){ end(); reject(new Error('network')) } };
+    s.src = SHEET_URL+'?action=lookup&email='+encodeURIComponent(email)+'&callback='+cb;
+    document.head.appendChild(s);
+  });
 }
 const st = id=>(PROG[id] ||= {v:VER[id],pick:{},first:{},rev:{}});
 const chScore = c=>{const s=PROG[c.id];if(!s)return [0,0];let ok=0,ans=0;c.qs.forEach((q,i)=>{if(s.first[i]!==undefined){ans++;if(s.first[i]===q.a)ok++}});return [ok,ans]};
@@ -213,7 +264,7 @@ const chScore = c=>{const s=PROG[c.id];if(!s)return [0,0];let ok=0,ans=0;c.qs.fo
 function route(){
   const h = location.hash.slice(1);
   window.scrollTo(0,0);
-  if(!USER) return showRegister();
+  if(!ME) return showRegister();
   if(/^m[1-4]$/.test(h)) return showModule(+h[1]);
   if(h.startsWith('c')){const [m,c]=findCh(h); if(c) return showChapter(m,c);}
   showHome();
@@ -224,29 +275,64 @@ function showRegister(){
   $('#bar').innerHTML='';
   $('#hdr').innerHTML=`<div class="eyebrow">Safety and Health Officer · NIOSH Malaysia</div>
     <h1>Kuiz Latihan SHO</h1>
-    <p class="sub">Daftar nama anda sebelum memulakan kuiz. Markah setiap bab akan direkodkan untuk penganjur kursus.</p>`;
+    <p class="sub">Masukkan e-mel anda untuk mula atau menyambung kuiz. Markah setiap bab direkodkan untuk penganjur kursus.</p>`;
   $('#view').innerHTML=`<form class="reg" id="regf" novalidate>
-      <h2>Daftar peserta</h2>
-      <p>Gunakan nama penuh seperti dalam senarai kursus. Jika anda menyambung di peranti lain, taip nama yang sama supaya markah direkodkan pada baris yang sama.</p>
-      <label>Nama penuh<input id="nm" name="nm" autocomplete="name" maxlength="80" placeholder="Contoh: Ahmad bin Ali"></label>
+      <h2 id="rt">Mula atau sambung</h2>
+      <p id="rp">Peserta baharu akan diminta mendaftar nama. Jika e-mel anda sudah berdaftar, anda boleh terus menyambung dari tempat anda berhenti, di mana-mana peranti.</p>
+      <label id="le">Alamat e-mel<input id="em" name="em" type="email" autocomplete="email" inputmode="email" maxlength="120" placeholder="nama@contoh.com"></label>
+      <div class="emline" id="emline" hidden><span>E-mel: <b id="emv"></b></span><button type="button" class="link" id="chg">Tukar e-mel</button></div>
+      <label id="ln" hidden>Nama penuh<input id="nm" name="nm" autocomplete="name" maxlength="80" placeholder="Contoh: Ahmad bin Ali"></label>
       <div class="err" id="err" role="alert"></div>
-      <button class="go" type="submit">Daftar &amp; mula</button>
+      <div class="acts"><button class="go" id="gob" type="submit">Seterusnya</button><button type="button" class="link" id="offl" hidden>Teruskan tanpa semakan</button></div>
     </form>
     <div class="howto">
       <div><b>1 markah setiap soalan</b>Jawapan betul yang disahkan pada cubaan pertama diberi 1 markah. Setiap bab bernilai 20 markah.</div>
-      <div><b>Direkod automatik</b>Markah dihantar kepada penganjur sebaik sahaja anda mengesahkan jawapan.</div>
+      <div><b>Sambung bila-bila masa</b>Kemajuan anda disimpan. Masukkan e-mel yang sama untuk menyambung di peranti lain.</div>
       <div><b>Markah terbaik dikira</b>Jika anda set semula bab dan mencuba lagi, markah tertinggi disimpan.</div>
     </div>`;
-  const f=$('#regf'), nm=$('#nm'); nm.focus();
-  f.onsubmit = e=>{
-    e.preventDefault();
-    const n = cleanName(nm.value);
-    if(n.replace(/[^\p{L}]/gu,'').length < 3){ $('#err').textContent='Sila masukkan nama penuh anda.'; nm.focus(); return; }
-    USER = n; LS.set('kuizsho:user', n); loadProg();
-    queue({action:'register', name:n, t:Date.now()});
-    for(const m of DATA.modules) for(const c of m.chapters){ if(PROG[c.id] && chScore(c)[1]) sendScore(m,c); }
-    renderWho(); route();
+  const em=$('#em'), nm=$('#nm'), err=$('#err'), gob=$('#gob');
+  let step='email', email='';
+  const toName = ()=>{
+    step='name'; $('#le').hidden=true; $('#emline').hidden=false; $('#emv').textContent=email;
+    $('#ln').hidden=false; $('#offl').hidden=true; $('#rt').textContent='Daftar peserta baharu';
+    $('#rp').textContent='E-mel ini belum berdaftar. Masukkan nama penuh anda seperti dalam senarai kursus.';
+    gob.textContent='Daftar & mula'; err.textContent=''; if(!nm.value && LEGACY_NAME) nm.value=LEGACY_NAME; nm.focus();
   };
+  $('#chg').onclick = ()=>{ step='email'; $('#le').hidden=false; $('#emline').hidden=true; $('#ln').hidden=true; $('#rt').textContent='Mula atau sambung'; gob.textContent='Seterusnya'; err.textContent=''; em.focus(); };
+  $('#offl').onclick = toName;
+  em.focus();
+  $('#regf').onsubmit = async e=>{
+    e.preventDefault();
+    if(step==='name'){
+      const n = cleanName(nm.value);
+      if(n.replace(/[^\p{L}]/gu,'').length < 3){ err.textContent='Sila masukkan nama penuh anda.'; nm.focus(); return; }
+      return signIn(email, n, {}, true);
+    }
+    email = cleanEmail(em.value);
+    if(!email){ err.textContent='Sila masukkan alamat e-mel yang sah.'; em.focus(); return; }
+    if(!SHEET_URL) return toName();
+    gob.disabled=true; gob.textContent='Menyemak…'; err.textContent='';
+    try{
+      const d = await lookup(email);
+      if(!d || !(d.version>=2)) throw new Error('old');
+      if(d.found) return signIn(email, cleanName(d.name)||email, d.progress, false);
+      toName();
+    }catch(x){
+      err.textContent = x.message==='old' ? 'Sistem rekod sedang dikemas kini. Sila cuba sebentar lagi.' : 'Tidak dapat menyemak e-mel sekarang. Semak sambungan internet dan cuba lagi.';
+      $('#offl').hidden = x.message==='old';
+    }finally{ gob.disabled=false; if(step==='email') gob.textContent='Seterusnya'; }
+  };
+}
+
+/* where to continue: the first chapter left unfinished, else the chapter after the last one completed */
+function nextChapter(){
+  const all = DATA.modules.flatMap(m=>m.chapters.filter(c=>c.qs.length).map(c=>[m,c]));
+  const started = all.filter(([m,c])=>chScore(c)[1]>0);
+  if(!started.length) return null;
+  const open = started.find(([m,c])=>chScore(c)[1]<c.qs.length);
+  if(open) return open;
+  const lastDone = all.indexOf(started[started.length-1]);
+  return all.slice(lastDone+1).find(([m,c])=>!chScore(c)[1]) || null;
 }
 
 function showHome(){
@@ -266,13 +352,18 @@ function showHome(){
       <span class="bar" aria-hidden="true"><i style="width:${pct}%"></i></span>
       <span class="meta"><span>${m.chapters.length} bab · ${tq} soalan</span><span>${ans? `Markah ${ok}/${ans}`:'Belum mula'}</span></span>
     </button>`}).join('');
-  $('#view').innerHTML=`<h2 style="font-size:26px">Pilih modul</h2><div class="modgrid">${cards}</div>
+  const nx = nextChapter();
+  const resume = nx ? `<div class="resume"><div><div class="k">Sambung di sini</div><div class="t">Bab ${esc(nx[1].id)} · ${esc(nx[1].title)}</div><div class="hint">Modul ${nx[0].n} · ${chScore(nx[1])[1]}/${nx[1].qs.length} soalan dijawab</div></div><button class="go2" id="cont">Sambung ›</button></div>` : '';
+  const welcome = WELCOME ? `<div class="welcome" role="status">Selamat kembali, ${esc(WELCOME)}. Kemajuan anda telah dimuatkan.</div>` : '';
+  WELCOME = '';
+  $('#view').innerHTML=`${welcome}${resume}<h2 style="font-size:26px">Pilih modul</h2><div class="modgrid">${cards}</div>
     <div class="howto">
       <div><b>1 · Pilih &amp; sahkan</b>Klik satu pilihan, kemudian tekan <i>Ya, pasti</i>. Jawapan betul disambut dengan bunga api.</div>
       <div><b>2 · Tukar jika belum pasti</b>Tekan <i>Tukar jawapan</i> untuk memilih semula. Selepas disahkan, jawapan dikunci.</div>
       <div><b>3 · Dedah jawapan</b>Lihat jawapan sebenar, penerangan dan rujukan slaid.</div>
     </div>`;
   document.querySelectorAll('.mod').forEach(b=>b.onclick=()=>go('m'+b.dataset.m));
+  if(nx) $('#cont').onclick=()=>go(slug(nx[1].id));
 }
 
 function showModule(n){
@@ -407,5 +498,18 @@ function tick(now){
   if(parts.length||rockets.length) raf=requestAnimationFrame(tick); else {ctx.clearRect(0,0,W,H); raf=0}
 }
 
-addEventListener('hashchange',route); renderWho(); route(); schedule(500);
+/* a returning device picks up answers made on other devices since it was last used */
+async function refreshFromSheet(){
+  if(!ME || !SHEET_URL) return;
+  try{
+    const d = await lookup(ME.email); if(!d || !d.found || !ME) return;
+    const remote = prune(d.progress||{});
+    const [, fromRemote] = mergeProg(PROG, remote);
+    const [merged, fromLocal] = mergeProg(remote, PROG);
+    PROG = merged; LS.set(pkey(ME.email), JSON.stringify(PROG));
+    if(fromLocal.length) pushProgress();
+    if(fromRemote.length && !Object.keys(PEND).length) route();
+  }catch(e){}
+}
+addEventListener('hashchange',route); renderWho(); route(); schedule(500); refreshFromSheet();
 </script>

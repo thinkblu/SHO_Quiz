@@ -36,7 +36,7 @@ Soalan asal Modul 1 dan 2 (sebelum dikemas kini) disimpan dalam `tools/q_v1/`. A
 
 ## Pendaftaran peserta dan rekod markah
 
-- Peserta mendaftar nama pada halaman utama. Kemajuan disimpan mengikut nama dalam pelayar.
+- Peserta memasukkan e-mel pada halaman utama. E-mel baharu diminta nama penuh untuk mendaftar; e-mel yang sudah berdaftar terus menyambung dari tempat peserta berhenti, di mana-mana peranti.
 - 1 markah bagi setiap jawapan betul yang disahkan (20 markah setiap bab). Jika bab diset semula dan dicuba lagi, markah tertinggi disimpan.
-- Markah dihantar ke Google Sheet "Markah Kuiz SHO" (tab Modul 1–4) melalui Google Apps Script dalam `tools/apps-script.gs`.
-- URL web app Apps Script diletakkan dalam `tools/sheet_url.txt`, kemudian jalankan `python3 tools/build.py`. Tanpa URL, markah disimpan dalam peranti dan dihantar apabila URL ditetapkan.
+- Google Sheet "Markah Kuiz SHO": tab Modul 1–4 (nama, e-mel, markah setiap bab, jumlah, peratus) dan tab Kemajuan (salinan jawapan setiap peserta untuk disambung).
+- Kod Google Apps Script ada dalam `tools/apps-script.gs`. URL web app diletakkan dalam `tools/sheet_url.txt`, kemudian jalankan `python3 tools/build.py`.

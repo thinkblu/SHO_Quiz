@@ -1,48 +1,81 @@
 /**
- * Kuiz SHO – penerima markah untuk Google Sheet "Markah Kuiz SHO".
+ * Kuiz SHO – penerima markah dan kemajuan untuk Google Sheet "Markah Kuiz SHO". Versi 2 (e-mel).
  *
- * Cara pasang (sekali sahaja):
+ * Cara pasang / kemas kini:
  * 1. Buka Google Sheet "Markah Kuiz SHO" → Extensions → Apps Script.
  * 2. Padam kod sedia ada, tampal SEMUA kod dalam fail ini, tekan Save.
- * 3. Deploy → New deployment → jenis "Web app".
- *    Execute as: Me   ·   Who has access: Anyone
- * 4. Tekan Deploy, benarkan akses (Authorize), salin "Web app URL".
+ * 3. Kali pertama: Deploy → New deployment → "Web app", Execute as: Me, Who has access: Anyone.
+ *    Kemas kini: Deploy → Manage deployments → ikon pensel → Version: New version → Deploy
+ *    (URL web app kekal sama).
  *
- * Aplikasi kuiz menghantar dua jenis permintaan:
- *   {action:"register", name}                      → nama ditambah ke semua tab Modul 1–4
- *   {action:"score", name, module, chapter, score} → markah bab ditulis (markah tertinggi disimpan)
+ * Tab yang digunakan:
+ *   Modul 1–4 : Nama Peserta | E-mel | Tarikh Daftar | kod bab ... | Jumlah | Peratus
+ *   Kemajuan  : E-mel | Nama Peserta | Kemajuan (JSON aplikasi) | Kemas kini
+ *
+ * GET  ?action=lookup&email=...            → {found, name, progress}
+ * POST {action:"register", email, name}
+ * POST {action:"score", email, name, module, chapter, score}   (markah tertinggi disimpan)
+ * POST {action:"progress", email, name, progress}               (kemajuan terkini peserta)
  */
 
+const VERSION = 2;
 const TABS = { 1: 'Modul 1', 2: 'Modul 2', 3: 'Modul 3', 4: 'Modul 4' };
-const FIRST_ROW = 3;        // baris 1 = kod bab, baris 2 = tajuk bab, data bermula baris 3
+const PROGRESS_TAB = 'Kemajuan';
+const FIRST_ROW = 3;        // modul: baris 1 = kod bab, baris 2 = tajuk bab, data bermula baris 3
 const MAX_PER_CHAPTER = 20; // 20 soalan, 1 markah setiap jawapan betul
+
+function doGet(e) {
+  const p = (e && e.parameter) || {};
+  let res;
+  try {
+    res = p.action === 'lookup' ? lookup(p.email) : { ok: true, service: 'Kuiz SHO', version: VERSION };
+  } catch (err) {
+    res = { ok: false, error: String(err), version: VERSION };
+  }
+  if (p.callback && /^[A-Za-z_$][\w$.]*$/.test(p.callback)) {
+    return ContentService.createTextOutput(p.callback + '(' + JSON.stringify(res) + ')')
+      .setMimeType(ContentService.MimeType.JAVASCRIPT);
+  }
+  return reply(res);
+}
 
 function doPost(e) {
   const lock = LockService.getScriptLock();
   lock.waitLock(20000);
   try {
     const d = JSON.parse(e.postData.contents || '{}');
+    const email = cleanEmail(d.email);
     const name = cleanName(d.name);
-    if (!name) return reply({ ok: false, error: 'nama kosong' });
+    if (!email) return reply({ ok: false, error: 'e-mel tidak sah' });
     const ss = SpreadsheetApp.getActiveSpreadsheet();
 
     if (d.action === 'register') {
-      Object.values(TABS).forEach(t => rowFor(ss.getSheetByName(t), name));
+      registerAll(ss, email, name);
       return reply({ ok: true });
     }
 
     if (d.action === 'score') {
       const sh = ss.getSheetByName(TABS[d.module]);
       if (!sh) return reply({ ok: false, error: 'modul tidak sah' });
-      Object.values(TABS).forEach(t => rowFor(ss.getSheetByName(t), name)); // pastikan nama ada di semua tab
-      const row = rowFor(sh, name);
-      const header = sh.getRange(1, 1, 1, sh.getLastColumn()).getDisplayValues()[0];
-      const col = header.indexOf(String(d.chapter)) + 1;
-      if (col < 3) return reply({ ok: false, error: 'bab tidak sah' });
+      registerAll(ss, email, name);
+      const row = rowFor(sh, email, name);
+      const col = headers(sh).indexOf(String(d.chapter)) + 1;
+      if (col < 1 || col <= colIndex(sh, 'Tarikh Daftar')) return reply({ ok: false, error: 'bab tidak sah' });
       const score = Math.max(0, Math.min(MAX_PER_CHAPTER, Math.round(Number(d.score) || 0)));
       const cell = sh.getRange(row, col);
       const current = cell.getValue();
       if (current === '' || score > Number(current)) cell.setValue(score);
+      return reply({ ok: true });
+    }
+
+    if (d.action === 'progress') {
+      const sh = progressSheet(ss);
+      let row = findRow(sh, 1, email, 2);
+      if (!row) row = Math.max(sh.getLastRow() + 1, 2);
+      const json = JSON.stringify(d.progress || {});
+      if (json.length > 49000) return reply({ ok: false, error: 'data terlalu besar' });
+      const current = row <= sh.getLastRow() ? sh.getRange(row, 2).getValue() : '';
+      sh.getRange(row, 1, 1, 4).setValues([[email, current || name, json, new Date()]]);
       return reply({ ok: true });
     }
 
@@ -54,26 +87,88 @@ function doPost(e) {
   }
 }
 
-function doGet() {
-  return reply({ ok: true, service: 'Kuiz SHO' });
+/** Cari peserta mengikut e-mel: nama dan kemajuan tersimpan. */
+function lookup(rawEmail) {
+  const email = cleanEmail(rawEmail);
+  if (!email) return { ok: false, error: 'e-mel tidak sah', version: VERSION };
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ps = progressSheet(ss);
+  const pr = findRow(ps, 1, email, 2);
+  if (pr) {
+    const v = ps.getRange(pr, 1, 1, 3).getValues()[0];
+    let progress = {};
+    try { progress = JSON.parse(v[2] || '{}'); } catch (err) { progress = {}; }
+    return { ok: true, version: VERSION, found: true, name: String(v[1]), progress: progress };
+  }
+  for (const t of Object.values(TABS)) {
+    const sh = ss.getSheetByName(t);
+    const r = findRow(sh, colIndex(sh, 'E-mel'), email, FIRST_ROW);
+    if (r) return { ok: true, version: VERSION, found: true, name: String(sh.getRange(r, 1).getValue()), progress: {} };
+  }
+  return { ok: true, version: VERSION, found: false };
 }
 
-/** Cari baris peserta (tidak sensitif huruf besar/kecil); tambah baris baharu jika belum ada. */
-function rowFor(sh, name) {
-  const last = sh.getLastRow();
-  if (last >= FIRST_ROW) {
-    const names = sh.getRange(FIRST_ROW, 1, last - FIRST_ROW + 1, 1).getValues()
-      .map(r => String(r[0]).trim().toUpperCase());
-    const i = names.indexOf(name.toUpperCase());
-    if (i >= 0) return FIRST_ROW + i;
+function registerAll(ss, email, name) {
+  Object.values(TABS).forEach(t => rowFor(ss.getSheetByName(t), email, name));
+}
+
+/** Baris peserta dalam tab modul: cari ikut e-mel, kemudian ikut nama tanpa e-mel (pendaftaran lama), atau tambah baris baharu. */
+function rowFor(sh, email, name) {
+  const emailCol = colIndex(sh, 'E-mel');
+  let row = findRow(sh, emailCol, email, FIRST_ROW);
+  if (row) return row;
+  if (name) {
+    const last = sh.getLastRow();
+    if (last >= FIRST_ROW) {
+      const vals = sh.getRange(FIRST_ROW, 1, last - FIRST_ROW + 1, emailCol).getValues();
+      const i = vals.findIndex(r => String(r[0]).trim().toUpperCase() === name.toUpperCase() && String(r[emailCol - 1]).trim() === '');
+      if (i >= 0) {
+        sh.getRange(FIRST_ROW + i, emailCol).setValue(email);
+        return FIRST_ROW + i;
+      }
+    }
   }
-  const row = Math.max(last + 1, FIRST_ROW);
-  const header = sh.getRange(1, 1, 1, sh.getLastColumn()).getDisplayValues()[0];
-  const total = header.indexOf('Jumlah') + 1;
-  sh.getRange(row, 1, 1, 2).setValues([[name, new Date()]]);
-  sh.getRange(row, total).setFormulaR1C1('=SUM(RC3:RC' + (total - 1) + ')');
+  row = Math.max(sh.getLastRow() + 1, FIRST_ROW);
+  const h = headers(sh);
+  const dateCol = h.indexOf('Tarikh Daftar') + 1;
+  const total = h.indexOf('Jumlah') + 1;
+  sh.getRange(row, 1).setValue(name || email);
+  sh.getRange(row, emailCol).setValue(email);
+  sh.getRange(row, dateCol).setValue(new Date());
+  sh.getRange(row, total).setFormulaR1C1('=SUM(RC' + (dateCol + 1) + ':RC' + (total - 1) + ')');
   sh.getRange(row, total + 1).setFormulaR1C1('=IF(R2C' + total + '=0,0,RC' + total + '/R2C' + total + ')');
   return row;
+}
+
+function findRow(sh, col, value, firstRow) {
+  const last = sh.getLastRow();
+  if (!col || last < firstRow) return 0;
+  const vals = sh.getRange(firstRow, col, last - firstRow + 1, 1).getValues();
+  const want = String(value).trim().toLowerCase();
+  const i = vals.findIndex(r => String(r[0]).trim().toLowerCase() === want);
+  return i >= 0 ? firstRow + i : 0;
+}
+
+function headers(sh) {
+  return sh.getRange(1, 1, 1, sh.getLastColumn()).getDisplayValues()[0];
+}
+
+function colIndex(sh, label) {
+  return headers(sh).indexOf(label) + 1;
+}
+
+function progressSheet(ss) {
+  let sh = ss.getSheetByName(PROGRESS_TAB);
+  if (!sh) {
+    sh = ss.insertSheet(PROGRESS_TAB);
+    sh.getRange(1, 1, 1, 4).setValues([['E-mel', 'Nama Peserta', 'Kemajuan (data aplikasi, jangan diubah)', 'Kemas kini']]);
+  }
+  return sh;
+}
+
+function cleanEmail(s) {
+  const e = String(s || '').trim().toLowerCase();
+  return /^[^\s@=+]+@[^\s@]+\.[^\s@]+$/.test(e) && e.length <= 120 ? e : '';
 }
 
 /** Kemaskan nama dan elakkan teks yang boleh dibaca sebagai formula. */
