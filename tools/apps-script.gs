@@ -1,5 +1,5 @@
 /**
- * Kuiz SHO – penerima markah dan kemajuan untuk Google Sheet "Markah Kuiz SHO". Versi 2 (e-mel).
+ * Kuiz SHO – penerima markah dan kemajuan untuk Google Sheet "Markah Kuiz SHO". Versi 3 (e-mel; kemajuan turut membawa markah semua bab).
  *
  * Cara pasang / kemas kini:
  * 1. Buka Google Sheet "Markah Kuiz SHO" → Extensions → Apps Script.
@@ -15,10 +15,10 @@
  * GET  ?action=lookup&email=...            → {found, name, progress}
  * POST {action:"register", email, name}
  * POST {action:"score", email, name, module, chapter, score}   (markah tertinggi disimpan)
- * POST {action:"progress", email, name, progress}               (kemajuan terkini peserta)
+ * POST {action:"progress", email, name, progress, scores}       (kemajuan terkini peserta; scores = {bab: {m, s}})
  */
 
-const VERSION = 2;
+const VERSION = 3;
 const TABS = { 1: 'Modul 1', 2: 'Modul 2', 3: 'Modul 3', 4: 'Modul 4' };
 const PROGRESS_TAB = 'Kemajuan';
 const FIRST_ROW = 3;        // modul: baris 1 = kod bab, baris 2 = tajuk bab, data bermula baris 3
@@ -55,17 +55,9 @@ function doPost(e) {
     }
 
     if (d.action === 'score') {
-      const sh = ss.getSheetByName(TABS[d.module]);
-      if (!sh) return reply({ ok: false, error: 'modul tidak sah' });
       registerAll(ss, email, name);
-      const row = rowFor(sh, email, name);
-      const col = headers(sh).indexOf(String(d.chapter)) + 1;
-      if (col < 1 || col <= colIndex(sh, 'Tarikh Daftar')) return reply({ ok: false, error: 'bab tidak sah' });
-      const score = Math.max(0, Math.min(MAX_PER_CHAPTER, Math.round(Number(d.score) || 0)));
-      const cell = sh.getRange(row, col);
-      const current = cell.getValue();
-      if (current === '' || score > Number(current)) cell.setValue(score);
-      return reply({ ok: true });
+      const ok = writeScore(ss, d.module, d.chapter, d.score, email, name);
+      return reply(ok ? { ok: true } : { ok: false, error: 'bab tidak sah' });
     }
 
     if (d.action === 'progress') {
@@ -76,6 +68,10 @@ function doPost(e) {
       if (json.length > 49000) return reply({ ok: false, error: 'data terlalu besar' });
       const current = row <= sh.getLastRow() ? sh.getRange(row, 2).getValue() : '';
       sh.getRange(row, 1, 1, 4).setValues([[email, current || name, json, new Date()]]);
+      if (d.scores && typeof d.scores === 'object') {
+        registerAll(ss, email, name);
+        Object.keys(d.scores).forEach(ch => writeScore(ss, d.scores[ch].m, ch, d.scores[ch].s, email, name));
+      }
       return reply({ ok: true });
     }
 
@@ -85,6 +81,20 @@ function doPost(e) {
   } finally {
     lock.releaseLock();
   }
+}
+
+/** Tulis markah bab; markah tertinggi disimpan. */
+function writeScore(ss, module, chapter, value, email, name) {
+  const sh = ss.getSheetByName(TABS[module]);
+  if (!sh) return false;
+  const col = headers(sh).indexOf(String(chapter)) + 1;
+  if (col < 1 || col <= colIndex(sh, 'Tarikh Daftar')) return false;
+  const row = rowFor(sh, email, name);
+  const score = Math.max(0, Math.min(MAX_PER_CHAPTER, Math.round(Number(value) || 0)));
+  const cell = sh.getRange(row, col);
+  const current = cell.getValue();
+  if (current === '' || score > Number(current)) cell.setValue(score);
+  return true;
 }
 
 /** Cari peserta mengikut e-mel: nama dan kemajuan tersimpan. */

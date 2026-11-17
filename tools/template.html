@@ -194,7 +194,13 @@ function mergeProg(base, extra){ // per chapter, keep the attempt with more answ
 }
 let saveT = 0;
 const save=()=>{ if(!ME) return; LS.set(pkey(ME.email), JSON.stringify(PROG)); clearTimeout(saveT); saveT = setTimeout(pushProgress, 2500); };
-function pushProgress(){ if(ME) queue({action:'progress', email:ME.email, name:ME.name, progress:PROG, t:Date.now()}); }
+/* every progress upload also carries the current mark of each answered chapter, so the sheet can always be brought up to date */
+function allScores(){
+  const out = {};
+  for(const m of DATA.modules) for(const c of m.chapters){ const [ok,ans] = chScore(c); if(ans) out[c.id] = {m:m.n, s:ok}; }
+  return out;
+}
+function pushProgress(){ if(ME) queue({action:'progress', email:ME.email, name:ME.name, progress:PROG, scores:allScores(), t:Date.now()}); }
 if(ME) PROG = readLS(pkey(ME.email));
 
 /* outbox: messages waiting to be sent to the sheet; survives reloads and offline periods */
@@ -211,9 +217,11 @@ async function flush(){
   if(!SHEET_URL || flushing || !OUTBOX.length){ syncUI(); return; }
   flushing = true; syncUI();
   while(OUTBOX.length){
+    const msg = OUTBOX[0];
     try{
-      await fetch(SHEET_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(OUTBOX[0])});
-      OUTBOX.shift(); LS.set('kuizsho:outbox', JSON.stringify(OUTBOX)); lastErr = false;
+      await fetch(SHEET_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(msg)});
+      /* remove exactly the message that was sent: newer messages may have been queued (and older duplicates dropped) while it was in flight */
+      OUTBOX = OUTBOX.filter(x=>x!==msg); LS.set('kuizsho:outbox', JSON.stringify(OUTBOX)); lastErr = false;
     }catch(e){ lastErr = true; flushing = false; syncUI(); schedule(15000); return; }
   }
   flushing = false; syncUI();
