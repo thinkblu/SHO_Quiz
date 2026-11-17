@@ -33,3 +33,10 @@ python3 tools/build.py   # semak 20 soalan/bab dan tulis index.html
 ## Set soalan lama
 
 Soalan asal Modul 1 dan 2 (sebelum dikemas kini) disimpan dalam `tools/q_v1/`. Apabila set soalan sesuatu bab berubah, jawapan yang tersimpan dalam pelayar bagi bab itu dikosongkan secara automatik.
+
+## Pendaftaran peserta dan rekod markah
+
+- Peserta mendaftar nama pada halaman utama. Kemajuan disimpan mengikut nama dalam pelayar.
+- 1 markah bagi setiap jawapan betul yang disahkan (20 markah setiap bab). Jika bab diset semula dan dicuba lagi, markah tertinggi disimpan.
+- Markah dihantar ke Google Sheet "Markah Kuiz SHO" (tab Modul 1–4) melalui Google Apps Script dalam `tools/apps-script.gs`.
+- URL web app Apps Script diletakkan dalam `tools/sheet_url.txt`, kemudian jalankan `python3 tools/build.py`. Tanpa URL, markah disimpan dalam peranti dan dihantar apabila URL ditetapkan.

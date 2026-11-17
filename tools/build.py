@@ -51,6 +51,10 @@ for m in [1, 2, 3, 4]:
         mod['chapters'].append(entry)
     out['modules'].append(mod)
 tpl = open(f'{B}/template.html').read()
+# web app URL of the Google Apps Script that records marks (tools/sheet_url.txt); empty = marks stay on the device
+uf = f'{B}/sheet_url.txt'
+sheet_url = open(uf).read().strip() if os.path.exists(uf) else ''
+tpl = tpl.replace('/*__SHEET_URL__*/', sheet_url.replace("'", ''))
 data = json.dumps(out, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 os.makedirs(f'{B}/dist', exist_ok=True)
 open(f'{B}/../index.html', 'w').write(tpl.replace('/*__DATA__*/null', data))

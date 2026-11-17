@@ -114,12 +114,29 @@ main .wrap{padding-block:24px 64px;display:flex;flex-direction:column;gap:18px}
 .done-card h2{font-size:28px}
 .done-card .btn{background:var(--green-ink);color:var(--green);border-color:transparent}
 .empty{background:var(--surface);border:1px dashed var(--line);border-radius:6px;padding:20px;color:var(--muted)}
+/* participant strip + registration */
+.whobar{background:var(--ink);color:var(--surface);font-size:14px}
+.whobar[hidden]{display:none}
+.whobar .wrap{padding-block:7px;display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;justify-content:space-between}
+.whobar b{font-weight:700}
+.whobar button{background:none;border:1px solid currentColor;color:inherit;border-radius:4px;padding:2px 10px;cursor:pointer;font-size:13px;opacity:.85}
+.whobar button:hover{opacity:1}
+.sync{font-family:var(--f-mono);font-size:12px;opacity:.8}
+.reg{background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--green);border-radius:6px;padding:22px 20px;display:flex;flex-direction:column;gap:14px;max-width:560px}
+.reg h2{font-size:28px}
+.reg p{margin:0;color:var(--muted)}
+.reg label{font-weight:600;display:flex;flex-direction:column;gap:6px}
+.reg input{font:inherit;font-size:18px;padding:12px 14px;border:1.5px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.reg input:focus{border-color:var(--green);outline:none}
+.reg .go{align-self:flex-start;background:var(--green);color:var(--green-ink);border:0;padding:11px 20px;border-radius:5px;font-family:var(--f-display);font-weight:700;font-size:18px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer}
+.reg .err{color:var(--red);font-size:14px;min-height:1.2em}
 footer{color:var(--muted);font-size:13px;text-align:center;padding-block:0 40px}
 canvas#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
 </style>
 
 <canvas id="fx" aria-hidden="true"></canvas>
 <div class="hazard" aria-hidden="true"></div>
+<div class="whobar" id="who" hidden></div>
 <header class="top"><div class="wrap" id="hdr"></div></header>
 <div id="bar"></div>
 <main><div class="wrap" id="view"></div></main>
@@ -133,24 +150,104 @@ const esc = s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;
 const slug = id=>'c'+id.toLowerCase().replace('.','-');
 const findCh = h=>{for(const m of DATA.modules)for(const c of m.chapters)if(slug(c.id)===h)return [m,c];return [null,null]};
 
-/* progress store (per-viewer convenience only) */
-let PROG = {};
-try{PROG = JSON.parse(localStorage.getItem('kuizsho')||'{}')||{}}catch(e){PROG={}}
-const save=()=>{try{localStorage.setItem('kuizsho',JSON.stringify(PROG))}catch(e){}};
-/* drop saved answers for chapters whose question set has changed (old saves carry no version = first set) */
-for(const m of DATA.modules) for(const c of m.chapters){ const s=PROG[c.id]; if(s && (s.v||c.lv)!==c.v) delete PROG[c.id]; }
+/* Google Apps Script web app that writes marks into the "Markah Kuiz SHO" sheet (empty = marks kept on this device only) */
+const SHEET_URL = '/*__SHEET_URL__*/';
+const LS = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}, del(k){try{localStorage.removeItem(k)}catch(e){}}};
 const VER = {}; for(const m of DATA.modules) for(const c of m.chapters) VER[c.id]=c.v;
+
+/* participant + progress (stored per participant name on this device) */
+let USER = LS.get('kuizsho:user') || null;
+let PROG = {};
+const pkey = n=>'kuizsho:p:'+n.toLowerCase();
+function loadProg(){
+  PROG = {}; if(!USER) return;
+  let raw = LS.get(pkey(USER));
+  if(raw===null && LS.get('kuizsho')!==null){ raw = LS.get('kuizsho'); LS.set(pkey(USER), raw); LS.del('kuizsho'); } // progress saved before registration existed
+  try{ PROG = JSON.parse(raw||'{}')||{} }catch(e){ PROG = {} }
+  /* drop saved answers for chapters whose question set has changed (old saves carry no version = first set) */
+  for(const m of DATA.modules) for(const c of m.chapters){ const s=PROG[c.id]; if(s && (s.v||c.lv)!==c.v) delete PROG[c.id]; }
+}
+const save=()=>{ if(USER) LS.set(pkey(USER), JSON.stringify(PROG)); };
+loadProg();
+
+/* outbox: marks waiting to be sent to the sheet; survives reloads and offline periods */
+let OUTBOX = []; try{ OUTBOX = JSON.parse(LS.get('kuizsho:outbox')||'[]')||[] }catch(e){ OUTBOX = [] }
+let flushT = 0, flushing = false, lastErr = false;
+function queue(msg){
+  if(msg.action==='score') OUTBOX = OUTBOX.filter(x=>!(x.action==='score' && x.name===msg.name && x.chapter===msg.chapter));
+  OUTBOX.push(msg); LS.set('kuizsho:outbox', JSON.stringify(OUTBOX)); schedule(1200);
+}
+function schedule(ms){ clearTimeout(flushT); flushT = setTimeout(flush, ms); }
+async function flush(){
+  if(!SHEET_URL || flushing || !OUTBOX.length){ syncUI(); return; }
+  flushing = true; syncUI();
+  while(OUTBOX.length){
+    try{
+      await fetch(SHEET_URL, {method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(OUTBOX[0])});
+      OUTBOX.shift(); LS.set('kuizsho:outbox', JSON.stringify(OUTBOX)); lastErr = false;
+    }catch(e){ lastErr = true; flushing = false; syncUI(); schedule(15000); return; }
+  }
+  flushing = false; syncUI();
+}
+addEventListener('online', ()=>schedule(300));
+function syncUI(){
+  const el = $('#sync'); if(!el) return;
+  const mine = OUTBOX.filter(x=>x.name===USER).length;
+  el.textContent = !SHEET_URL ? 'Markah disimpan dalam peranti ini' : mine ? (lastErr ? `Tiada sambungan · ${mine} markah menunggu` : 'Menghantar markah…') : 'Markah telah dihantar ✓';
+}
+function sendScore(m,c){
+  if(!USER) return;
+  const [ok] = chScore(c);
+  queue({action:'score', name:USER, module:m.n, chapter:c.id, score:ok, t:Date.now()});
+}
+const cleanName = s=>String(s||'').replace(/\s+/g,' ').trim().replace(/^[=+\-@']+/,'').slice(0,80);
+function renderWho(){
+  const w = $('#who'); w.hidden = !USER; if(!USER){ w.innerHTML=''; return; }
+  w.innerHTML = `<div class="wrap"><span>Peserta: <b>${esc(USER)}</b> <span class="sync" id="sync"></span></span><button id="sw">Tukar peserta</button></div>`;
+  $('#sw').onclick = ()=>{ USER = null; LS.del('kuizsho:user'); PROG = {}; renderWho(); go(''); };
+  syncUI();
+}
 const st = id=>(PROG[id] ||= {v:VER[id],pick:{},first:{},rev:{}});
 const chScore = c=>{const s=PROG[c.id];if(!s)return [0,0];let ok=0,ans=0;c.qs.forEach((q,i)=>{if(s.first[i]!==undefined){ans++;if(s.first[i]===q.a)ok++}});return [ok,ans]};
 
 function route(){
   const h = location.hash.slice(1);
   window.scrollTo(0,0);
+  if(!USER) return showRegister();
   if(/^m[1-4]$/.test(h)) return showModule(+h[1]);
   if(h.startsWith('c')){const [m,c]=findCh(h); if(c) return showChapter(m,c);}
   showHome();
 }
 const go = h=>{ if(location.hash==='#'+h) route(); else location.hash=h; };
+
+function showRegister(){
+  $('#bar').innerHTML='';
+  $('#hdr').innerHTML=`<div class="eyebrow">Safety and Health Officer · NIOSH Malaysia</div>
+    <h1>Kuiz Latihan SHO</h1>
+    <p class="sub">Daftar nama anda sebelum memulakan kuiz. Markah setiap bab akan direkodkan untuk penganjur kursus.</p>`;
+  $('#view').innerHTML=`<form class="reg" id="regf" novalidate>
+      <h2>Daftar peserta</h2>
+      <p>Gunakan nama penuh seperti dalam senarai kursus. Jika anda menyambung di peranti lain, taip nama yang sama supaya markah direkodkan pada baris yang sama.</p>
+      <label>Nama penuh<input id="nm" name="nm" autocomplete="name" maxlength="80" placeholder="Contoh: Ahmad bin Ali"></label>
+      <div class="err" id="err" role="alert"></div>
+      <button class="go" type="submit">Daftar &amp; mula</button>
+    </form>
+    <div class="howto">
+      <div><b>1 markah setiap soalan</b>Jawapan betul yang disahkan pada cubaan pertama diberi 1 markah. Setiap bab bernilai 20 markah.</div>
+      <div><b>Direkod automatik</b>Markah dihantar kepada penganjur sebaik sahaja anda mengesahkan jawapan.</div>
+      <div><b>Markah terbaik dikira</b>Jika anda set semula bab dan mencuba lagi, markah tertinggi disimpan.</div>
+    </div>`;
+  const f=$('#regf'), nm=$('#nm'); nm.focus();
+  f.onsubmit = e=>{
+    e.preventDefault();
+    const n = cleanName(nm.value);
+    if(n.replace(/[^\p{L}]/gu,'').length < 3){ $('#err').textContent='Sila masukkan nama penuh anda.'; nm.focus(); return; }
+    USER = n; LS.set('kuizsho:user', n); loadProg();
+    queue({action:'register', name:n, t:Date.now()});
+    for(const m of DATA.modules) for(const c of m.chapters){ if(PROG[c.id] && chScore(c)[1]) sendScore(m,c); }
+    renderWho(); route();
+  };
+}
 
 function showHome(){
   $('#bar').innerHTML='';
@@ -167,7 +264,7 @@ function showHome(){
       <h2>${esc(m.title)}</h2>
       <span class="en">${esc(m.en)}</span>
       <span class="bar" aria-hidden="true"><i style="width:${pct}%"></i></span>
-      <span class="meta"><span>${m.chapters.length} bab · ${tq} soalan</span><span>${ans? `${ok}/${ans} betul`:'Belum mula'}</span></span>
+      <span class="meta"><span>${m.chapters.length} bab · ${tq} soalan</span><span>${ans? `Markah ${ok}/${ans}`:'Belum mula'}</span></span>
     </button>`}).join('');
   $('#view').innerHTML=`<h2 style="font-size:26px">Pilih modul</h2><div class="modgrid">${cards}</div>
     <div class="howto">
@@ -205,7 +302,7 @@ function showChapter(m,c){
   $('#bar').innerHTML=`<div class="qbar"><div class="wrap">
     <span class="stat">Dijawab <b id="nAns">0</b>/${c.qs.length}</span>
     <span class="prog" aria-hidden="true"><i id="pBar"></i></span>
-    <span class="stat">Betul cubaan pertama <b id="nOk">0</b></span>
+    <span class="stat">Markah <b id="nOk">0</b>/${c.qs.length}</span>
     <button class="btn" id="reset">Set semula</button></div></div>`;
   $('#reset').onclick=()=>{ if($('#reset').dataset.arm){delete PROG[c.id];save();showChapter(m,c);} else {$('#reset').dataset.arm=1;$('#reset').textContent='Klik lagi untuk sahkan';setTimeout(()=>{const r=$('#reset');if(r){delete r.dataset.arm;r.textContent='Set semula'}},3000)} };
   $('#view').innerHTML = c.qs.map((q,i)=>`<article class="q" id="q${i}">
@@ -240,6 +337,7 @@ function confirmPick(c,i){
   delete PEND[i];
   s.pick[i]=k; if(s.first[i]===undefined) s.first[i]=k; save();
   paint(c,i); stats(c);
+  sendScore(DATA.modules.find(m=>m.chapters.includes(c)), c);
   const card=$('#q'+i);
   if(k===c.qs[i].a){ const r=card.querySelector(`.opt[data-k="${k}"]`).getBoundingClientRect(); celebrate(r.left+r.width/2, r.top+r.height/2); }
   card.querySelector('.reveal').focus({preventScroll:true});
@@ -273,7 +371,7 @@ function stats(c){
   const fin=$('#fin');
   if(ans===c.qs.length){
     const [m] = DATA.modules.filter(m=>m.chapters.includes(c)); const idx=m.chapters.indexOf(c); const nx=m.chapters.slice(idx+1).find(x=>x.qs.length);
-    fin.innerHTML=`<div class="done-card"><div><div class="eyebrow">Bab selesai</div><h2>${ok}/${c.qs.length} betul pada cubaan pertama</h2></div>
+    fin.innerHTML=`<div class="done-card"><div><div class="eyebrow">Bab selesai</div><h2>Markah ${ok}/${c.qs.length}</h2><div style="opacity:.9;font-size:14px">1 markah bagi setiap jawapan betul yang disahkan</div></div>
       ${nx?`<button class="btn" id="nxt">Bab seterusnya: ${esc(nx.id)} ›</button>`:`<button class="btn" id="nxt">Kembali ke Modul ${m.n}</button>`}</div>`;
     $('#nxt').onclick=()=>go(nx?slug(nx.id):'m'+m.n);
   } else fin.innerHTML='';
@@ -309,5 +407,5 @@ function tick(now){
   if(parts.length||rockets.length) raf=requestAnimationFrame(tick); else {ctx.clearRect(0,0,W,H); raf=0}
 }
 
-addEventListener('hashchange',route); route();
+addEventListener('hashchange',route); renderWho(); route(); schedule(500);
 </script>
