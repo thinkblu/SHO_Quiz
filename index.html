@@ -151,7 +151,7 @@ const slug = id=>'c'+id.toLowerCase().replace('.','-');
 const findCh = h=>{for(const m of DATA.modules)for(const c of m.chapters)if(slug(c.id)===h)return [m,c];return [null,null]};
 
 /* Google Apps Script web app that writes marks into the "Markah Kuiz SHO" sheet (empty = marks kept on this device only) */
-const SHEET_URL = '';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbyBN08Iy-JEBFWBis9aodv4_jj6HSzGeEKXaeAnDkVWF0zhsTSVKyFrq7Fa668mgYVeWQ/exec';
 const LS = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}, del(k){try{localStorage.removeItem(k)}catch(e){}}};
 const VER = {}; for(const m of DATA.modules) for(const c of m.chapters) VER[c.id]=c.v;
 
