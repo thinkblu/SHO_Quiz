@@ -44,6 +44,11 @@ main .wrap{padding-block:24px 64px;display:flex;flex-direction:column;gap:18px}
 .mod{display:flex;flex-direction:column;gap:10px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 16px;cursor:pointer;position:relative;overflow:hidden;transition:transform .15s,border-color .15s}
 .mod:hover{transform:translateY(-2px);border-color:var(--green)}
 .mod .num{font-family:var(--f-display);font-weight:800;font-size:56px;line-height:.9;color:var(--green)}
+.mod .head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.mod .pc{display:flex;flex-direction:column;align-items:flex-end;text-align:right;background:var(--green-soft);border-radius:6px;padding:6px 10px;min-width:96px}
+.mod .pc b{font-family:var(--f-display);font-weight:800;font-size:32px;line-height:1;color:var(--green);font-variant-numeric:tabular-nums}
+.mod .pc small{font-size:12px;color:var(--muted);line-height:1.3}
+.mod .pc.none b{color:var(--muted)}
 .mod h2{font-size:24px;font-weight:700}
 .mod .en{color:var(--muted);font-size:14px}
 .mod .meta{display:flex;justify-content:space-between;gap:8px;font-size:14px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px;font-variant-numeric:tabular-nums}
@@ -258,11 +263,12 @@ function showHome(){
     let ans=0; ready.forEach(c=>{ans+=chScore(c)[1]});
     const pct = tq? Math.round(ans/tq*100):0, av = modAvg(m);
     return `<button class="mod" data-m="${m.n}">
-      <span class="num">0${m.n}</span>
+      <span class="head"><span class="num">0${m.n}</span>
+        <span class="pc${av?'':' none'}"><b>${av? av.pct+'%' : '–'}</b><small>${av? `% betul · purata ${av.n} bab` : 'Belum mula'}</small></span></span>
       <h2>${esc(m.title)}</h2>
       <span class="en">${esc(m.en)}</span>
       <span class="bar" aria-hidden="true"><i style="width:${pct}%"></i></span>
-      <span class="meta"><span>${m.chapters.length} bab · ${tq} soalan</span><span>${av? `Purata <b>${av.pct}%</b> · ${av.n} bab`:'Belum mula'}</span></span>
+      <span class="meta"><span>${m.chapters.length} bab · ${tq} soalan</span><span>${ans}/${tq} dijawab</span></span>
     </button>`}).join('');
   const nx = nextChapter();
   const resume = nx ? `<div class="resume"><div><div class="k">Sambung di sini</div><div class="t">Bab ${esc(nx[1].id)} · ${esc(nx[1].title)}</div><div class="hint">Modul ${nx[0].n} · ${chScore(nx[1])[1]}/${nx[1].qs.length} soalan dijawab</div></div><button class="go2" id="cont">Sambung ›</button></div>` : '';
