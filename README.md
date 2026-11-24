@@ -5,7 +5,7 @@ Kuiz interaktif untuk kursus Safety & Health Officer (SHO), Modul 1–4, dalam B
 - 4 modul, 60 bab, 20 soalan objektif setiap bab (1,200 soalan)
 - Jawapan tersembunyi sehingga butang **Dedah jawapan** ditekan, dengan penerangan dan rujukan slaid (nombor slaid, halaman dan petikan)
 - Bunga api apabila jawapan betul
-- Kemajuan disimpan dalam pelayar (localStorage)
+- Kemajuan dan markah disimpan dalam pelayar peserta sahaja (localStorage)
 
 ## Guna
 
@@ -34,9 +34,8 @@ python3 tools/build.py   # semak 20 soalan/bab dan tulis index.html
 
 Soalan asal Modul 1 dan 2 (sebelum dikemas kini) disimpan dalam `tools/q_v1/`. Apabila set soalan sesuatu bab berubah, jawapan yang tersimpan dalam pelayar bagi bab itu dikosongkan secara automatik.
 
-## Pendaftaran peserta dan rekod markah
+## Markah
 
-- Halaman utama ada dua pilihan: "Peserta baharu" (nama penuh + e-mel) dan "Sudah berdaftar" (e-mel sahaja, terus menyambung dari tempat peserta berhenti, di mana-mana peranti).
-- 1 markah bagi setiap jawapan betul yang disahkan (20 markah setiap bab). Jika bab diset semula dan dicuba lagi, markah tertinggi disimpan.
-- Google Sheet "Markah Kuiz SHO": tab Modul 1–4 (nama, e-mel, markah setiap bab, jumlah, peratus) dan tab Kemajuan (salinan jawapan setiap peserta untuk disambung).
-- Kod Google Apps Script ada dalam `tools/apps-script.gs`. URL web app diletakkan dalam `tools/sheet_url.txt`, kemudian jalankan `python3 tools/build.py`.
+- 1 markah bagi setiap jawapan betul yang disahkan pada cubaan pertama (20 markah setiap bab).
+- Markah untuk tontonan peserta sahaja: jawapan dan markah disimpan dalam pelayar peserta (localStorage) dan tidak dihantar ke mana-mana. Tiada pendaftaran.
+- Butang set semula tersedia untuk semua modul (halaman utama) dan untuk setiap modul (halaman modul).
