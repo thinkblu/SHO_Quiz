@@ -36,6 +36,6 @@ Soalan asal Modul 1 dan 2 (sebelum dikemas kini) disimpan dalam `tools/q_v1/`. A
 
 ## Markah
 
-- 1 markah bagi setiap jawapan betul yang disahkan pada cubaan pertama (20 markah setiap bab).
+- 1 markah bagi setiap jawapan betul yang disahkan pada cubaan pertama (20 markah setiap bab). Peratus markah dipaparkan bagi setiap bab, dan purata peratus bab yang telah dicuba dipaparkan bagi setiap modul.
 - Markah untuk tontonan peserta sahaja: jawapan dan markah disimpan dalam pelayar peserta (localStorage) dan tidak dihantar ke mana-mana. Tiada pendaftaran.
 - Butang set semula tersedia untuk semua modul (halaman utama) dan untuk setiap modul (halaman modul).
